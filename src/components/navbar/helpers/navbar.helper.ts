@@ -16,20 +16,4 @@ export class NavbarHelper {
 
 		return isScrolledValue;
 	}
-
-	public static getIsMidScreen() {
-		const [isMidScreen, setIsMidScreen] = useState(false);
-
-		if (typeof window !== undefined) {
-			window.addEventListener("resize", () => {
-				setIsMidScreen(window.innerWidth < 768);
-			});
-		}
-
-		const isMidScreenValue = useMemo(() => {
-			return isMidScreen;
-		}, [isMidScreen]);
-
-		return isMidScreenValue;
-	}
 }
