@@ -1,4 +1,3 @@
-import ButtonText from "@/components/common/buttons/ButtonText";
 import Image from "next/image";
 import React from "react";
 import userPic from "../../../../public/user.jpeg";
