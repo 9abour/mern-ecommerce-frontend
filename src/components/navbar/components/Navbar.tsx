@@ -10,15 +10,27 @@ import { AiOutlineHeart } from "react-icons/ai";
 import ButtonMenu from "@/components/common/buttons/ButtonMenu";
 import { NavbarHelper } from "../helpers/navbar.helper";
 import MobileNavDrop from "./MobileNavDrop";
+import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+	const handleClickOutside = () => {
+		if (isMenuOpen) {
+			setIsMenuOpen(true);
+		} else {
+			setIsMenuOpen(false);
+		}
+	};
+
+	const ref: any = useOnClickOutside(handleClickOutside);
+
 	return (
 		<nav
-			className={`fixed transition duration-200 backdrop-blur-md shadow-sm w-full h-[70px] flex justify-between items-center gap-4 md:gap-12 ${
+			ref={ref}
+			className={`fixed transition duration-200 backdrop-blur-md shadow-csm w-full h-[70px] flex justify-between items-center gap-4 md:gap-12 ${
 				NavbarHelper.getIsWindowScrolled() ? "bg-[#e2f9eed1]" : "bg-white"
-			} [&>div]:flex [&>div]:items-center`}
+			} [&>div]:flex [&>div]:items-center z-[999999999]`}
 		>
 			<div className="w-full justify-between md:w-[800px] md:max-w-[800px] gap-6">
 				<Logo />
@@ -37,7 +49,11 @@ const Navbar = () => {
 				<User />
 			</div>
 
-			<ButtonMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+			<ButtonMenu
+				isMenuOpen={isMenuOpen}
+				setIsMenuOpen={setIsMenuOpen}
+				customStyles="bg-primary [&>button]:bg-lightGreen [&>button>span]:bg-primary"
+			/>
 
 			<MobileNavDrop isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 		</nav>

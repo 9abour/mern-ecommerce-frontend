@@ -1,24 +1,15 @@
 import React, { useEffect } from "react";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { IButtonMenu } from "@/components/common/buttons/types";
 import InputSearch from "@/components/common/inputs/InputSearch";
 import User from "./User";
-import ButtonIcon from "@/components/common/buttons/ButtonIcon";
-import { AiOutlineHeart } from "react-icons/ai";
-import ButtonCart from "@/components/common/buttons/ButtonCart";
 import { NavbarHelper } from "../helpers/navbar.helper";
-
-const itemVariants: Variants = {
-	open: {
-		opacity: 1,
-		y: 0,
-		transition: { type: "spring", stiffness: 300, damping: 24 },
-	},
-	closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
-};
+import MobileNavDropItem from "./MobileNavDropItem";
+import NavbarMobileLink from "./NavbarMobileLink";
+import { useMediaQuery } from "react-responsive";
 
 const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IButtonMenu) => {
-	const isMidScreenValue = NavbarHelper.getIsMidScreen();
+	const isMidScreenValue = useMediaQuery({ query: "(max-width: 768px)" });
 
 	useEffect(() => {
 		if (isMenuOpen) {
@@ -50,20 +41,18 @@ const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IButtonMenu) => {
 					},
 				},
 			}}
-			className={`absolute w-full h-[150px] top-[70px] left-0 bg-secondaryDark flex flex-col md`}
+			className={`absolute w-full top-[70px] left-0 bg-secondaryDark flex flex-col md z-[1]`}
 		>
-			<motion.div
-				variants={itemVariants}
-				className="w-full flex justify-between gap-4 mt-4"
-			>
+			<MobileNavDropItem translate="y" customStyles="flex gap-2">
 				<InputSearch
 					type="text"
 					placeholder="Search"
 					customStyles="flex md:hidden ml-2"
 				/>
 				<User />
-			</motion.div>
-			<motion.div variants={itemVariants} className="w-full my-4">
+			</MobileNavDropItem>
+			{/* 
+			<MobileNavDropItem translate="y">
 				<div className="flex items-center gap-2 px-2">
 					<ButtonIcon
 						icon={<AiOutlineHeart size={20} color="white" />}
@@ -71,7 +60,15 @@ const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IButtonMenu) => {
 					/>
 					<ButtonCart />
 				</div>
-			</motion.div>
+			</MobileNavDropItem> */}
+
+			<ul className="w-full p-2">
+				{Array.from(Array(6)).map((_, i) => (
+					<MobileNavDropItem translate="y" customStyles="!m-0">
+						<NavbarMobileLink key={i} href={`/${i}`} name="Navbar Link" />
+					</MobileNavDropItem>
+				))}
+			</ul>
 		</motion.div>
 	);
 };

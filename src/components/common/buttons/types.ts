@@ -17,4 +17,5 @@ export interface IButtonIcon {
 export interface IButtonMenu {
 	isMenuOpen: boolean;
 	setIsMenuOpen: (isOpen: boolean) => void;
+	customStyles?: string;
 }
