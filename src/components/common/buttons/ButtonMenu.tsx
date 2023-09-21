@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
+import { IButtonMenu } from "./types";
 
-const ButtonMenu = () => {
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+const ButtonMenu = ({ isMenuOpen, setIsMenuOpen }: IButtonMenu) => {
 	return (
 		<div className="relative flex md:!hidden w-[70px] h-[50px] items-center gap-1 bg-dark py-2 px-1 rounded-l-full z-50">
 			<button

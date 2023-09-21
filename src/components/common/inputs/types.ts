@@ -1,5 +1,3 @@
-import { ReactElement } from "react";
-
 export interface IInput {
 	type: string;
 	value: string;
@@ -9,4 +7,5 @@ export interface IInput {
 export interface IInputSearch {
 	type: string;
 	placeholder?: string;
+	customStyles?: string;
 }
