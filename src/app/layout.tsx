@@ -1,4 +1,4 @@
-import Aside from "@/components/aside/Aside";
+import Aside from "@/components/aside/components/Aside";
 import "./globals.scss";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -21,9 +21,9 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={inter.className}>
 				<Navbar />
-				<div className="pt-[70px]">
+				<div className="flex pt-[70px]">
 					<Aside />
-					{children}
+					<div className="md:ml-[224px] mt-[5rem]">{children}</div>
 				</div>
 			</body>
 		</html>

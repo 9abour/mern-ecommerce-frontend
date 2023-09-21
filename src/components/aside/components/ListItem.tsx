@@ -1,5 +1,5 @@
 import React from "react";
-import { IListItem } from "./types";
+import { IListItem } from "../types";
 import Link from "next/link";
 
 const ListItem = ({ text, icon, isActive }: IListItem) => {
