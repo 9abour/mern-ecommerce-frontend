@@ -13,3 +13,8 @@ export interface IButtonIcon {
 	bgColor?: string;
 	customStyles?: string;
 }
+
+export interface IButtonMenu {
+	isMenuOpen: boolean;
+	setIsMenuOpen: (isOpen: boolean) => void;
+}
