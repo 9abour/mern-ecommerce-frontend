@@ -1,11 +1,11 @@
 import { useRef, useEffect } from "react";
 
-export const useOnClickOutside = (callback: any) => {
+export const useOnClickOutside = (callback: any, screenSize?: boolean) => {
 	const ref = useRef<HTMLElement>();
 
 	useEffect(() => {
 		const handleClick = (event: any) => {
-			if (ref.current && !ref.current.contains(event.target)) {
+			if (ref.current && !ref.current.contains(event.target) && screenSize) {
 				callback();
 			}
 		};
@@ -15,7 +15,7 @@ export const useOnClickOutside = (callback: any) => {
 		return () => {
 			document.removeEventListener("click", handleClick, true);
 		};
-	}, [ref]);
+	}, [ref, screenSize]);
 
 	return ref;
 };
