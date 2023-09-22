@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Menu from "./Menu";
 import LineBottom from "../../common/LineBottom";
 import SignOff from "../../common/buttons/SignOff";
@@ -12,24 +12,17 @@ import { useMediaQuery } from "usehooks-ts";
 
 const Aside = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-
 	const isMidScreenValue = useMediaQuery("(max-width: 768px)");
 
-	const handleOnClickOutside = () => {
-		if (isMidScreenValue) {
-			setIsMenuOpen(false);
-		}
-	};
-
 	useEffect(() => {
-		if (!isMidScreenValue) {
-			setIsMenuOpen(true);
-		} else if (isMidScreenValue) {
-			setIsMenuOpen(false);
-		}
+		setIsMenuOpen(!isMidScreenValue);
 	}, [isMidScreenValue]);
 
-	const ref: any = useOnClickOutside(handleOnClickOutside);
+	function handleOnClickOutside() {
+		setIsMenuOpen(false);
+	}
+
+	let ref: any = useOnClickOutside(handleOnClickOutside, isMidScreenValue);
 
 	return (
 		<div ref={ref} className="fixed">
