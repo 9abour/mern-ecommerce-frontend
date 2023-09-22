@@ -1,6 +1,9 @@
 import { useRef, useEffect } from "react";
 
-export const useOnClickOutside = (callback: any, screenSize?: boolean) => {
+export const useOnClickOutside = (
+	callback: any,
+	screenSize: boolean = true
+) => {
 	const ref = useRef<HTMLElement>();
 
 	useEffect(() => {

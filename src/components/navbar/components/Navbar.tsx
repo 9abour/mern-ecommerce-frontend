@@ -28,8 +28,8 @@ const Navbar = () => {
 	return (
 		<nav
 			ref={ref}
-			className={`fixed transition duration-200 backdrop-blur-md shadow-csm w-full h-[70px] flex justify-between items-center gap-4 md:gap-12 ${
-				useIsWindowScrolled() ? "bg-[#e2f9eed1]" : "bg-white"
+			className={`fixed transition duration-200 backdrop-blur-md w-full h-[70px] flex justify-between items-center gap-4 md:gap-12 ${
+				useIsWindowScrolled() ? "bg-[#e2f9eed1] shadow-csm" : "bg-white"
 			} [&>div]:flex [&>div]:items-center z-[999999999]`}
 		>
 			<div className="w-full justify-between md:w-[800px] md:max-w-[800px] gap-6">
