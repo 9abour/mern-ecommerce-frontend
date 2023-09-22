@@ -1,13 +1,13 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export const useIsWindowScrolled = (): boolean => {
 	const [isScrolled, setIsScrolled] = useState(false);
 
-	if (typeof window !== undefined) {
+	useEffect(() => {
 		window.addEventListener("scroll", () => {
 			setIsScrolled(window.pageYOffset > 1 ? true : false);
 		});
-	}
+	}, []);
 
 	const isScrolledValue = useMemo(() => {
 		return isScrolled;
