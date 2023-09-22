@@ -23,7 +23,7 @@ export default function RootLayout({
 				<Navbar />
 				<div className="flex pt-[70px]">
 					<Aside />
-					<div className="md:ml-[224px] mt-[5rem]">{children}</div>
+					<main className="md:ml-[224px] mt-[5rem]">{children}</main>
 				</div>
 			</body>
 		</html>
