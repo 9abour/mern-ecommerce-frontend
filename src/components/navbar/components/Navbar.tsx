@@ -41,11 +41,12 @@ const Navbar = () => {
 				/>
 			</div>
 			<div className="!hidden items-center gap-2 md:!flex">
+				<ButtonCart />
+
 				<ButtonIcon
 					icon={<AiOutlineHeart size={20} color="white" />}
 					bgColor="bg-dark"
 				/>
-				<ButtonCart />
 				<User />
 			</div>
 
