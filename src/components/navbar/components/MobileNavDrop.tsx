@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { IButtonMenu } from "@/components/common/buttons/types";
 import InputSearch from "@/components/common/inputs/InputSearch";
 import User from "./User";
-import { NavbarHelper } from "../helpers/navbar.helper";
 import MobileNavDropItem from "./MobileNavDropItem";
 import NavbarMobileLink from "./NavbarMobileLink";
 import { useMediaQuery } from "react-responsive";
@@ -51,20 +50,10 @@ const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IButtonMenu) => {
 				/>
 				<User />
 			</MobileNavDropItem>
-			{/* 
-			<MobileNavDropItem translate="y">
-				<div className="flex items-center gap-2 px-2">
-					<ButtonIcon
-						icon={<AiOutlineHeart size={20} color="white" />}
-						bgColor="bg-dark"
-					/>
-					<ButtonCart />
-				</div>
-			</MobileNavDropItem> */}
 
 			<ul className="w-full p-2">
 				{Array.from(Array(6)).map((_, i) => (
-					<MobileNavDropItem translate="y" customStyles="!m-0">
+					<MobileNavDropItem key={i} translate="y" customStyles="!m-0">
 						<NavbarMobileLink key={i} href={`/${i}`} name="Navbar Link" />
 					</MobileNavDropItem>
 				))}
