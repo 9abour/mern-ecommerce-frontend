@@ -10,7 +10,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import ButtonMenu from "@/components/common/buttons/ButtonMenu";
 import MobileNavDrop from "./MobileNavDrop";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
-import { getIsWindowScrolled } from "../helpers";
+import { useIsWindowScrolled } from "@/hooks/useIsWindowScrolled";
 
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,7 +29,7 @@ const Navbar = () => {
 		<nav
 			ref={ref}
 			className={`fixed transition duration-200 backdrop-blur-md shadow-csm w-full h-[70px] flex justify-between items-center gap-4 md:gap-12 ${
-				getIsWindowScrolled() ? "bg-[#e2f9eed1]" : "bg-white"
+				useIsWindowScrolled() ? "bg-[#e2f9eed1]" : "bg-white"
 			} [&>div]:flex [&>div]:items-center z-[999999999]`}
 		>
 			<div className="w-full justify-between md:w-[800px] md:max-w-[800px] gap-6">
