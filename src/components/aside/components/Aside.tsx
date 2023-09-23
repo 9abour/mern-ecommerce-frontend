@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import Menu from "./Menu";
 import LineBottom from "../../common/LineBottom";
 import SignOff from "../../common/buttons/SignOff";
@@ -25,7 +25,7 @@ const Aside = () => {
 	let ref: any = useOnClickOutside(handleOnClickOutside, isMidScreenValue);
 
 	return (
-		<div ref={ref} className="fixed">
+		<div ref={ref} className="fixed z-10">
 			<ButtonMenu
 				isMenuOpen={isMenuOpen}
 				setIsMenuOpen={setIsMenuOpen}
@@ -56,7 +56,7 @@ const Aside = () => {
 					},
 				}}
 			>
-				<aside className="w-[200px] max-w-[200px] h-[calc(100vh-152px)] md:h-[calc(100vh-86px)] rounded-tr-3xl bg-dark mr-6 mt-4 pt-4 shadow-slate-100 overflow-y-scroll aside-container">
+				<aside className="w-[200px] max-w-[200px] h-[calc(100vh-152px)] md:h-[calc(100vh-86px)] rounded-tr-[45px] bg-dark mr-6 mt-4 pt-4 shadow-slate-100 overflow-y-scroll aside-container">
 					<DropMotionItem translate="x">
 						<Menu />
 					</DropMotionItem>
