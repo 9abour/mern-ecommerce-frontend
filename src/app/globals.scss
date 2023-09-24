@@ -9,3 +9,9 @@
 		}
 	}
 }
+
+@layer base {
+	.dark-btn {
+		@apply w-[10rem] block text-center px-4 py-2 rounded-full  bg-dark mt-4 hover:bg-secondaryDark transition;
+	}
+}

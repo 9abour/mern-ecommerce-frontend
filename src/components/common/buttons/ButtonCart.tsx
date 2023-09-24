@@ -6,7 +6,7 @@ const ButtonCart = () => {
 	return (
 		<ButtonIcon
 			icon={<GiShoppingBag size={20} />}
-			customStyles="text-white bg-gradient-to-t from-primary to-primaryLight"
+			customStyles="text-white bg-primary"
 		/>
 	);
 };

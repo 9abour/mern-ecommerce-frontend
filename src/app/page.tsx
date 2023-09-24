@@ -1,5 +1,13 @@
-import Image from "next/image";
+import { lazy } from "react";
+
+const Hero = lazy(() => import("@/components/hero/components/Hero"));
+const Categories = lazy(() => import("@/components/categories/Categories"));
 
 export default function Home() {
-	return <h1 className="h-screen">Hello</h1>;
+	return (
+		<>
+			<Hero />
+			<Categories />
+		</>
+	);
 }
