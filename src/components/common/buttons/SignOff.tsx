@@ -5,8 +5,7 @@ const SignOff = () => {
 	return (
 		<ButtonText
 			text="Sign Off"
-			bgColor="bg-secondaryDark"
-			customStyles="block mx-auto uppercase text-sm text-gray-200 hover:shadow-md hover:bg-white hover:text-dark transition duration-500"
+			customStyles="block mx-auto uppercase text-sm bg-secondaryDark text-gray-200 hover:shadow-md hover:bg-white hover:text-dark transition duration-500"
 		/>
 	);
 };
