@@ -5,7 +5,7 @@ import { ICategory } from "@/components/categories/types";
 
 const CategoriesCarousel = () => {
 	const card: ICategory = {
-		name: "Ice cream",
+		name: "Angus Burger",
 		color: "[#fbc644]",
 		image: "",
 		info: "new",
@@ -26,13 +26,13 @@ const CategoriesCarousel = () => {
 					slidesPerView: 3.5,
 				},
 				991: {
-					slidesPerView: 3.1,
+					slidesPerView: 3,
 				},
 				800: {
-					slidesPerView: 2.3,
+					slidesPerView: 2,
 				},
 				768: {
-					slidesPerView: 2.2,
+					slidesPerView: 2,
 				},
 				640: {
 					slidesPerView: 2.1,
