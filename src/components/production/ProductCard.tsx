@@ -22,11 +22,11 @@ const ProductCard = () => {
 				<p className="text-slate-300 text-sm uppercase">Available</p>
 
 				<div className="flex justify-center">
-					<AiFillStar />
-					<AiFillStar />
-					<AiFillStar />
-					<AiFillStar />
-					<AiFillStar />
+					<AiFillStar className="text-primary" />
+					<AiFillStar className="text-primary" />
+					<AiFillStar className="text-primary" />
+					<AiFillStar className="text-primary" />
+					<AiFillStar className="text-primary" />
 				</div>
 
 				<span className="text-xl font-extrabold">$ 11.20</span>
