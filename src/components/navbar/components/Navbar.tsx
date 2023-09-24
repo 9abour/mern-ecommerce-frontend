@@ -30,7 +30,7 @@ const Navbar = () => {
 			ref={ref}
 			className={`fixed transition duration-200 w-full h-[70px] flex justify-between items-center gap-4 md:gap-12  ${
 				useIsWindowScrolled()
-					? "bg-lightGreen shadow-csm"
+					? "bg-primaryLight shadow-csm"
 					: "bg-white md:bg-transparent"
 			} [&>div]:flex [&>div]:items-center z-[999999999]`}
 		>
@@ -42,7 +42,7 @@ const Navbar = () => {
 					customStyles="hidden md:flex md:ml-4"
 				/>
 			</div>
-			<div className="!hidden items-center gap-2 md:!flex rounded-full bg-lightGreen pl-1">
+			<div className="!hidden items-center gap-2 md:!flex rounded-full bg-white pl-1">
 				<ButtonCart />
 
 				<ButtonIcon
@@ -55,7 +55,7 @@ const Navbar = () => {
 			<ButtonMenu
 				isMenuOpen={isMenuOpen}
 				setIsMenuOpen={setIsMenuOpen}
-				customStyles="bg-primary [&>button]:bg-lightGreen [&>button>span]:bg-primary"
+				customStyles="bg-primary [&>button]:bg-white [&>button>span]:bg-primary"
 			/>
 
 			<MobileNavDrop isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />

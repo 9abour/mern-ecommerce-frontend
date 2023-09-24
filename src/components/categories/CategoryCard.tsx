@@ -12,7 +12,7 @@ const CategoryCard = ({ category }: { category: ICategory }) => {
 		<div className="h-[300px] grid items-center">
 			<div className="relative w-[250px] h-[180px] bg-white shadow-clg rounded-xl p-4">
 				<div
-					className={`absolute w-[150px] h-[150px] top-[-50px] left-[50%] translate-x-[-50%] rounded-full bg-[#34aa74] shadow-clg`}
+					className={`absolute w-[150px] h-[150px] top-[-50px] left-[50%] translate-x-[-50%] rounded-full bg-[#fbc644] shadow-clg`}
 				>
 					<Image
 						src={img}

@@ -6,7 +6,7 @@ import { ICategory } from "@/components/categories/types";
 const CategoriesCarousel = () => {
 	const card: ICategory = {
 		name: "Ice cream",
-		color: "[#34aa74]",
+		color: "[#fbc644]",
 		image: "",
 		info: "new",
 	};
@@ -41,7 +41,7 @@ const CategoriesCarousel = () => {
 			className="md:!mx-[-24px] !px-[24px] sm"
 		>
 			{Array.from(Array(10)).map((_, i) => (
-				<SwiperSlide>
+				<SwiperSlide key={i}>
 					<CategoryCard key={i} category={card} />
 				</SwiperSlide>
 			))}
