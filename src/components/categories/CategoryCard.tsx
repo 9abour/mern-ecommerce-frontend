@@ -10,7 +10,7 @@ const CategoryCard = ({ category }: { category: ICategory }) => {
 
 	return (
 		<div className="h-[300px] grid items-center">
-			<div className="relative w-[250px] h-[180px] bg-white shadow-clg rounded-xl p-4">
+			<div className="relative w-[250px] h-[180px] bg-white shadow-clg rounded-xl p-4 [&>div>button]:hover:mr-0 cursor-pointer">
 				<div
 					className={`absolute w-[150px] h-[150px] top-[-50px] left-[50%] translate-x-[-50%] rounded-full bg-[#fbc644] shadow-clg`}
 				>
@@ -23,18 +23,20 @@ const CategoryCard = ({ category }: { category: ICategory }) => {
 					/>
 				</div>
 
-				<div className="mt-[90px] flex justify-between items-end">
+				<div className="mt-[90px] flex justify-between items-end gap-2">
 					<div>
-						<span className={`uppercase text-${color} text-sm font-semibold`}>
+						<span className={`uppercase text-[#fbc644] text-sm font-semibold`}>
 							{info}
 						</span>
-						<h4 className="text-2xl font-semibold text-dark">{name}</h4>
+						<h4 className="text-2xl font-semibold text-dark line-clamp-1 transition-all">
+							{name}
+						</h4>
 					</div>
 
 					<ButtonIcon
 						icon={<BsArrowRightShort size={25} />}
 						bgColor={"bg-" + color}
-						customStyles="text-white"
+						customStyles="text-white mr-4 duration-300 ease-in-out"
 					/>
 				</div>
 			</div>

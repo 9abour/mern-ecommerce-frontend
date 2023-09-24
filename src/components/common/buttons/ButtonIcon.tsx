@@ -11,7 +11,7 @@ const ButtonIcon = ({
 		<button
 			className={`w-[40px] min-w-[40px] h-[40px] min-h-[40px] flex justify-center items-center rounded-full ${bgColor} ${
 				customStyles ? customStyles : ""
-			} ${bgColor === "bg-primary" && "hover:bg-primaryLight transition"}`}
+			} ${bgColor === "bg-primary" && "hover:bg-primaryDark transition"}`}
 		>
 			{text}
 			{icon}
