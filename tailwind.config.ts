@@ -20,6 +20,7 @@ const config: Config = {
 				lightYellow: "#fdcd45",
 				dark: "#36373b",
 				secondaryDark: "#4a4b4f",
+				primaryBlue: "#669eeb",
 			},
 			boxShadow: {
 				csm: "0 0px 10px -5px rgba(0, 0, 0, 0.2)",
