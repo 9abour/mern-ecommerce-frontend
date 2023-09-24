@@ -14,13 +14,12 @@ const config: Config = {
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
 			},
 			colors: {
-				primary: "#3bb77e",
-				primaryLight: "#61d7a0",
-				lightGreen: "#e2f9ee",
+				primary: "#fbc644",
+				primaryLight: "#faf5e5",
+				primaryDark: "#f4ab3a",
+				lightYellow: "#fdcd45",
 				dark: "#36373b",
 				secondaryDark: "#4a4b4f",
-				primaryYellow: "#f3cd3a",
-				lightYellow: "#fdcd45",
 			},
 			boxShadow: {
 				csm: "0 0px 10px -5px rgba(0, 0, 0, 0.2)",

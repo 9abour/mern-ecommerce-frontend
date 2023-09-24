@@ -7,7 +7,7 @@ import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 
 const Hero = () => {
 	return (
-		<section className="relative w-full ml-auto md:w-[calc(100%+24px)] h-[45rem] sm:h-[35rem] mt-[-86px] bg-gradient-to-l from-primary to-[#32a771] md:rounded-bl-[45px] pt-[70px] sm:pl-16 flex flex-col-reverse sm:flex-row justify-center items-center">
+		<section className="relative w-full ml-auto md:w-[calc(100%+24px)] h-[45rem] sm:h-[35rem] mt-[-86px] bg-gradient-to-l from-primary to-primaryDark md:rounded-bl-[45px] pt-[70px] sm:pl-16 flex flex-col-reverse sm:flex-row justify-center items-center">
 			<TextInfo />
 			<Image
 				src={burger}

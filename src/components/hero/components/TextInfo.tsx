@@ -12,11 +12,11 @@ const TextInfo = () => {
 			</h2>
 
 			<div className="flex gap-1">
-				<LineBottom customStyles="w-[130px] [&>div]:h-[2px] [&>div]:bg-lightGreen [&>div]:mx-0" />
+				<LineBottom customStyles="w-[130px] [&>div]:h-[2px] [&>div]:bg-lightYellow [&>div]:mx-0" />
 
-				<LineBottom customStyles="w-[2px] [&>div]:h-[2px] [&>div]:bg-lightGreen [&>div]:mx-0" />
-				<LineBottom customStyles="w-[2px] [&>div]:h-[2px] [&>div]:bg-lightGreen [&>div]:mx-0" />
-				<LineBottom customStyles="w-[2px] [&>div]:h-[2px] [&>div]:bg-lightGreen [&>div]:mx-0" />
+				<LineBottom customStyles="w-[2px] [&>div]:h-[2px] [&>div]:bg-lightYellow [&>div]:mx-0" />
+				<LineBottom customStyles="w-[2px] [&>div]:h-[2px] [&>div]:bg-lightYellow [&>div]:mx-0" />
+				<LineBottom customStyles="w-[2px] [&>div]:h-[2px] [&>div]:bg-lightYellow [&>div]:mx-0" />
 			</div>
 
 			<p className="max-w-[350px] xl:text-xl">
