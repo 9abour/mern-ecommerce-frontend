@@ -5,6 +5,7 @@ export interface IButtonText {
 	textColor?: string;
 	bgColor?: string;
 	customStyles?: string;
+	onclick?: () => void;
 }
 
 export interface IButtonIcon {
@@ -12,6 +13,7 @@ export interface IButtonIcon {
 	icon: ReactElement;
 	bgColor?: string;
 	customStyles?: string;
+	onclick?: () => void;
 }
 
 export interface IButtonMenu {

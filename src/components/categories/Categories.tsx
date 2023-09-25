@@ -7,10 +7,10 @@ import CategoriesCarousel from "../common/carousels/CategoriesCarousel";
 
 const Categories = () => {
 	return (
-		<>
+		<div className="container mx-auto">
 			<Heading text="Popular Category" />
 			<CategoriesCarousel />
-		</>
+		</div>
 	);
 };
 

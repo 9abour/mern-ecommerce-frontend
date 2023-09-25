@@ -1,8 +1,11 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Heading from "../common/typography/Heading";
 import ProductCard from "./ProductCard";
 import Tabs from "./Tabs";
 import ButtonText from "../common/buttons/ButtonText";
+import { useRouter } from "next/navigation";
 
 const Production = () => {
 	const data = [
@@ -11,29 +14,39 @@ const Production = () => {
 		{ name: "ice cream" },
 		{ name: "sushi" },
 	];
+	const [isActive, setIsActive] = useState(data[0]);
+
+	const router = useRouter();
+
+	useEffect(() => {
+		// Update the products
+	}, [isActive]);
 
 	return (
-		<div className="max-w-[1200px] mx-auto">
-			<div className="flex flex-col lg:flex-row justify-between items-center gap-2 my-12">
-				<Heading text="Our Production" customStyles="!m-0" />
+		<div className="bg-slate-100 md:-mx-6 p-6">
+			<div className="container mx-auto">
+				<div className="flex flex-col lg:flex-row justify-between items-center gap-2 my-12">
+					<Heading text="Our Production" customStyles="!m-0" />
 
-				<Tabs list={data} />
+					<Tabs list={data} isActive={isActive} setIsActive={setIsActive} />
 
-				<ButtonText
-					text="See All"
-					customStyles="bg-transparent border-2 border-dark text-dark font-semibold text-xs hover:bg-dark hover:text-white transition-all ml-4"
-				/>
-			</div>
+					<ButtonText
+						text="See All"
+						customStyles="bg-transparent border-2 border-dark text-dark font-semibold text-xs hover:bg-dark hover:text-white transition-all ml-4"
+						onclick={() => router.push("/all")}
+					/>
+				</div>
 
-			<div className="flex flex-wrap justify-center gap-16 mb-16">
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
+				<div className="flex flex-wrap justify-center gap-16 mb-16">
+					<ProductCard />
+					<ProductCard />
+					<ProductCard />
+					<ProductCard />
+					<ProductCard />
+					<ProductCard />
+					<ProductCard />
+					<ProductCard />
+				</div>
 			</div>
 		</div>
 	);

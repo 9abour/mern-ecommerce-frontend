@@ -7,7 +7,7 @@ import { AiFillStar } from "react-icons/ai";
 const ProductCard = () => {
 	return (
 		<div className="relative w-[250px] h-[340px]">
-			<div className="w-full h-full bg-white shadow-clg rounded-xl skew-x-[3deg] py-8 px-6 grid items-center text-center gap-1 [&>*]:skew-x-[-3deg]">
+			<div className="relative w-full h-full bg-white shadow-clg rounded-xl skew-x-[3deg] py-8 px-6 grid items-center text-center gap-1 [&>*]:skew-x-[-3deg] z-10">
 				<div className="w-full h-full rounded-xl bg-slate-100">
 					<Image
 						src={burger}
@@ -34,7 +34,7 @@ const ProductCard = () => {
 
 			<ButtonCart customStyles="relative mt-[-20px] mx-auto z-10" />
 
-			<span className="absolute top-0 w-2/4 h-full rounded-xl bg-primaryBlue skew-x-[-3deg] -z-10"></span>
+			<span className="absolute top-0 w-2/4 h-full rounded-xl bg-primaryBlue skew-x-[-3deg] z-0"></span>
 		</div>
 	);
 };
