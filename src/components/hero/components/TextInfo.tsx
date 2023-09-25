@@ -6,9 +6,8 @@ import React from "react";
 const TextInfo = () => {
 	return (
 		<div className="text-white">
-			<h2 className="text-3xl sm:text-[1.5rem] lg:text-4xl xl:text-6xl uppercase flex gap-2 sm:block">
-				<p className="font-light mb-2">Flying Food</p>
-				<b className="">Delivery</b>
+			<h2 className="text-3xl sm:text-[1.5rem] lg:text-4xl xl:text-6xl uppercase">
+				Flying Food Delivery
 			</h2>
 
 			<div className="flex gap-1">
