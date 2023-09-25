@@ -15,15 +15,10 @@ const CategoriesCarousel = () => {
 		<Swiper
 			spaceBetween={50}
 			slidesPerView={1.5}
+			autoplay={true}
 			breakpoints={{
-				2000: {
-					slidesPerView: 6.5,
-				},
-				1400: {
-					slidesPerView: 4.5,
-				},
 				1200: {
-					slidesPerView: 3.5,
+					slidesPerView: 4,
 				},
 				991: {
 					slidesPerView: 3,
