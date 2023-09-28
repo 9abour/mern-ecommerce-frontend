@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import CategoryCard from "../../categories/CategoryCard";
 import { ICategory } from "@/components/categories/types";
 
-const CategoriesCarousel = () => {
+const CategoriesCarousel = ({ swiperRef }: any) => {
 	const card: ICategory = {
 		name: "Angus Burger",
 		color: "[#fbc644]",
@@ -15,7 +15,11 @@ const CategoriesCarousel = () => {
 		<Swiper
 			spaceBetween={50}
 			slidesPerView={1.5}
-			autoplay={true}
+			autoplay
+			loop={true}
+			onSwiper={swiper => {
+				swiperRef.current = swiper;
+			}}
 			breakpoints={{
 				1200: {
 					slidesPerView: 4,

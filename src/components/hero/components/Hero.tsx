@@ -6,7 +6,7 @@ import Image from "next/image";
 import burger from "../../../../public/burger.png";
 import ButtonIcon from "@/components/common/buttons/ButtonIcon";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Hero = () => {
 	const swiperRef: any = useRef();
@@ -32,7 +32,7 @@ const Hero = () => {
 								width={400}
 								height={400}
 								alt=""
-								className="w-full sm:w-3/6 md:w-4/6 max-w-[500px]"
+								className="w-full sm:w-3/6 md:w-4/6 max-w-[500px] drop-shadow-2xl"
 							/>
 						</div>
 					</SwiperSlide>
