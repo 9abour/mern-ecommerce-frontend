@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { lazy } from "react";
+import Footer from "@/components/footer/components/Footer";
 const Navbar = lazy(() => import("@/components/navbar/components/Navbar"));
 
 const inter = Inter({ subsets: ["latin"] });
@@ -30,6 +31,7 @@ export default function RootLayout({
 						{children}
 					</main>
 				</div>
+				<Footer />
 			</body>
 		</html>
 	);

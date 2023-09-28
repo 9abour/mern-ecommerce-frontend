@@ -14,7 +14,7 @@ const ProductCard = () => {
 						width={250}
 						height={250}
 						alt=""
-						className="w-[180px] h-full mx-auto"
+						className="w-[180px] h-full mx-auto drop-shadow-xl"
 					/>
 				</div>
 
