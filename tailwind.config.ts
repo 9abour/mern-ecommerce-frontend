@@ -25,6 +25,8 @@ const config: Config = {
 			boxShadow: {
 				csm: "0 0px 10px -5px rgba(0, 0, 0, 0.2)",
 				clg: "0px 9px 30px rgba(0, 0, 0, 0.1)",
+				circleYellow:
+					"0px 0px 0 3px rgb(255 255 255), 0px 0px 0 6px #fbc644, 0px 9px 30px rgba(0, 0, 0, 0.1)",
 			},
 		},
 	},
