@@ -2,7 +2,7 @@ import React from "react";
 import { ICategory } from "./types";
 import img from "../../../public/burger.png";
 import Image from "next/image";
-import ButtonIcon from "../common/buttons/ButtonIcon";
+import IconButton from "../common/buttons/IconButton";
 import { BsArrowRightShort } from "react-icons/bs";
 
 const CategoryCard = ({ category }: { category: ICategory }) => {
@@ -32,7 +32,7 @@ const CategoryCard = ({ category }: { category: ICategory }) => {
 						</h4>
 					</div>
 
-					<ButtonIcon
+					<IconButton
 						icon={<BsArrowRightShort size={25} />}
 						bgColor={"bg-" + color}
 						customStyles="text-white mr-4 duration-300 ease-in-out"

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Heading from "../common/typography/Heading";
 import ProductCard from "./ProductCard";
 import Tabs from "./Tabs";
-import ButtonText from "../common/buttons/ButtonText";
+import TextButton from "../common/buttons/TextButton";
 import { useRouter } from "next/navigation";
 
 const Production = () => {
@@ -30,14 +30,14 @@ const Production = () => {
 
 					<Tabs list={data} isActive={isActive} setIsActive={setIsActive} />
 
-					<ButtonText
+					<TextButton
 						text="See All"
 						customStyles="bg-transparent border-2 border-dark text-dark font-semibold text-xs hover:bg-dark hover:text-white transition-all ml-4"
-						onclick={() => router.push("/all")}
+						onclick={() => router.push(`/products/${isActive.name}`)}
 					/>
 				</div>
 
-				<div className="flex flex-wrap justify-center gap-16 mb-16">
+				<div className="flex flex-wrap justify-between gap-16 mb-16">
 					<ProductCard />
 					<ProductCard />
 					<ProductCard />

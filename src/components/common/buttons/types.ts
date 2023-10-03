@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-export interface IButtonText {
+export interface ITextButton {
 	text: string;
 	textColor?: string;
 	bgColor?: string;
@@ -8,7 +8,7 @@ export interface IButtonText {
 	onclick?: () => void;
 }
 
-export interface IButtonIcon {
+export interface IIconButton {
 	text?: string;
 	icon: ReactElement;
 	bgColor?: string;
@@ -16,7 +16,7 @@ export interface IButtonIcon {
 	onclick?: () => void;
 }
 
-export interface IButtonMenu {
+export interface IMenuButton {
 	isMenuOpen: boolean;
 	setIsMenuOpen: (isOpen: boolean) => void;
 	customStyles?: string;

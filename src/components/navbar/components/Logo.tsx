@@ -4,8 +4,11 @@ import Link from "next/link";
 
 const Logo = () => {
 	return (
-		<div className="min-w-[150px] md:min-w-[200px] flex justify-center text-primary">
-			<Link href={"/"}>
+		<div className="min-w-[150px] md:min-w-[200px] flex justify-center">
+			<Link
+				href={"/"}
+				className="text-primary hover:text-primaryDark transition-all"
+			>
 				<PiBowlFoodFill size={50} />
 			</Link>
 		</div>
