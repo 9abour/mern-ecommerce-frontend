@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import ButtonIcon from "../buttons/ButtonIcon";
+import IconButton from "../buttons/IconButton";
 import { IInputSearch } from "./types";
 import { IoSearchSharp } from "react-icons/io5";
 import useInput from "@/hooks/useInput";
@@ -20,7 +20,7 @@ const InputSearch = ({ type, placeholder, customStyles }: IInputSearch) => {
 				value={searchProps.value}
 				onChange={searchProps.onChange}
 			/>
-			<ButtonIcon
+			<IconButton
 				icon={<IoSearchSharp size={25} color="white" />}
 				bgColor="bg-primary"
 			/>
