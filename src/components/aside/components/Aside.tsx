@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Menu from "./Menu";
 import LineBottom from "../../common/LineBottom";
 import SignOff from "../../common/buttons/SignOff";
-import ButtonMenu from "../../common/buttons/ButtonMenu";
+import MenuButton from "../../common/buttons/MenuButton";
 import { motion } from "framer-motion";
 import DropMotionItem from "./DropItem";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
@@ -26,7 +26,7 @@ const Aside = () => {
 
 	return (
 		<div ref={ref} className="fixed z-50">
-			<ButtonMenu
+			<MenuButton
 				isMenuOpen={isMenuOpen}
 				setIsMenuOpen={setIsMenuOpen}
 				customStyles="!rounded-l-[0px] rounded-r-full justify-end my-4"
@@ -57,9 +57,7 @@ const Aside = () => {
 				}}
 			>
 				<aside
-					className={`w-[200px] max-w-[200px] h-[calc(100vh-152px)] md:h-[calc(100vh-86px)] rounded-tr-[45px] bg-dark mr-6 mt-4 pt-4 shadow-slate-100 overflow-y-scroll aside-container ${
-						isMenuOpen ? "visible" : "hidden"
-					}`}
+					className={`w-[200px] max-w-[200px] h-[calc(100vh-152px)] md:h-[calc(100vh-86px)] rounded-tr-[45px] bg-dark mr-6 mt-4 pt-4 shadow-slate-100 overflow-y-scroll aside-container`}
 				>
 					<DropMotionItem translate="x">
 						<Menu />

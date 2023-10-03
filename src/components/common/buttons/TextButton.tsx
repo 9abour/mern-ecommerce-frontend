@@ -1,7 +1,7 @@
 import React from "react";
-import { IButtonText } from "./types";
+import { ITextButton } from "./types";
 
-const ButtonText = ({ text, customStyles, onclick }: IButtonText) => {
+const TextButton = ({ text, customStyles, onclick }: ITextButton) => {
 	return (
 		<button
 			className={`px-4 py-2 rounded-full ${customStyles ? customStyles : ""}`}
@@ -12,4 +12,4 @@ const ButtonText = ({ text, customStyles, onclick }: IButtonText) => {
 	);
 };
 
-export default ButtonText;
+export default TextButton;

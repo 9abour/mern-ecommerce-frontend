@@ -27,9 +27,11 @@ const config: Config = {
 				clg: "0px 9px 30px rgba(0, 0, 0, 0.1)",
 				circleYellow:
 					"0px 0px 0 3px rgb(255 255 255), 0px 0px 0 6px #fbc644, 0px 9px 30px rgba(0, 0, 0, 0.1)",
+				sliderCircleYellow: "0 0 0 8px rgba(251, 198, 68,.25)",
+				cYellow: "0px 5px 10px 10px rgba(251, 198, 68,0.50)",
 			},
 		},
 	},
-	plugins: [],
+	plugins: [require("daisyui")],
 };
 export default config;

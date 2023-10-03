@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { IButtonMenu } from "./types";
+import { IMenuButton } from "./types";
 
-const ButtonMenu = ({
+const MenuButton = ({
 	isMenuOpen,
 	setIsMenuOpen,
 	customStyles,
-}: IButtonMenu) => {
+}: IMenuButton) => {
 	return (
 		<div
 			className={`relative flex md:!hidden w-[60px] min-w-[60px] h-[50px] items-center gap-1 bg-dark py-2 px-1 rounded-l-full ${customStyles}`}
@@ -37,4 +37,4 @@ const ButtonMenu = ({
 	);
 };
 
-export default ButtonMenu;
+export default MenuButton;

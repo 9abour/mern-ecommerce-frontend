@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import burger from "../../../public/burger.png";
-import ButtonCart from "../common/buttons/ButtonCart";
+import CartButton from "../common/buttons/CartButton";
 import { AiFillStar } from "react-icons/ai";
 
 const ProductCard = () => {
@@ -32,7 +32,7 @@ const ProductCard = () => {
 				<span className="text-xl font-extrabold">$ 11.20</span>
 			</div>
 
-			<ButtonCart customStyles="relative mt-[-20px] mx-auto z-10" />
+			<CartButton customStyles="relative mt-[-20px] mx-auto z-10" />
 
 			<span className="absolute top-0 w-2/4 h-full rounded-xl bg-primaryBlue skew-x-[-3deg] z-0"></span>
 		</div>

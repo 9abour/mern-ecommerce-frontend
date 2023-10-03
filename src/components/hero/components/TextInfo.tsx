@@ -1,5 +1,4 @@
 import LineBottom from "@/components/common/LineBottom";
-import ButtonText from "@/components/common/buttons/ButtonText";
 import Link from "next/link";
 import React from "react";
 
@@ -22,7 +21,10 @@ const TextInfo = () => {
 				a patty of ground beef grilled and placed between two halves of a bun.
 			</p>
 
-			<Link href={"/"} className="dark-btn uppercase">
+			<Link
+				href={"/"}
+				className="text-gray-200 hover:text-white dark-btn uppercase"
+			>
 				Go to Details
 			</Link>
 		</div>

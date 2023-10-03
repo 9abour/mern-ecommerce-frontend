@@ -1,9 +1,9 @@
 import React from "react";
-import ButtonText from "./ButtonText";
+import TextButton from "./TextButton";
 
 const SignOff = () => {
 	return (
-		<ButtonText
+		<TextButton
 			text="Sign Off"
 			customStyles="block mx-auto uppercase text-sm bg-secondaryDark text-gray-200 hover:shadow-md hover:bg-white hover:text-dark transition duration-500"
 		/>
