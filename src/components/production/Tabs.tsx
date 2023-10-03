@@ -1,6 +1,6 @@
 import React from "react";
 import { ITab, ITabs } from "./types";
-import ButtonText from "../common/buttons/ButtonText";
+import TextButton from "../common/buttons/TextButton";
 
 const Tabs = ({
 	list,
@@ -14,7 +14,7 @@ const Tabs = ({
 	return (
 		<div>
 			{list.map(tab => (
-				<ButtonText
+				<TextButton
 					key={tab.name}
 					text={tab.name}
 					customStyles={`${

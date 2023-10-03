@@ -1,7 +1,8 @@
 import Aside from "@/components/aside/components/Aside";
-import "./globals.scss";
+import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "rsuite/dist/rsuite.min.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { lazy } from "react";
@@ -27,7 +28,7 @@ export default function RootLayout({
 				<Navbar />
 				<div className="flex pt-[70px]">
 					<Aside />
-					<main className="w-full md:w-[calc(100%-248px)] md:ml-[224px] md:mr-[24px] mt-[1rem]">
+					<main className="w-full md:w-[calc(100%-248px)] md:ml-[224px] md:mr-[24px] mt-[5rem]">
 						{children}
 					</main>
 				</div>

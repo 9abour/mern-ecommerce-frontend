@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import TextInfo from "./TextInfo";
 import Image from "next/image";
 import burger from "../../../../public/burger.png";
-import ButtonIcon from "@/components/common/buttons/ButtonIcon";
+import IconButton from "@/components/common/buttons/IconButton";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -40,13 +40,13 @@ const Hero = () => {
 			</Swiper>
 
 			<div className="absolute right-0 bottom-0 flex gap-2 m-8 z-10">
-				<ButtonIcon
+				<IconButton
 					icon={<BsArrowLeftShort size={25} />}
 					customStyles="border-2 border-dark hover:!bg-dark hover:text-white text-dark"
 					onclick={() => swiperRef.current.slideNext()}
 				/>
 
-				<ButtonIcon
+				<IconButton
 					icon={<BsArrowRightShort size={25} />}
 					customStyles="border-2 border-dark hover:!bg-dark hover:text-white text-dark"
 					onclick={() => swiperRef.current.slidePrev()}

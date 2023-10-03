@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import Logo from "./Logo";
 import InputSearch from "@/components/common/inputs/InputSearch";
 import User from "./User";
-import ButtonCart from "@/components/common/buttons/ButtonCart";
-import ButtonIcon from "@/components/common/buttons/ButtonIcon";
+import CartButton from "@/components/common/buttons/CartButton";
+import IconButton from "@/components/common/buttons/IconButton";
 import { AiOutlineHeart } from "react-icons/ai";
-import ButtonMenu from "@/components/common/buttons/ButtonMenu";
+import MenuButton from "@/components/common/buttons/MenuButton";
 import MobileNavDrop from "./MobileNavDrop";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import { useIsWindowScrolled } from "@/hooks/useIsWindowScrolled";
@@ -43,16 +43,16 @@ const Navbar = () => {
 				/>
 			</div>
 			<div className="!hidden items-center gap-2 md:!flex rounded-full bg-white pl-1">
-				<ButtonCart />
+				<CartButton />
 
-				<ButtonIcon
+				<IconButton
 					icon={<AiOutlineHeart size={20} color="white" />}
 					bgColor="bg-dark"
 				/>
 				<User />
 			</div>
 
-			<ButtonMenu
+			<MenuButton
 				isMenuOpen={isMenuOpen}
 				setIsMenuOpen={setIsMenuOpen}
 				customStyles="bg-primary [&>button]:bg-white [&>button>span]:bg-primary"

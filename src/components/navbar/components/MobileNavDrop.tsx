@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import { IButtonMenu } from "@/components/common/buttons/types";
+import { IMenuButton } from "@/components/common/buttons/types";
 import InputSearch from "@/components/common/inputs/InputSearch";
 import User from "./User";
 import MobileNavDropItem from "./MobileNavDropItem";
 import NavbarMobileLink from "./NavbarMobileLink";
 import { useMediaQuery } from "react-responsive";
 
-const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IButtonMenu) => {
+const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 	const isMidScreenValue = useMediaQuery({ query: "(max-width: 768px)" });
 
 	useEffect(() => {

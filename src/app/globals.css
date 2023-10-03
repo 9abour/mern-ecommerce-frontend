@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.aside-container::-webkit-scrollbar {
+		width: 0;
+	}
+}
+
+@layer base {
+	.dark-btn {
+		@apply w-[10rem] block text-center px-4 py-2 rounded-full  bg-dark mt-4 hover:bg-secondaryDark transition-all duration-300;
+	}
+	a {
+		@apply !no-underline text-sm;
+	}
+}
+
+body,
+html {
+	scroll-behavior: smooth;
+	background-color: white;
+}
+
+.rs-slider-bar {
+	@apply !bg-gray-200;
+}
+
+.rs-slider-progress-bar {
+	@apply !bg-primary;
+}
+
+.rs-slider-handle {
+	@apply !shadow-cYellow;
+}
+
+.rs-slider-handle:focus:before,
+.rs-slider-handle:hover:before {
+	@apply !shadow-sliderCircleYellow;
+}
+
+.rs-slider-handle::before {
+	@apply !border-primary;
+}
