@@ -22,7 +22,9 @@ const TableItem = () => {
 					<span className="font-semibold bg-primary text-secondaryDark rounded-full px-2 text-xs sm:text-sm">
 						Free Delivery
 					</span>
-					<h4 className="text-dark text-sm sm:text-xl lg:text-2xl">Burger</h4>
+					<h4 className="font-semibold text-dark text-sm sm:text-xl lg:text-2xl">
+						Burger
+					</h4>
 					<span className="font-semibold bg-gray-300 text-secondaryDark rounded-full px-2">
 						400g
 					</span>

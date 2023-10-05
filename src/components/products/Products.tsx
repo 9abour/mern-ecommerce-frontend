@@ -15,7 +15,9 @@ const Products = () => {
 
 	return (
 		<div className="container mx-auto px-4">
-			<h3 className={`text-2xl text-dark mt-16 my-8 mx-[24px] md:mx-0`}>
+			<h3
+				className={`font-semibold text-2xl text-dark mt-16 my-8 mx-[24px] md:mx-0`}
+			>
 				Products for - {currentProductsCategory}
 			</h3>
 

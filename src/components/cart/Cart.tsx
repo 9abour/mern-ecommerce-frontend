@@ -7,14 +7,14 @@ const Cart = () => {
 		<section className="container mx-auto bg-white shadow-clg rounded-3xl p-4">
 			<div className="flex flex-col lg:flex-row justify-between">
 				<div className="w-full lg:w-8/12">
-					<h4 className="text-dark">
+					<h4 className="text-2xl font-semibold text-dark">
 						Shopping <span className="font-normal">Cart</span>
 					</h4>
 
 					<Table />
 				</div>
 				<div className="w-full lg:w-4/12 mt-8 lg:mt-0">
-					<h4 className="text-dark">
+					<h4 className="text-2xl font-semibold text-dark">
 						Cart <span className="font-normal">Total</span>
 					</h4>
 					<div className="h-full lg:pl-4 pt-4 lg:pb-8">
