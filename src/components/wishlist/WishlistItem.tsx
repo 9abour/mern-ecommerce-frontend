@@ -24,7 +24,9 @@ const WishlistItem = () => {
 						/>
 					</div>
 					<div>
-						<h4 className="text-dark text-sm sm:text-xl lg:text-2xl">Burger</h4>
+						<h4 className="font-semibold text-dark text-sm sm:text-xl lg:text-2xl">
+							Burger
+						</h4>
 						<span className="text-dark">$20.99</span>
 						<span className="block text-secondaryDark text-xs sm:text-sm">
 							October 3, 2023
