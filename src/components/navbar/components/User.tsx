@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import userPic from "../../../../public/user.jpeg";
-import SignOff from "@/components/common/buttons/SignOff";
+import SignOff from "@/components/common/button/SignOff";
 
 const User = () => {
 	return (

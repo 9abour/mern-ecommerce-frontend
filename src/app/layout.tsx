@@ -28,11 +28,11 @@ export default function RootLayout({
 				<Navbar />
 				<div className="flex pt-[70px]">
 					<Aside />
-					<main className="w-full md:w-[calc(100%-248px)] md:ml-[224px] md:mr-[24px] mt-[5rem]">
-						{children}
-					</main>
+					<div className="w-full md:w-[calc(100%-248px)] md:ml-[224px] md:mr-[24px] mt-[5rem] flex flex-col justify-between h-[calc(100vh-150px)]">
+						<main>{children}</main>
+						<Footer />
+					</div>
 				</div>
-				<Footer />
 			</body>
 		</html>
 	);

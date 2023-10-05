@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import { IMenuButton } from "@/components/common/buttons/types";
-import InputSearch from "@/components/common/inputs/InputSearch";
+import { IMenuButton } from "@/components/common/button/types";
+import InputSearch from "@/components/common/input/InputSearch";
 import User from "./User";
 import MobileNavDropItem from "./MobileNavDropItem";
 import NavbarMobileLink from "./NavbarMobileLink";
@@ -52,11 +52,12 @@ const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 			</MobileNavDropItem>
 
 			<ul className="w-full p-2">
-				{Array.from(Array(6)).map((_, i) => (
-					<MobileNavDropItem key={i} translate="y" customStyles="!m-0">
-						<NavbarMobileLink key={i} href={`/${i}`} name="Navbar Link" />
-					</MobileNavDropItem>
-				))}
+				<MobileNavDropItem translate="y" customStyles="!m-0">
+					<NavbarMobileLink href={`/cart`} name="Cart" />
+					<NavbarMobileLink href={`/wishlist`} name="Wishlist" />
+					<NavbarMobileLink href={`/menu`} name="Menu" />
+					<NavbarMobileLink href={`/categories`} name="Categories" />
+				</MobileNavDropItem>
 			</ul>
 		</motion.div>
 	);

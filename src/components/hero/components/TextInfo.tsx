@@ -5,7 +5,7 @@ import React from "react";
 const TextInfo = () => {
 	return (
 		<div className="text-white">
-			<h2 className="text-3xl sm:text-[1.5rem] lg:text-4xl xl:text-6xl uppercase">
+			<h2 className="max-w-[400px] text-3xl sm:text-[1.5rem] lg:text-4xl xl:text-5xl uppercase">
 				Flying Food Delivery
 			</h2>
 
