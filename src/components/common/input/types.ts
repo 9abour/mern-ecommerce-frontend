@@ -9,3 +9,7 @@ export interface IInputSearch {
 	placeholder?: string;
 	customStyles?: string;
 }
+
+export interface IInputProductSearch extends IInputSearch {
+	label?: string;
+}

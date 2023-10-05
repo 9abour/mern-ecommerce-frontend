@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import IconButton from "../buttons/IconButton";
+import IconButton from "../button/IconButton";
 import { IInputSearch } from "./types";
 import { IoSearchSharp } from "react-icons/io5";
 import useInput from "@/hooks/useInput";

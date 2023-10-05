@@ -2,15 +2,16 @@
 
 import React, { useState } from "react";
 import Logo from "./Logo";
-import InputSearch from "@/components/common/inputs/InputSearch";
+import InputSearch from "@/components/common/input/InputSearch";
 import User from "./User";
-import CartButton from "@/components/common/buttons/CartButton";
-import IconButton from "@/components/common/buttons/IconButton";
+import CartButton from "@/components/common/button/CartButton";
+import IconButton from "@/components/common/button/IconButton";
 import { AiOutlineHeart } from "react-icons/ai";
-import MenuButton from "@/components/common/buttons/MenuButton";
+import MenuButton from "@/components/common/button/MenuButton";
 import MobileNavDrop from "./MobileNavDrop";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import { useIsWindowScrolled } from "@/hooks/useIsWindowScrolled";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,13 +26,15 @@ const Navbar = () => {
 
 	const ref: any = useOnClickOutside(handleClickOutside);
 
+	const router = useRouter();
+
 	return (
 		<nav
 			ref={ref}
-			className={`fixed transition duration-200 w-full h-[70px] flex justify-between items-center gap-4 md:gap-12  ${
+			className={`fixed transition duration-200 w-full h-[70px] flex justify-between items-center gap-4 md:gap-12 bg-white ${
 				useIsWindowScrolled()
 					? "bg-primaryLight shadow-csm"
-					: "bg-white md:bg-transparent"
+					: "bg-white md:bg-white"
 			} [&>div]:flex [&>div]:items-center z-[999999999]`}
 		>
 			<div className="w-full justify-between md:w-[800px] md:max-w-[800px] gap-6">
@@ -47,7 +50,8 @@ const Navbar = () => {
 
 				<IconButton
 					icon={<AiOutlineHeart size={20} color="white" />}
-					bgColor="bg-dark"
+					customStyles="bg-dark"
+					onclick={() => router.push("/wishlist")}
 				/>
 				<User />
 			</div>

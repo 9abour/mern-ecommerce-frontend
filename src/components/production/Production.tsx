@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Heading from "../common/typography/Heading";
 import ProductCard from "./ProductCard";
 import Tabs from "./Tabs";
-import TextButton from "../common/buttons/TextButton";
+import TextButton from "../common/button/TextButton";
 import { useRouter } from "next/navigation";
 
 const Production = () => {
@@ -23,7 +23,7 @@ const Production = () => {
 	}, [isActive]);
 
 	return (
-		<div className="bg-slate-100 md:-mx-6 p-6">
+		<section className="bg-slate-100 md:-mx-6 p-6">
 			<div className="container mx-auto">
 				<div className="flex flex-col lg:flex-row justify-between items-center gap-2 my-12">
 					<Heading text="Our Production" customStyles="!m-0" />
@@ -37,7 +37,7 @@ const Production = () => {
 					/>
 				</div>
 
-				<div className="flex flex-wrap justify-between gap-16 mb-16">
+				<div className="flex flex-wrap justify-center gap-16 mb-16">
 					<ProductCard />
 					<ProductCard />
 					<ProductCard />
@@ -48,7 +48,7 @@ const Production = () => {
 					<ProductCard />
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

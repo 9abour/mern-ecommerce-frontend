@@ -1,6 +1,6 @@
 import React from "react";
 import { ITab, ITabs } from "./types";
-import TextButton from "../common/buttons/TextButton";
+import TextButton from "../common/button/TextButton";
 
 const Tabs = ({
 	list,

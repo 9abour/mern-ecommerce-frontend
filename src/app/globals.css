@@ -20,7 +20,7 @@
 body,
 html {
 	scroll-behavior: smooth;
-	background-color: white;
+	@apply !bg-gray-50;
 }
 
 .rs-slider-bar {
