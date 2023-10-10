@@ -3,7 +3,6 @@
 import React from "react";
 import ProductCard from "../production/ProductCard";
 import Filters from "../filters/components/Filters";
-import Heading from "../common/typography/Heading";
 import { usePathname } from "next/navigation";
 
 const Products = () => {
@@ -12,6 +11,21 @@ const Products = () => {
 		.slice(-1)
 		.toString()
 		.toUpperCase();
+
+	const product = {
+		id: "1",
+		name: "Angus Burger",
+		description: "new",
+		price: 11.2,
+		discount: 10,
+		image: "/burger.png",
+		available: true,
+		inCart: false,
+		rate: 4,
+		weight: "250g",
+		categories: ["Food", "Burgers"],
+		count: 1,
+	};
 
 	return (
 		<div className="container mx-auto px-4">
@@ -23,14 +37,14 @@ const Products = () => {
 
 			<Filters />
 			<div className="flex flex-wrap justify-between gap-16 my-8">
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
+				<ProductCard product={product} />
+				<ProductCard product={product} />
+				<ProductCard product={product} />
+				<ProductCard product={product} />
+				<ProductCard product={product} />
+				<ProductCard product={product} />
+				<ProductCard product={product} />
+				<ProductCard product={product} />
 			</div>
 		</div>
 	);

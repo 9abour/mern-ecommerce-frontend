@@ -11,6 +11,7 @@ export interface IIconButton {
 	icon: ReactElement;
 	bgColor?: string;
 	customStyles?: string;
+	disabled?: boolean;
 	onclick?: () => void;
 }
 

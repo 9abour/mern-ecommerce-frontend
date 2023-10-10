@@ -3,11 +3,9 @@
 import React, { useRef } from "react";
 import TextInfo from "./TextInfo";
 import Image from "next/image";
-import burger from "../../../../public/burger.png";
 import IconButton from "@/components/common/button/IconButton";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
-import heroShapes from "../../../../public/hero-bg.jpg";
 
 const Hero = () => {
 	const swiperRef: any = useRef();
@@ -29,7 +27,7 @@ const Hero = () => {
 						<div className="h-full flex flex-col-reverse sm:flex-row justify-center items-center md:!mx-[-24px] !px-[24px] py-[70px]">
 							<TextInfo />
 							<Image
-								src={burger}
+								src="/burger.png"
 								width={400}
 								height={400}
 								alt=""
@@ -55,7 +53,7 @@ const Hero = () => {
 			</div>
 
 			<Image
-				src={heroShapes}
+				src="/hero-bg.jpg"
 				alt="heroShapes"
 				layout="fill"
 				objectFit="cover"
