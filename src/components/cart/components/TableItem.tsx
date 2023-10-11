@@ -3,7 +3,12 @@ import React from "react";
 import IconButton from "../../common/button/IconButton";
 import { IoIosRemove, IoIosAdd } from "react-icons/io";
 import { IoCloseSharp } from "react-icons/io5";
-import { ICartProduct, removeFromCart } from "@/rtk/slices/cart/cartSlice";
+import {
+	ICartProduct,
+	decreaseProductCount,
+	increaseProductCount,
+	removeFromCart,
+} from "@/rtk/slices/cart/cartSlice";
 import { useAppDispatch } from "@/rtk/store/store";
 
 const TableItem = ({ product }: { product: ICartProduct }) => {
@@ -38,11 +43,13 @@ const TableItem = ({ product }: { product: ICartProduct }) => {
 					<IconButton
 						icon={<IoIosRemove size={25} />}
 						customStyles="bg-white text-dark hover:!bg-dark hover:!text-white w-[25px] h-[25px] sm:!w-[40px] sm:!h-[40px]"
+						onclick={() => dispatch(decreaseProductCount(id))}
 					/>
 					<span className="font-bold text-sm sm:text-lg">{count}</span>
 					<IconButton
 						icon={<IoIosAdd size={25} />}
 						customStyles="bg-white text-dark hover:!bg-dark hover:!text-white w-[25px] h-[25px] sm:!w-[40px] sm:!h-[40px]"
+						onclick={() => dispatch(increaseProductCount(id))}
 					/>
 				</td>
 				<td>

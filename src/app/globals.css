@@ -13,13 +13,13 @@
 		@apply w-[10rem] block text-center px-4 py-2 rounded-full  bg-dark mt-4 hover:bg-secondaryDark transition-all duration-300;
 	}
 	a {
-		@apply !no-underline text-sm;
+		@apply !no-underline text-sm focus:text-primary active:text-primary;
 	}
 }
 
 body,
 html {
-	scroll-behavior: smooth;
+	scroll-behavior: smooth !important;
 	@apply !bg-gray-50;
 }
 

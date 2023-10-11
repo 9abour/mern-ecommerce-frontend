@@ -6,15 +6,22 @@ import User from "./User";
 import MobileNavDropItem from "./MobileNavDropItem";
 import NavbarMobileLink from "./NavbarMobileLink";
 import { useMediaQuery } from "react-responsive";
+import { usePathname } from "next/navigation";
 
 const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 	const isMidScreenValue = useMediaQuery({ query: "(max-width: 768px)" });
+
+	const pathname = usePathname();
 
 	useEffect(() => {
 		if (isMenuOpen) {
 			setIsMenuOpen(isMidScreenValue);
 		}
 	}, [isMidScreenValue]);
+
+	useEffect(() => {
+		setIsMenuOpen(false);
+	}, [pathname]);
 
 	return (
 		<motion.div
