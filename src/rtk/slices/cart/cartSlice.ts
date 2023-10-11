@@ -27,6 +27,21 @@ const initialState: ICartState = {
 			count: 1,
 			freeDelivery: true,
 		},
+		{
+			id: "2",
+			name: "Angus Burger",
+			description: "new",
+			price: 10,
+			discount: 10,
+			image: "/burger.png",
+			available: true,
+			inCart: false,
+			rate: 4,
+			weight: "250g",
+			categories: ["Food", "Burgers"],
+			count: 1,
+			freeDelivery: true,
+		},
 	],
 };
 
@@ -66,10 +81,44 @@ const cartSlice = createSlice({
 			state.products = [];
 			toast.success(`Cart cleared successfully`);
 		},
-		increaseProductCount: (state, action) => {},
-		decreaseProductCount: (state, action) => {},
+		increaseProductCount: (state, action) => {
+			state.products.map(product => {
+				if (product.id === action.payload) {
+					return {
+						...product,
+						count: product.count++,
+					};
+				} else {
+					return {
+						...product,
+					};
+				}
+			});
+
+			console.log(state.products);
+		},
+		decreaseProductCount: (state, action) => {
+			state.products.map(product => {
+				if (product.id === action.payload && product.count > 1) {
+					return {
+						...product,
+						count: product.count--,
+					};
+				} else {
+					return {
+						...product,
+					};
+				}
+			});
+		},
 	},
 });
 
 export default cartSlice.reducer;
-export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
+export const {
+	addToCart,
+	removeFromCart,
+	clearCart,
+	increaseProductCount,
+	decreaseProductCount,
+} = cartSlice.actions;

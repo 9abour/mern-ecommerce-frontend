@@ -6,7 +6,8 @@ import { TbShoppingBagCheck, TbShoppingBagPlus } from "react-icons/tb";
 import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
 import { addToCart, removeFromCart } from "@/rtk/slices/cart/cartSlice";
 import { IProduct } from "@/components/products/types";
-import { productInCart } from "@/components/cart/helper/productInCart";
+import { usePathname, useRouter } from "next/navigation";
+import { useCheckProductIn } from "@/hooks/useCheckProductIn";
 
 const AddToCartButton = ({
 	customStyles,
@@ -17,7 +18,10 @@ const AddToCartButton = ({
 }) => {
 	const dispatch = useAppDispatch();
 	const { products } = useAppSelector(state => state.cartSlice);
-	const inCart = productInCart(product.id, products);
+	const inCart = useCheckProductIn(product.id, products);
+
+	const pathname = usePathname().split("/");
+	const router = useRouter();
 
 	return (
 		<IconButton
@@ -30,7 +34,9 @@ const AddToCartButton = ({
 			}
 			customStyles={`text-white bg-gradient-to-b from-primary to-primaryDark ${customStyles}`}
 			onclick={() => {
-				dispatch(inCart ? removeFromCart(product) : addToCart(product));
+				pathname[pathname.length - 1] !== "wishlist" || !inCart
+					? dispatch(inCart ? removeFromCart(product) : addToCart(product))
+					: router.push("./cart");
 			}}
 		/>
 	);
