@@ -7,12 +7,9 @@ import { AiFillStar } from "react-icons/ai";
 import AddToCartButton from "../common/button/AddToCartButton";
 import IconButton from "../common/button/IconButton";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
-import { useAppDispatch } from "@/rtk/store/store";
-import {
-	decreaseProductCount,
-	increaseProductCount,
-} from "@/rtk/slices/cart/cartSlice";
+import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
 import ProductCard from "../production/ProductCard";
+import { productInCart } from "../cart/helper/productInCart";
 
 const ProductDetails = () => {
 	const [count, setCount] = useState(1);
@@ -34,10 +31,13 @@ const ProductDetails = () => {
 		freeDelivery: true,
 	};
 
-	const dispatch = useAppDispatch();
+	const { products } = useAppSelector(state => state.cartSlice);
+
+	const inCart = productInCart(product.id, products);
+
 	return (
 		<section className="relative container mx-auto flex flex-col lg:flex-row items-center gap-[4rem] py-16 px-6 lg:px-16 shadow-clg rounded-3xl overflow-hidden z-0">
-			<div className="w-full flex flex-col gap-4">
+			<div className="w-full lg:w-7/12 flex flex-col gap-4 mb-auto">
 				<div className="relative max-h-full px-8 py-4 z-0">
 					<div className="relative w-full mx-auto rounded-xl overflow-hidden">
 						<Image
@@ -49,7 +49,7 @@ const ProductDetails = () => {
 						/>
 					</div>
 					<div className="flex flex-col md:flex-row md:justify-between items-start md:items-center gap-2">
-						<h3 className="text-dark">Angus Burger</h3>
+						<h3 className="text-3xl font-bold text-dark">Angus Burger</h3>
 						<div>
 							{Array.from(Array(3)).map((tag, index) => (
 								<TextButton
@@ -86,7 +86,7 @@ const ProductDetails = () => {
 				<div className="flex gap-4 ml-8">
 					<div className="w-fit flex items-center p-1 rounded-full bg-dark">
 						<h6 className="uppercase p-2 text-white font-semibold">
-							Add to Cart
+							{inCart ? "In Cart" : "Add to Cart"}
 						</h6>
 						<AddToCartButton product={product} />
 					</div>
@@ -108,7 +108,7 @@ const ProductDetails = () => {
 			</div>
 
 			{/* Suggestions Products */}
-			<div className="w-full lg:w-6/12 h-fit flex flex-wrap gap-[2rem] mt-8 lg:mt-0">
+			<div className="w-full lg:w-5/12 h-fit flex flex-wrap gap-[2rem] mt-8 lg:mt-0">
 				{Array.from(Array(4)).map((_, index) => (
 					<ProductCard key={index} product={product} />
 				))}

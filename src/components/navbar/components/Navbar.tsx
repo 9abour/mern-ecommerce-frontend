@@ -6,7 +6,7 @@ import InputSearch from "@/components/common/input/InputSearch";
 import User from "./User";
 import CartButton from "@/components/common/button/CartButton";
 import IconButton from "@/components/common/button/IconButton";
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiFillHeart } from "react-icons/ai";
 import MenuButton from "@/components/common/button/MenuButton";
 import MobileNavDrop from "./MobileNavDrop";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
@@ -35,9 +35,7 @@ const Navbar = () => {
 		<nav
 			ref={ref}
 			className={`fixed transition duration-200 w-full h-[70px] flex justify-between items-center gap-4 md:gap-12 bg-white ${
-				useIsWindowScrolled()
-					? "bg-primaryLight shadow-csm"
-					: "bg-white md:bg-white"
+				useIsWindowScrolled() ? "!bg-dark shadow-csm" : "bg-white md:bg-white"
 			} [&>div]:flex [&>div]:items-center z-[999999999]`}
 		>
 			<div className="w-full justify-between md:w-[800px] md:max-w-[800px] gap-6">
@@ -53,7 +51,7 @@ const Navbar = () => {
 
 				<div className="relative">
 					<IconButton
-						icon={<AiOutlineHeart size={20} color="white" />}
+						icon={<AiFillHeart size={20} color="white" />}
 						customStyles="bg-dark"
 						onclick={() => router.push("/wishlist")}
 					/>

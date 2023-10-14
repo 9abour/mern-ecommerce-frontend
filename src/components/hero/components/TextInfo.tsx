@@ -5,7 +5,7 @@ import React from "react";
 const TextInfo = () => {
 	return (
 		<div className="text-white">
-			<h2 className="max-w-[400px] text-3xl sm:text-[1.5rem] lg:text-4xl xl:text-5xl uppercase">
+			<h2 className="max-w-[400px] text-3xl sm:text-[1.5rem] lg:text-4xl xl:text-5xl font-bold uppercase">
 				Flying Food Delivery
 			</h2>
 
@@ -17,7 +17,7 @@ const TextInfo = () => {
 				<LineBottom customStyles="w-[2px] [&>div]:h-[2px] [&>div]:bg-lightYellow [&>div]:mx-0" />
 			</div>
 
-			<p className="max-w-[350px] xl:text-xl">
+			<p className="max-w-[350px] xl:text-xl font-medium">
 				a patty of ground beef grilled and placed between two halves of a bun.
 			</p>
 

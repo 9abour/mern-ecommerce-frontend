@@ -12,20 +12,20 @@ const PopularCategory = () => {
 					<PopularCategoryCard
 						name="Burger"
 						image={burger}
-						bg="bg-primary"
+						bg="bg-sky-500"
 						customStyles="left-0"
 					/>
 					<PopularCategoryCard
 						name="Burger"
 						image={burger}
-						bg="bg-primary"
+						bg="bg-[#f5d34e]"
 						customStyles="left-0"
 					/>
 				</div>
 				<PopularCategoryCard
 					name="Burger"
 					image={burger}
-					bg="bg-primary"
+					bg="bg-[#76acf5]"
 					customStyles="left-0"
 					fullHeight={true}
 				/>
@@ -34,13 +34,13 @@ const PopularCategory = () => {
 					<PopularCategoryCard
 						name="Burger"
 						image={burger}
-						bg="bg-primary"
+						bg="bg-[#ff8d31]"
 						customStyles="left-0"
 					/>
 					<PopularCategoryCard
 						name="Burger"
 						image={burger}
-						bg="bg-primary"
+						bg="bg-[#fe7f84]"
 						customStyles="left-0"
 					/>
 				</div>
