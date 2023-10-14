@@ -8,6 +8,7 @@ const Logo = () => {
 			<Link
 				href={"/"}
 				className="!text-primary hover:!text-primaryDark transition-all"
+				aria-label="logo"
 			>
 				<PiBowlFoodFill size={50} />
 			</Link>
