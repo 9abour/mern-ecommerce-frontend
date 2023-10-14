@@ -58,14 +58,14 @@ const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 				<User />
 			</MobileNavDropItem>
 
-			<ul className="w-full p-2">
+			<div className="w-full p-2">
 				<MobileNavDropItem translate="y" customStyles="!m-0">
 					<NavbarMobileLink href={`/cart`} name="Cart" />
 					<NavbarMobileLink href={`/wishlist`} name="Wishlist" />
 					<NavbarMobileLink href={`/menu`} name="Menu" />
 					<NavbarMobileLink href={`/categories`} name="Categories" />
 				</MobileNavDropItem>
-			</ul>
+			</div>
 		</motion.div>
 	);
 };

@@ -13,12 +13,12 @@ const itemVariants: Variants = {
 
 const MobileNavDropItem = ({ children, customStyles }: IDropMotionItem) => {
 	return (
-		<motion.div
+		<motion.ul
 			className={`w-full mt-4 ${customStyles ? customStyles : ""}`}
 			variants={itemVariants}
 		>
 			{children}
-		</motion.div>
+		</motion.ul>
 	);
 };
 
