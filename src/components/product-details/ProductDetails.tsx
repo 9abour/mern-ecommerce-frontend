@@ -80,7 +80,7 @@ const ProductDetails = () => {
 				<p className="max-w-[500px] ml-8 font-semibold text-dark">
 					An Angus burger is a hamburger made using beef from Angus cattle. The
 					name Angus burger is used by several fast-food hamburger chains for
-					one or more "premium" burgers.
+					one or more premium burgers.
 				</p>
 
 				<div className="flex gap-4 ml-8">
