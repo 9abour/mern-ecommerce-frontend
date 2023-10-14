@@ -34,13 +34,13 @@ const ProductCard = ({ product }: { product: IProduct }) => {
 				className={`[&>div>div]:hover:opacity-100 relative w-full h-full bg-white border border-transparent hover:border-primary shadow-clg rounded-xl skew-x-[3deg] py-8 px-6 grid items-center text-center gap-1 [&>*]:skew-x-[-3deg] z-10 transition-all`}
 			>
 				<div className="relative w-full h-full rounded-xl overflow-hidden">
-					<div className="w-full h-full">
+					<div className="w-[150px]">
 						<Image
 							src={image}
-							width={250}
-							height={250}
+							width={150}
+							height={150}
 							alt=""
-							className="w-full h-full mx-auto drop-shadow-xl"
+							className="mx-auto drop-shadow-xl object-cover"
 						/>
 					</div>
 
