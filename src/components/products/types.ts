@@ -1,5 +1,6 @@
 export interface IProduct {
 	id: string;
+	slug: string;
 	name: string;
 	description: string;
 	price: number;
@@ -7,6 +8,7 @@ export interface IProduct {
 	discount: number;
 	categories: string[];
 	inCart: boolean;
+	count: number;
 	rate: number;
 	available: boolean;
 	freeDelivery?: boolean;

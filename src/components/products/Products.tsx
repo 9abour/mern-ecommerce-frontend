@@ -14,6 +14,7 @@ const Products = () => {
 
 	const product = {
 		id: "1",
+		slug: "angus-burger",
 		name: "Angus Burger",
 		description: "new",
 		price: 11.2,

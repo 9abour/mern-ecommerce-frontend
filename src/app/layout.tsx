@@ -4,14 +4,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "rsuite/dist/rsuite.min.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Outfit } from "next/font/google";
 import { lazy } from "react";
 import Footer from "@/components/footer/components/Footer";
 import { ReduxProvider } from "@/rtk/Provider";
 import { Toaster } from "sonner";
 const Navbar = lazy(() => import("@/components/navbar/components/Navbar"));
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Ecommerce",

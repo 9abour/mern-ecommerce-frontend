@@ -37,7 +37,7 @@ const Cart = () => {
 							<h4 className="text-2xl font-semibold text-dark lg:ml-4">
 								Cart <span className="font-normal">Total</span>
 							</h4>
-							<div className="h-full lg:pl-4 pt-4 lg:pb-8">
+							<div className="h-fit lg:pl-4 pt-4 lg:pb-8">
 								<table className="h-full flex justify-between items-center bg-secondaryDark rounded-2xl text-white text-lg p-4">
 									<thead className="[&>tr>th]:p-2 [&>tr>th]:text-start">
 										<tr>

@@ -22,20 +22,104 @@ const Production = () => {
 		// Update the products
 	}, [isActive]);
 
-	const product = {
-		id: "1",
-		name: "Angus Burger",
-		description: "new",
-		price: 11.2,
-		discount: 10,
-		image: "/burger.png",
-		available: true,
-		inCart: false,
-		rate: 4,
-		weight: "250g",
-		categories: ["Food", "Burgers"],
-		count: 1,
-	};
+	const products = [
+		{
+			id: "1",
+			slug: "angus-burger",
+			name: "Angus Burger",
+			description: "new",
+			price: 10,
+			discount: 10,
+			image: "/burger.png",
+			available: true,
+			inCart: false,
+			rate: 4,
+			weight: "250g",
+			categories: ["Food", "Burgers"],
+			count: 1,
+			freeDelivery: true,
+		},
+		{
+			id: "2",
+			slug: "angus-burger",
+			name: "Angus Burger",
+			description: "new",
+			price: 10,
+			discount: 10,
+			image: "/burger.png",
+			available: true,
+			inCart: false,
+			rate: 4,
+			weight: "250g",
+			categories: ["Food", "Burgers"],
+			count: 1,
+			freeDelivery: true,
+		},
+		{
+			id: "3",
+			slug: "angus-burger",
+			name: "Angus Burger",
+			description: "new",
+			price: 10,
+			discount: 10,
+			image: "/burger.png",
+			available: true,
+			inCart: false,
+			rate: 4,
+			weight: "250g",
+			categories: ["Food", "Burgers"],
+			count: 1,
+			freeDelivery: true,
+		},
+		{
+			id: "4",
+			slug: "angus-burger",
+			name: "Angus Burger",
+			description: "new",
+			price: 10,
+			discount: 10,
+			image: "/burger.png",
+			available: true,
+			inCart: false,
+			rate: 4,
+			weight: "250g",
+			categories: ["Food", "Burgers"],
+			count: 1,
+			freeDelivery: true,
+		},
+		{
+			id: "5",
+			slug: "angus-burger",
+			name: "Angus Burger",
+			description: "new",
+			price: 10,
+			discount: 10,
+			image: "/burger.png",
+			available: true,
+			inCart: false,
+			rate: 4,
+			weight: "250g",
+			categories: ["Food", "Burgers"],
+			count: 1,
+			freeDelivery: true,
+		},
+		{
+			id: "6",
+			slug: "angus-burger",
+			name: "Angus Burger",
+			description: "new",
+			price: 10,
+			discount: 10,
+			image: "/burger.png",
+			available: true,
+			inCart: false,
+			rate: 4,
+			weight: "250g",
+			categories: ["Food", "Burgers"],
+			count: 1,
+			freeDelivery: true,
+		},
+	];
 
 	return (
 		<section className="bg-slate-100 md:-mx-6 p-6">
@@ -53,14 +137,9 @@ const Production = () => {
 				</div>
 
 				<div className="flex flex-wrap justify-center gap-16 mb-16">
-					<ProductCard product={product} />
-					<ProductCard product={product} />
-					<ProductCard product={product} />
-					<ProductCard product={product} />
-					<ProductCard product={product} />
-					<ProductCard product={product} />
-					<ProductCard product={product} />
-					<ProductCard product={product} />
+					{products.map(product => (
+						<ProductCard key={product.id} product={product} />
+					))}
 				</div>
 			</div>
 		</section>

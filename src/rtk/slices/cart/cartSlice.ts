@@ -11,38 +11,7 @@ export interface ICartState {
 }
 
 const initialState: ICartState = {
-	products: [
-		{
-			id: "1",
-			name: "Angus Burger",
-			description: "new",
-			price: 10,
-			discount: 10,
-			image: "/burger.png",
-			available: true,
-			inCart: false,
-			rate: 4,
-			weight: "250g",
-			categories: ["Food", "Burgers"],
-			count: 1,
-			freeDelivery: true,
-		},
-		{
-			id: "2",
-			name: "Angus Burger",
-			description: "new",
-			price: 10,
-			discount: 10,
-			image: "/burger.png",
-			available: true,
-			inCart: false,
-			rate: 4,
-			weight: "250g",
-			categories: ["Food", "Burgers"],
-			count: 1,
-			freeDelivery: true,
-		},
-	],
+	products: [],
 };
 
 const cartSlice = createSlice({
@@ -63,7 +32,6 @@ const cartSlice = createSlice({
 				const newCartProduct = {
 					...action.payload,
 					inCart: true,
-					count: 1,
 				};
 				state.products.push(newCartProduct);
 				toast.success(`"${newCartProduct.name}" added to cart successfully`);
@@ -94,8 +62,6 @@ const cartSlice = createSlice({
 					};
 				}
 			});
-
-			console.log(state.products);
 		},
 		decreaseProductCount: (state, action) => {
 			state.products.map(product => {
