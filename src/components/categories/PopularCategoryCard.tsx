@@ -17,7 +17,7 @@ const PopularCategoryCard = ({
 		>
 			<div className="relative w-fit flex flex-col items-center text-primary z-10">
 				<span
-					className={`w-fit bg-[#ffffff] drop-shadow text-xs lg:text-2xl font-bold rounded-[45px] py-1 px-4`}
+					className={`w-fit bg-white/40 text-white backdrop-blur-sm drop-shadow text-xs lg:text-2xl font-bold rounded-[45px] py-1 px-4`}
 				>
 					03
 				</span>
@@ -50,14 +50,13 @@ const PopularCategoryCard = ({
 					fullHeight ? "!w-full !h-fit !top-[50%] !translate-y-[-50%]" : "w-2/4"
 				}`}
 			>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
-					<circle
-						cx="161.24"
-						cy="137.91"
-						r="114.37"
-						fill="rgba(248, 117, 55, 1)"
-					></circle>
-					<g fill="#fff">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 300 300"
+					className="fill-white/20"
+				>
+					<circle cx="161.24" cy="137.91" r="114.37" fill="current"></circle>
+					<g className="fill-white/60">
 						<path d="M268.09 156.12c-.05 1.15.78.74.94.91-.23-1.94-1.15-.86-.94-.91z"></path>
 						<path d="M264.64 137.47L265.03 137.75 263.72 135.17 264.64 137.47z"></path>
 						<path d="M260.65 120.42c-.92 2 2.04 6.01 2.17 9.21l-.2.57 1.44 1.13c-.54-1.83-1.19-3.93-1.9-5.85-.72-1.92-1.31-3.72-1.51-5.06zM260.36 110.48c-.3.76-1.2-1.75.66 2.14-.02-.22-.01-.29-.02-.43-.15-.36-.34-.85-.64-1.71z"></path>

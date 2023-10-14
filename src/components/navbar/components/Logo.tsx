@@ -7,7 +7,7 @@ const Logo = () => {
 		<div className="min-w-[150px] md:min-w-[200px] flex justify-center">
 			<Link
 				href={"/"}
-				className="text-primary hover:text-primaryDark transition-all active:text-primary focus:text-primary"
+				className="!text-primary hover:!text-primaryDark transition-all"
 			>
 				<PiBowlFoodFill size={50} />
 			</Link>

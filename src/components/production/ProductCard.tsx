@@ -13,6 +13,7 @@ import {
 } from "@/rtk/slices/wishlist/wishlistSlice";
 import { useCheckProductIn } from "@/hooks/useCheckProductIn";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const ProductCard = ({ product }: { product: IProduct }) => {
 	const { id, slug, name, price, image, available, rate } = product;
@@ -73,7 +74,12 @@ const ProductCard = ({ product }: { product: IProduct }) => {
 					</div>
 				</div>
 
-				<h4 className="text-xl font-semibold">{name}</h4>
+				<Link
+					href={`/product-details/${slug}`}
+					className="!text-dark text-xl font-semibold"
+				>
+					{name}
+				</Link>
 				<p className="text-slate-300 text-sm uppercase">
 					{available ? "Available" : "Not Available"}
 				</p>

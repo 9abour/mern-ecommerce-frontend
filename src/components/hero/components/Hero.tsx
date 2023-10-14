@@ -11,7 +11,60 @@ const Hero = () => {
 	const swiperRef: any = useRef();
 
 	return (
-		<section className="relative w-full mx-auto ml-auto md:w-[calc(100%+24px)] h-[35rem] mt-[-86px] bg-gradient-to-l from-primary to-primaryDark md:rounded-bl-[45px] overflow-hidden">
+		<section className="relative w-full mx-auto ml-auto md:w-[calc(100%+24px)] h-[35rem] mt-[-86px] bg-gradient-to-b from-primary to-primaryDark md:rounded-bl-[45px] overflow-hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				version="1.1"
+				viewBox="0 0 800 800"
+				className="absolute"
+			>
+				<defs>
+					<filter
+						id="bbblurry-filter"
+						x="-100%"
+						y="-100%"
+						width="400%"
+						height="400%"
+						filterUnits="objectBoundingBox"
+						primitiveUnits="userSpaceOnUse"
+						color-interpolation-filters="sRGB"
+					>
+						<feGaussianBlur
+							stdDeviation="130"
+							x="0%"
+							y="0%"
+							width="100%"
+							height="100%"
+							in="SourceGraphic"
+							edgeMode="none"
+							result="blur"
+						></feGaussianBlur>
+					</filter>
+				</defs>
+				<g filter="url(#bbblurry-filter)">
+					<ellipse
+						rx="150"
+						ry="150"
+						cx="623.7197814448562"
+						cy="291.4283306967216"
+						fill="hsla(55, 46%, 77%, 1.00)"
+					></ellipse>
+					<ellipse
+						rx="150"
+						ry="150"
+						cx="235.91708158839492"
+						cy="628.0714784784092"
+						fill="hsla(55, 45%, 77%, 1.00)"
+					></ellipse>
+					<ellipse
+						rx="150"
+						ry="150"
+						cx="355.6087320099564"
+						cy="309.5323628994293"
+						fill="hsla(55, 100%, 50%, 1.00)"
+					></ellipse>
+				</g>
+			</svg>
 			<Swiper
 				spaceBetween={50}
 				slidesPerView={1}
@@ -57,7 +110,7 @@ const Hero = () => {
 				height={400}
 				src="/hero-bg.jpg"
 				alt="heroShapes"
-				className="w-full h-full absolute top-0 left-0 opacity-5 object-cover z-0"
+				className="w-full h-full absolute top-0 left-0 opacity-[2%] object-cover z-0"
 			/>
 		</section>
 	);

@@ -7,7 +7,13 @@ const List = () => {
 	return (
 		<div className="flex flex-col gap-1 mt-2">
 			{Array.from(Array(10)).map((_, i) => (
-				<ListItem key={i} text="Burger" icon={<FaBowlFood />} isActive={i} />
+				<ListItem
+					key={i}
+					text="burger"
+					href="burgers"
+					icon={<FaBowlFood />}
+					isActive={i}
+				/>
 			))}
 			<LineBottom />
 		</div>
