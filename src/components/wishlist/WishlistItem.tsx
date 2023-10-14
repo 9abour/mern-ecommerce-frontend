@@ -50,7 +50,7 @@ const WishlistItem = ({ product }: { product: IWishlistProduct }) => {
 						<span className="font-semibold text-xs sm:text-sm">In Cart</span>
 					) : (
 						<span className="font-semibold text-xs sm:text-sm">
-							Add to Cart -&gt;{" "}
+							Add to Cart{" "}
 						</span>
 					)}
 					<AddToCartButton product={product} />

@@ -11,7 +11,7 @@ const Hero = () => {
 	const swiperRef: any = useRef();
 
 	return (
-		<section className="relative w-full mx-auto ml-auto md:w-[calc(100%+24px)] h-[35rem] mt-[-86px] bg-gradient-to-l from-primary to-primaryDark md:rounded-bl-[45px]">
+		<section className="relative w-full mx-auto ml-auto md:w-[calc(100%+24px)] h-[35rem] mt-[-86px] bg-gradient-to-l from-primary to-primaryDark md:rounded-bl-[45px] overflow-hidden">
 			<Swiper
 				spaceBetween={50}
 				slidesPerView={1}
@@ -53,11 +53,11 @@ const Hero = () => {
 			</div>
 
 			<Image
+				width={400}
+				height={400}
 				src="/hero-bg.jpg"
 				alt="heroShapes"
-				layout="fill"
-				objectFit="cover"
-				className="w-full h-full absolute opacity-5 z-0"
+				className="w-full h-full absolute top-0 left-0 opacity-5 object-cover z-0"
 			/>
 		</section>
 	);

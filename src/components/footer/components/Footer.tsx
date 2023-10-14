@@ -17,9 +17,9 @@ const Footer = () => {
 				</div>
 				<ul className="w-full lg:w-8/12 text-center text-sm md:text-lg text-gray-200 uppercase grid justify-center gap-x-2 md:gap-x-4 gap-y-2 grid-cols-4">
 					<FooterLink name="Home" href="/" />
-					<FooterLink name="Delivery" href="/delivery" />
-					<FooterLink name="Payment" href="/payment" />
-					<FooterLink name="Menu" href="/menu" />
+					<FooterLink name="Cart" href="/cart" />
+					<FooterLink name="Wishlist" href="/wishlist" />
+					<FooterLink name="Categories" href="/categories" />
 					<FooterLink name="Home" href="home" />
 					<FooterLink name="Delivery" href="/delivery" />
 					<FooterLink name="Payment" href="/payment" />

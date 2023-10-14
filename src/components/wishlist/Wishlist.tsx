@@ -22,7 +22,7 @@ const Wishlist = () => {
 		<section className="w-full max-w-[900px] mx-auto bg-white shadow-clg rounded-3xl p-4">
 			{products.length ? (
 				<>
-					<h4 className="text-dark">Wishlist</h4>
+					<h4 className="text-2xl font-semibold text-dark">Wishlist</h4>
 					<table className="w-full">
 						{products.map(product => (
 							<WishlistItem key={product.id} product={product} />
