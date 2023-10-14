@@ -9,6 +9,7 @@ const IconButton = ({ icon, customStyles, onclick, disabled }: IIconButton) => {
 			}`}
 			onClick={onclick}
 			disabled={disabled}
+			aria-label="icon"
 		>
 			{icon}
 		</button>
