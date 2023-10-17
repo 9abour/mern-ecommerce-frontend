@@ -13,3 +13,8 @@ export interface IInputSearch {
 export interface IInputProductSearch extends IInputSearch {
 	label?: string;
 }
+
+export interface IFormInput extends IInputSearch {
+	name?: string;
+	required?: boolean;
+}

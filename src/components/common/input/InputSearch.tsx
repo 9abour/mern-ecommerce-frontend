@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import IconButton from "../button/IconButton";
 import { IInputSearch } from "./types";
 import { IoSearchSharp } from "react-icons/io5";
@@ -16,7 +16,7 @@ const InputSearch = ({ type, placeholder, customStyles }: IInputSearch) => {
 
 	const router = useRouter();
 
-	const handleOnSubmit = (e: any) => {
+	const handleOnSubmit = (e: FormEvent) => {
 		e.preventDefault();
 		router.push(`/search/p=${searchProps.value}`);
 		setFormIsActive(false);
