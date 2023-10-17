@@ -1,6 +1,6 @@
 import axios, { AxiosError } from "axios";
 
-export const useGetUser = async () => {
+export const getUser = async () => {
 	try {
 		const { data } = await axios.get("/api/auth/user");
 
