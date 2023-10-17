@@ -11,9 +11,9 @@ import Aside from "@/components/aside/components/Aside";
 import Footer from "@/components/footer/components/Footer";
 import Navbar from "@/components/navbar/components/Navbar";
 import { useEffect, useState } from "react";
-import { useGetUser } from "@/hooks/useGetUser";
 import { usePathname, useRouter } from "next/navigation";
 import JoinLayout from "@/components/join/Layout";
+import { getUser } from "@/helpers/getUser";
 
 const inter = Outfit({ subsets: ["latin"] });
 
@@ -29,7 +29,7 @@ export default function RootLayout({
 
 	useEffect(() => {
 		(async () => {
-			const { user, error } = await useGetUser();
+			const { user, error } = await getUser();
 
 			if (user) {
 				setUser(user);
