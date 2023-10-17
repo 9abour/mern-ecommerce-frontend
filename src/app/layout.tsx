@@ -67,7 +67,7 @@ export default function RootLayout({
 						</div>
 					</ReduxProvider>
 				) : (
-					<JoinLayout />
+					<JoinLayout>{children}</JoinLayout>
 				)}
 			</body>
 		</html>
