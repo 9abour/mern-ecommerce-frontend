@@ -21,12 +21,10 @@ const SignIn = () => {
 		try {
 			const { data } = await axios.post("/api/auth/signin", credentials);
 
-			console.log(JSON.stringify(data));
 			toast.success("Authorized");
 			push("./");
 		} catch (error) {
 			toast.error("Unauthorized");
-			console.log(e);
 		}
 	};
 
@@ -49,11 +47,12 @@ const SignIn = () => {
 				customStyles="mt-2 font-semibold text-xl bg-primary"
 			/>
 
-			<div>
-				<p>
-					Don&apos;t have an account? <Link href="/signup">Sign Up</Link>
-				</p>
-			</div>
+			<p>
+				Don&apos;t have an account?{" "}
+				<Link href="/signup" className="!font-semibold !text-blue-600">
+					Sign Up
+				</Link>
+			</p>
 		</form>
 	);
 };

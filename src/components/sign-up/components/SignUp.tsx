@@ -18,7 +18,10 @@ const SignUp = () => {
 
 			<div>
 				<p>
-					Already have an account? <Link href="/signin">Sign In</Link>
+					Already have an account?{" "}
+					<Link href="/signin" className="!font-semibold !text-blue-600">
+						Sign In
+					</Link>
 				</p>
 			</div>
 		</form>

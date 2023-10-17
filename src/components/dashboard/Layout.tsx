@@ -1,16 +1,17 @@
 "use client";
 
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, lazy, useEffect, useState } from "react";
 import JoinLayout from "../join/Layout";
 import { usePathname, useRouter } from "next/navigation";
 import { getUser } from "@/helpers/getUser";
-import Navbar from "../navbar/components/Navbar";
-import Aside from "../aside/components/Aside";
-import Footer from "../footer/components/Footer";
+const Navbar = lazy(() => import("../navbar/components/Navbar"));
+const Aside = lazy(() => import("../aside/components/Aside"));
+const Footer = lazy(() => import("../footer/components/Footer"));
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [user, setUser] = useState();
+
 	const router = useRouter();
 	const pathname = usePathname().split("/");
 
@@ -28,6 +29,15 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 				!pathname[pathname.length - 1].includes("signup")
 			) {
 				router.push("/signin");
+				return;
+			}
+
+			if (
+				user &&
+				(pathname[pathname.length - 1].includes("signin") ||
+					pathname[pathname.length - 1].includes("signup"))
+			) {
+				router.push("/");
 				return;
 			}
 

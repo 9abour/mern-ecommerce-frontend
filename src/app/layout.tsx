@@ -5,7 +5,8 @@ import "rsuite/dist/rsuite.min.css";
 import { Outfit } from "next/font/google";
 import { ReduxProvider } from "@/rtk/Provider";
 import { Toaster } from "sonner";
-import DashboardLayout from "@/components/dashboard/Layout";
+import { lazy } from "react";
+const DashboardLayout = lazy(() => import("@/components/dashboard/Layout"));
 
 const inter = Outfit({ subsets: ["latin"] });
 
