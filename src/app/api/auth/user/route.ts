@@ -13,7 +13,7 @@ export const GET = async () => {
 
 	const { value } = token;
 
-	const secret = process.env.JWT_SECRET || "";
+	const secret = process.env.NEXT_PUBLIC_JWT_SECRET || "";
 
 	try {
 		verify(value, secret);

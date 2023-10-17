@@ -15,14 +15,14 @@ export const POST = async (request: Request) => {
 	}
 
 	// get the jwt secret
-	const secret = process.env.JWT_SECRET || "";
+	const secret = process.env.NEXT_PUBLIC_JWT_SECRET || "";
 
 	const token = sign({ username }, secret, { expiresIn: MAX_AGE });
 
 	// Save to cookies
 	const serialized = serialize("accessToken", token, {
 		httpOnly: true,
-		secure: process.env.NODE_ENV === "production",
+		secure: process.env.NEXT_PUBLIC_NODE_ENV === "production",
 		sameSite: true,
 		maxAge: MAX_AGE,
 		path: "/",
