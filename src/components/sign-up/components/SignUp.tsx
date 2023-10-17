@@ -1,5 +1,6 @@
 import TextButton from "@/components/common/button/TextButton";
 import FormInput from "@/components/common/input/FormInput";
+import Link from "next/link";
 import React from "react";
 
 const SignUp = () => {
@@ -17,7 +18,7 @@ const SignUp = () => {
 
 			<div>
 				<p>
-					Already have an account? <a href="/signin">Sign In</a>
+					Already have an account? <Link href="/signin">Sign In</Link>
 				</p>
 			</div>
 		</form>

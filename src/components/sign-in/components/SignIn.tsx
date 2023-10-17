@@ -6,6 +6,7 @@ import axios from "axios";
 import React, { FormEvent } from "react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const SignIn = () => {
 	const { push } = useRouter();
@@ -50,7 +51,7 @@ const SignIn = () => {
 
 			<div>
 				<p>
-					Don&apos;t have an account? <a href="/signup">Sign Up</a>
+					Don&apos;t have an account? <Link href="/signup">Sign Up</Link>
 				</p>
 			</div>
 		</form>
