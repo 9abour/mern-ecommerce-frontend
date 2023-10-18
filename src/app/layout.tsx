@@ -7,7 +7,7 @@ import { ReduxProvider } from "@/rtk/Provider";
 import { Toaster } from "sonner";
 import { lazy } from "react";
 import { Metadata } from "next";
-const DashboardLayout = lazy(() => import("@/components/dashboard/Layout"));
+const DashboardLayout = lazy(() => import("@/components/secure/Layout"));
 
 const inter = Outfit({ subsets: ["latin"] });
 
