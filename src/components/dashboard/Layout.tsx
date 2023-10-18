@@ -2,7 +2,7 @@
 
 import React, { ReactNode, lazy, useEffect, useState } from "react";
 import JoinLayout from "../join/Layout";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { getUser } from "@/helpers/getUser";
 import Loader from "../common/loading/Loader";
 const Navbar = lazy(() => import("../navbar/components/Navbar"));
@@ -28,7 +28,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 		})();
 	}, [pathname]);
 
-	if (isLoading) {
+	if (isLoading && !user) {
 		return <Loader />;
 	}
 
