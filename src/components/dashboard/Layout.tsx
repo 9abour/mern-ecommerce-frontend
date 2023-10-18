@@ -1,13 +1,13 @@
 "use client";
 
 import React, { ReactNode, lazy, useEffect, useState } from "react";
-import JoinLayout from "../join/Layout";
 import { usePathname } from "next/navigation";
 import { getUser } from "@/helpers/getUser";
-import Loader from "../common/loading/Loader";
 const Navbar = lazy(() => import("../navbar/components/Navbar"));
 const Aside = lazy(() => import("../aside/components/Aside"));
 const Footer = lazy(() => import("../footer/components/Footer"));
+const JoinLayout = lazy(() => import("../join/Layout"));
+const Loader = lazy(() => import("../common/loading/Loader"));
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
 	const [isLoading, setIsLoading] = useState(true);
@@ -28,7 +28,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 		})();
 	}, [pathname]);
 
-	if (isLoading && !user) {
+	if (isLoading) {
 		return <Loader />;
 	}
 
@@ -44,9 +44,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 			</div>
 		</>
 	) : (
-		<>
-			<JoinLayout>{children}</JoinLayout>
-		</>
+		<>{/* <JoinLayout>{children}</JoinLayout> */}</>
 	);
 };
 
