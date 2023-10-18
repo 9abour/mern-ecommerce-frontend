@@ -6,7 +6,7 @@ import { IInputSearch } from "./types";
 import { IoSearchSharp } from "react-icons/io5";
 import useInput from "@/hooks/useInput";
 import Link from "next/link";
-import ThrobbingLoading from "../laoding/ThrobbingLoading";
+import ThrobbingLoading from "../loading/ThrobbingLoading";
 import { useRouter } from "next/navigation";
 
 const InputSearch = ({ type, placeholder, customStyles }: IInputSearch) => {

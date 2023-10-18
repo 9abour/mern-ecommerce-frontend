@@ -5,11 +5,9 @@ import FormInput from "@/components/common/input/FormInput";
 import axios from "axios";
 import React, { FormEvent } from "react";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const SignIn = () => {
-	const { push } = useRouter();
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
@@ -22,7 +20,7 @@ const SignIn = () => {
 			const { data } = await axios.post("/api/auth/signin", credentials);
 
 			toast.success("Authorized");
-			push("./");
+			window.location.pathname = "/";
 		} catch (error) {
 			toast.error("Unauthorized");
 		}

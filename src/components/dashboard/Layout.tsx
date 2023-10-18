@@ -4,6 +4,7 @@ import React, { ReactNode, lazy, useEffect, useState } from "react";
 import JoinLayout from "../join/Layout";
 import { usePathname, useRouter } from "next/navigation";
 import { getUser } from "@/helpers/getUser";
+import Loader from "../common/loading/Loader";
 const Navbar = lazy(() => import("../navbar/components/Navbar"));
 const Aside = lazy(() => import("../aside/components/Aside"));
 const Footer = lazy(() => import("../footer/components/Footer"));
@@ -12,7 +13,6 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [user, setUser] = useState();
 
-	const router = useRouter();
 	const pathname = usePathname().split("/");
 
 	useEffect(() => {
@@ -23,30 +23,14 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 				setUser(user);
 			}
 
-			if (
-				error &&
-				!pathname[pathname.length - 1].includes("signin") &&
-				!pathname[pathname.length - 1].includes("signup")
-			) {
-				router.push("/signin");
-				return;
+			if (user || error) {
+				setIsLoading(false);
 			}
-
-			if (
-				user &&
-				(pathname[pathname.length - 1].includes("signin") ||
-					pathname[pathname.length - 1].includes("signup"))
-			) {
-				router.push("/");
-				return;
-			}
-
-			setIsLoading(false);
 		})();
 	}, [pathname]);
 
 	if (isLoading) {
-		return <h1>Loading</h1>;
+		return <Loader />;
 	}
 
 	return user ? (
@@ -61,7 +45,9 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 			</div>
 		</>
 	) : (
-		<JoinLayout>{children}</JoinLayout>
+		<>
+			<JoinLayout>{children}</JoinLayout>
+		</>
 	);
 };
 
