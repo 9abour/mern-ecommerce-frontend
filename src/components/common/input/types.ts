@@ -17,4 +17,5 @@ export interface IInputProductSearch extends IInputSearch {
 export interface IFormInput extends IInputSearch {
 	name?: string;
 	required?: boolean;
+	autoFocus?: boolean;
 }

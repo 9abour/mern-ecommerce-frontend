@@ -12,8 +12,7 @@ const Footer = lazy(() => import("../footer/components/Footer"));
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [user, setUser] = useState();
-
-	const pathname = usePathname().split("/");
+	const pathname = usePathname();
 
 	useEffect(() => {
 		(async () => {

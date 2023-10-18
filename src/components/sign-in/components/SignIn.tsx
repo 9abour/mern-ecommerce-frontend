@@ -33,7 +33,13 @@ const SignIn = () => {
 		>
 			<h1 className="font-bold text-5xl mb-4">Welcome Back</h1>
 
-			<FormInput type="text" name="username" placeholder="Username" required />
+			<FormInput
+				type="text"
+				name="username"
+				placeholder="Username"
+				required
+				autoFocus={true}
+			/>
 			<FormInput
 				type="password"
 				name="password"

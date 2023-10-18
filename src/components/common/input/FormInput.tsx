@@ -10,6 +10,7 @@ const FormInput = ({
 	customStyles,
 	required,
 	name,
+	autoFocus,
 }: IFormInput) => {
 	const [searchProps, resetSearch] = useInput("");
 
@@ -22,6 +23,7 @@ const FormInput = ({
 			onChange={searchProps.onChange}
 			required={required}
 			name={name}
+			autoFocus={autoFocus}
 		/>
 	);
 };
