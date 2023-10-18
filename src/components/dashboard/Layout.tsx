@@ -44,7 +44,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 			</div>
 		</>
 	) : (
-		<>{/* <JoinLayout>{children}</JoinLayout> */}</>
+		!isLoading && <JoinLayout>{children}</JoinLayout>
 	);
 };
 
