@@ -22,23 +22,25 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 			setUser(user);
 
 			protectAuth(user, error);
-
-			if (user || error) {
-				setIsLoading(false);
-			}
 		})();
 	}, []);
 
-	function protectAuth<T>(user: T, error: T) {
-		if (user && (pathname.includes("signin") || pathname.includes("signup"))) {
+	async function protectAuth<T>(user: T, error: T) {
+		const userAuthenticated =
+			(await user) &&
+			(pathname.includes("signin") || pathname.includes("signup"));
+		const userNotAuthenticated =
+			(await error) &&
+			(!pathname.includes("signin") || !pathname.includes("signup"));
+
+		if (userAuthenticated) {
 			location.pathname = "/";
+		} else if (userNotAuthenticated) {
+			push("/signin");
 		}
 
-		if (
-			error &&
-			(!pathname.includes("signin") || !pathname.includes("signup"))
-		) {
-			push("/signin");
+		if (user || error) {
+			setIsLoading(false);
 		}
 	}
 
