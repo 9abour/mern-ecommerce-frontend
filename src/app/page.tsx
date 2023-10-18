@@ -1,5 +1,4 @@
 import PopularCategory from "@/components/categories/PopularCategory";
-import { getUser } from "@/helpers/getUser";
 import { lazy } from "react";
 
 const Hero = lazy(() => import("@/components/hero/components/Hero"));

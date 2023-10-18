@@ -1,7 +1,6 @@
 "use client";
 
 import React, { ReactNode, lazy, useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
 import { getUser } from "@/helpers/getUser";
 const Navbar = lazy(() => import("../navbar/components/Navbar"));
 const Aside = lazy(() => import("../aside/components/Aside"));
@@ -12,8 +11,6 @@ const Loader = lazy(() => import("../common/loading/Loader"));
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [user, setUser] = useState(null);
-	const pathname = usePathname();
-	const { push } = useRouter();
 
 	useEffect(() => {
 		(async () => {
@@ -21,32 +18,17 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 
 			setUser(user);
 
-			protectAuth(user, error);
+			if (user || error) {
+				setIsLoading(false);
+			}
 		})();
 	}, []);
 
-	async function protectAuth<T>(user: T, error: T) {
-		const userAuthenticated =
-			(await user) &&
-			(pathname.includes("signin") || pathname.includes("signup"));
-		const userNotAuthenticated =
-			(await error) &&
-			(!pathname.includes("signin") || !pathname.includes("signup"));
-
-		if (userAuthenticated) {
-			location.pathname = "/";
-		} else if (userNotAuthenticated) {
-			push("/signin");
-		}
-
-		if (user || error) {
-			setIsLoading(false);
-		}
+	if (isLoading) {
+		return <Loader />;
 	}
 
-	return isLoading ? (
-		<Loader />
-	) : user ? (
+	return user ? (
 		<>
 			<Navbar />
 			<div className="flex pt-[70px]">

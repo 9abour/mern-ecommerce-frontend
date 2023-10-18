@@ -1,10 +1,10 @@
 import axios, { AxiosError } from "axios";
 
 export const getUser = async () => {
-	const pathname = window.location.pathname;
-
 	try {
 		const { data } = await axios.get("/api/auth/user");
+
+		console.log(data);
 
 		return {
 			user: data,

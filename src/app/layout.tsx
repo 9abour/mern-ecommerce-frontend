@@ -6,9 +6,15 @@ import { Outfit } from "next/font/google";
 import { ReduxProvider } from "@/rtk/Provider";
 import { Toaster } from "sonner";
 import { lazy } from "react";
+import { Metadata } from "next";
 const DashboardLayout = lazy(() => import("@/components/dashboard/Layout"));
 
 const inter = Outfit({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+	title: "E-commerce",
+	description: "E-commerce app",
+};
 
 export default function RootLayout({
 	children,
