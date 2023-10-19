@@ -17,7 +17,7 @@ const PopularCategoryCard = ({
 		>
 			<div className="relative w-fit flex flex-col items-center text-primary z-10">
 				<span
-					className={`w-fit bg-white/40 text-white backdrop-blur-sm drop-shadow text-xs lg:text-2xl font-bold rounded-[45px] py-1 px-4`}
+					className={`w-fit bg-white/40 text-white drop-shadow text-xs lg:text-2xl font-bold rounded-[45px] py-1 px-4`}
 				>
 					03
 				</span>
