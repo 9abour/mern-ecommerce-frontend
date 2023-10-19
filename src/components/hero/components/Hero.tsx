@@ -110,6 +110,7 @@ const Hero = () => {
 				height={400}
 				src="/hero-bg.jpg"
 				alt="heroShapes"
+				loading="eager"
 				className="w-full h-full absolute top-0 left-0 opacity-[2%] object-cover z-0"
 			/>
 		</section>
