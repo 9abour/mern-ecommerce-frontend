@@ -8,7 +8,7 @@ import { toast } from "sonner";
 const SignOff = () => {
 	const signOff = async () => {
 		try {
-			await axios.post("api/auth/signoff");
+			await axios.post("/api/auth/signoff");
 			window.location.reload();
 			toast.success("Signed Off");
 		} catch (e) {
