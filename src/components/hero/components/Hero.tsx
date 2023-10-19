@@ -11,7 +11,7 @@ const Hero = () => {
 	const swiperRef: any = useRef();
 
 	return (
-		<section className="relative w-full mx-auto ml-auto md:w-[calc(100%+24px)] h-[35rem] mt-[-86px] bg-gradient-to-b from-primary to-primaryDark md:rounded-bl-[45px] overflow-hidden before:absolute before:w-full before:h-full before:top-0 before:left-0 before:bg-[url('/hero-bg.jpg')] before:bg-cover before:bg-no-repeat before:opacity-[3%] z-0">
+		<section className="relative w-full mx-auto ml-auto md:w-[calc(100%+24px)] h-[35rem] mt-[-86px] bg-gradient-to-b from-primary to-primaryDark md:rounded-bl-[45px] overflow-hidden">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				version="1.1"
@@ -104,6 +104,14 @@ const Hero = () => {
 					onclick={() => swiperRef.current.slidePrev()}
 				/>
 			</div>
+
+			<Image
+				src="/hero-bg.jpg"
+				alt="heroShapes"
+				loading="eager"
+				fill={true}
+				className="w-full h-full absolute top-0 left-0 opacity-[2%] object-cover z-0"
+			/>
 		</section>
 	);
 };
