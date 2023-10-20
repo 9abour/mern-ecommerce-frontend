@@ -7,6 +7,7 @@ const Aside = lazy(() => import("../aside/components/Aside"));
 const Footer = lazy(() => import("../footer/components/Footer"));
 const JoinLayout = lazy(() => import("../join/Layout"));
 const Loader = lazy(() => import("../common/loading/Loader"));
+const Basket = lazy(() => import("../basket/components/Basket"));
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
 	const [isLoading, setIsLoading] = useState(true);
@@ -34,7 +35,10 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 			<div className="flex pt-[70px]">
 				<Aside />
 				<div className="w-full md:w-[calc(100%-248px)] md:ml-[224px] md:mr-[24px] mt-[5rem] flex flex-col justify-between h-[calc(100vh-150px)]">
-					<main>{children}</main>
+					<main>
+						<Basket />
+						{children}
+					</main>
 					<Footer />
 				</div>
 			</div>

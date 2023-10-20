@@ -37,7 +37,8 @@ const Aside = () => {
 				animate={isMenuOpen ? "open" : "closed"}
 				variants={{
 					open: {
-						clipPath: "inset(0% 0% 0% 0% round 0)",
+						x: 0,
+						width: "auto",
 						transition: {
 							type: "spring",
 							bounce: 0,
@@ -47,12 +48,14 @@ const Aside = () => {
 						},
 					},
 					closed: {
-						clipPath: "inset(0% 100% 0% 0% round 0)",
+						width: 0,
+						x: "-200px",
 						transition: {
 							type: "spring",
 							bounce: 0,
 							duration: 0.3,
 						},
+						overflow: "hidden",
 					},
 				}}
 			>

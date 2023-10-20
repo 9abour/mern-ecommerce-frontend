@@ -6,7 +6,7 @@ import { BsClockHistory } from "react-icons/bs";
 const Footer = () => {
 	return (
 		<footer className="w-full mt-[4rem]">
-			<div className="bg-dark flex items-center flex-col lg:flex-row mx-auto gap-8 lg:gap-2 container h-full py-8 lg:py-16 rounded-t-3xl [&>:not(:first-child)]:pr-2 md:[&>:not(:first-child)]:pr-4">
+			<div className="bg-dark flex items-center flex-col lg:flex-row mx-auto gap-8 lg:gap-2 container h-full py-12 lg:py-16 rounded-t-3xl [&>:not(:first-child)]:pr-2 md:[&>:not(:first-child)]:pr-4">
 				<div className="flex w-11/12 mr-auto lg:w-4/12 h-[50px] items-center gap-1 bg-secondaryDark py-2 px-1 rounded-r-full">
 					<div className="flex justify-center items-center gap-2 text-white">
 						<PiBowlFoodFill className="text-4xl lg:text-4xl" />

@@ -8,6 +8,7 @@ import { addToCart, removeFromCart } from "@/rtk/slices/cart/cartSlice";
 import { IProduct } from "@/components/products/types";
 import { usePathname, useRouter } from "next/navigation";
 import { useCheckProductIn } from "@/hooks/useCheckProductIn";
+import { productInBasket } from "@/components/basket/helper/getProduct";
 
 const AddToCartButton = ({
 	customStyles,
@@ -18,7 +19,10 @@ const AddToCartButton = ({
 }) => {
 	const dispatch = useAppDispatch();
 	const { products } = useAppSelector(state => state.cartSlice);
+	const basketProducts = useAppSelector(state => state.basketSlice.products);
+
 	const inCart = useCheckProductIn(product.id, products);
+	const inBasket = productInBasket(product.id, basketProducts);
 
 	const pathname = usePathname().split("/");
 	const router = useRouter();

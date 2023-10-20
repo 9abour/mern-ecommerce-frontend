@@ -5,6 +5,7 @@ import AddToCartButton from "../common/button/AddToCartButton";
 import { IProduct } from "../products/types";
 import IconButton from "../common/button/IconButton";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { TbBasketCheck, TbBasketMinus, TbBasketPlus } from "react-icons/tb";
 import { BiShow } from "react-icons/bi";
 import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
 import {
@@ -14,6 +15,8 @@ import {
 import { useCheckProductIn } from "@/hooks/useCheckProductIn";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { productInBasket } from "../basket/helper/getProduct";
+import { addToBasket, removeFromBasket } from "@/rtk/slices/basket/basketSlice";
 
 const ProductCard = ({ product }: { product: IProduct }) => {
 	const { id, slug, name, price, image, available, rate } = product;
@@ -21,8 +24,10 @@ const ProductCard = ({ product }: { product: IProduct }) => {
 	const dispatch = useAppDispatch();
 	const { products } = useAppSelector(state => state.wishlistSlice);
 	const cartProducts = useAppSelector(state => state.cartSlice.products);
+	const basketProducts = useAppSelector(state => state.basketSlice.products);
 	const inWishlist = useCheckProductIn(id, products);
 	const inCart = useCheckProductIn(id, cartProducts);
+	const inBasket = productInBasket(id, basketProducts);
 
 	const router = useRouter();
 
@@ -50,12 +55,12 @@ const ProductCard = ({ product }: { product: IProduct }) => {
 						<IconButton
 							icon={
 								inWishlist ? (
-									<AiFillHeart className="text-primary" size={20} />
+									<AiFillHeart size={20} />
 								) : (
 									<AiOutlineHeart size={20} />
 								)
 							}
-							customStyles={`w-[30px] h-[30px] bg-white shadow-cYellow ${
+							customStyles={`!w-[30px] !h-[30px] bg-white shadow-cYellow ${
 								inWishlist ? "" : "hover:bg-primary"
 							} transition-all`}
 							onclick={() =>
@@ -67,8 +72,26 @@ const ProductCard = ({ product }: { product: IProduct }) => {
 							}
 						/>
 						<IconButton
+							icon={
+								!inBasket ? (
+									<TbBasketPlus size={20} />
+								) : (
+									<TbBasketCheck size={20} />
+								)
+							}
+							customStyles={`!w-[30px] !h-[30px] bg-white shadow-cYellow hover:bg-primary transition-all`}
+							onclick={() =>
+								dispatch(
+									inBasket || inCart
+										? removeFromBasket(product.id)
+										: addToBasket(product)
+								)
+							}
+							disabled={inCart}
+						/>
+						<IconButton
 							icon={<BiShow size={20} />}
-							customStyles="w-[30px] h-[30px] bg-white shadow-cYellow hover:bg-primary transition-all"
+							customStyles="!w-[30px] !h-[30px] bg-white shadow-cYellow hover:bg-primary transition-all"
 							onclick={() => router.push(`/product-details/${slug}`)}
 						/>
 					</div>

@@ -24,7 +24,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<Toaster richColors />
+				<Toaster richColors position="bottom-left" />
 				<ReduxProvider>
 					<DashboardLayout>{children}</DashboardLayout>
 				</ReduxProvider>
