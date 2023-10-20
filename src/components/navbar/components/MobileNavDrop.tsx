@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { IMenuButton } from "@/components/common/button/types";
 import InputSearch from "@/components/common/input/InputSearch";
@@ -10,6 +10,16 @@ import { usePathname } from "next/navigation";
 
 const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 	const isMidScreenValue = useMediaQuery({ query: "(max-width: 768px)" });
+
+	const [height, setHeight] = useState(0);
+
+	const refHeight = useRef<HTMLDivElement | null>(null);
+
+	useEffect(() => {
+		if (refHeight.current) {
+			setHeight(refHeight.current.offsetHeight);
+		}
+	}, [refHeight]);
 
 	const pathname = usePathname();
 
@@ -25,11 +35,12 @@ const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 
 	return (
 		<motion.div
+			ref={refHeight}
 			initial={isMenuOpen}
 			animate={isMenuOpen ? "open" : "closed"}
 			variants={{
 				open: {
-					clipPath: "inset(0% 0% 0% 0% round 0)",
+					y: 0,
 					transition: {
 						type: "spring",
 						bounce: 0,
@@ -39,7 +50,7 @@ const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 					},
 				},
 				closed: {
-					clipPath: "inset(0% 0% 100% 0% round 0)",
+					y: -height - 70,
 					transition: {
 						type: "spring",
 						bounce: 0,
@@ -47,26 +58,24 @@ const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 					},
 				},
 			}}
-			className={`absolute w-full top-[70px] left-0 bg-secondaryDark flex flex-col md z-[1]`}
+			className={`fixed w-full top-[70px] left-0 bg-secondaryDark flex flex-col rounded-b-xl pt-8 pb-4 z-10`}
 		>
-			<MobileNavDropItem translate="y" customStyles="flex gap-2">
+			<div className="flex gap-2">
 				<InputSearch
 					type="text"
 					placeholder="Search"
 					customStyles="flex md:hidden ml-2"
 				/>
 				<User />
-			</MobileNavDropItem>
+			</div>
 
 			<div className="w-full p-2">
-				<MobileNavDropItem translate="y" customStyles="!m-0">
-					<ul>
-						<NavbarMobileLink href={`/cart`} name="Cart" />
-						<NavbarMobileLink href={`/wishlist`} name="Wishlist" />
-						<NavbarMobileLink href={`/menu`} name="Menu" />
-						<NavbarMobileLink href={`/categories`} name="Categories" />
-					</ul>
-				</MobileNavDropItem>
+				<ul>
+					<NavbarMobileLink href={`/cart`} name="Cart" />
+					<NavbarMobileLink href={`/wishlist`} name="Wishlist" />
+					<NavbarMobileLink href={`/menu`} name="Menu" />
+					<NavbarMobileLink href={`/categories`} name="Categories" />
+				</ul>
 			</div>
 		</motion.div>
 	);
