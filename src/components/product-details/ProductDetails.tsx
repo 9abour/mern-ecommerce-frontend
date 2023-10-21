@@ -7,9 +7,10 @@ import { AiFillStar } from "react-icons/ai";
 import AddToCartButton from "../common/button/AddToCartButton";
 import IconButton from "../common/button/IconButton";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
-import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
+import { useAppSelector } from "@/rtk/store/store";
 import ProductCard from "../production/ProductCard";
 import { productInCart } from "../cart/helper/productInCart";
+import { useRouter } from "next/navigation";
 
 const ProductDetails = () => {
 	const [count, setCount] = useState(1);
@@ -35,6 +36,8 @@ const ProductDetails = () => {
 
 	const inCart = productInCart(product.id, products);
 
+	const { push } = useRouter();
+
 	return (
 		<section className="relative container mx-auto flex flex-col lg:flex-row items-center gap-[4rem] py-16 px-6 lg:px-16 shadow-clg rounded-3xl overflow-hidden z-0">
 			<div className="w-full lg:w-7/12 flex flex-col gap-4 mb-auto">
@@ -56,6 +59,7 @@ const ProductDetails = () => {
 									key={index}
 									text="Tag"
 									customStyles="bg-white hover:bg-primary font-semibold rounded-full py-2 px-4 shadow-csm border mr-2 transition-all"
+									onclick={() => push(`/products/tag`)}
 								/>
 							))}
 						</div>

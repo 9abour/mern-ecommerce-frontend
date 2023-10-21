@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Ref } from "react";
 import Menu from "./Menu";
 import LineBottom from "../../common/LineBottom";
 import SignOff from "../../common/button/SignOff";
@@ -22,7 +22,7 @@ const Aside = () => {
 		setIsMenuOpen(false);
 	}
 
-	let ref: any = useOnClickOutside(handleOnClickOutside, isMidScreenValue);
+	let ref: Ref<any> = useOnClickOutside(handleOnClickOutside, isMidScreenValue);
 
 	return (
 		<div ref={ref} className="fixed z-50">
@@ -43,13 +43,15 @@ const Aside = () => {
 							type: "spring",
 							bounce: 0,
 							duration: 0.7,
-							delayChildren: 0.3,
+							delayChildren: 0.4,
 							staggerChildren: 0.05,
 						},
 					},
 					closed: {
-						width: 0,
-						x: "-200px",
+						width: "auto",
+
+						x: "-250px",
+						filter: "blur(2px)",
 						transition: {
 							type: "spring",
 							bounce: 0,
@@ -60,7 +62,7 @@ const Aside = () => {
 				}}
 			>
 				<aside
-					className={`w-[200px] max-w-[200px] h-[calc(100vh-152px)] md:h-[calc(100vh-86px)] rounded-tr-[45px] bg-dark mr-6 mt-4 pt-4 shadow-slate-100 overflow-y-scroll aside-container`}
+					className={`w-[200px] max-w-[200px] h-[calc(100vh-152px)] md:h-[calc(100vh-84px)] rounded-tr-[45px] bg-dark mr-6 mt-4 pt-4 shadow-slate-100 overflow-y-scroll aside-container`}
 				>
 					<DropMotionItem translate="x">
 						<Menu />

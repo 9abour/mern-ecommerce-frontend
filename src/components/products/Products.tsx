@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import ProductCard from "../production/ProductCard";
 import Filters from "../filters/components/Filters";
 import { usePathname } from "next/navigation";
+import { IFilters } from "../filters/types";
 
 const Products = () => {
 	const currentProductsCategory = usePathname()
@@ -28,6 +29,13 @@ const Products = () => {
 		count: 1,
 	};
 
+	const [filters, setFilters] = useState<IFilters>({
+		category: [],
+		availability: [],
+		rate: [],
+		price: [0, 0],
+	});
+
 	return (
 		<div className="container mx-auto px-4">
 			<h3
@@ -36,7 +44,7 @@ const Products = () => {
 				Products for - {currentProductsCategory}
 			</h3>
 
-			<Filters />
+			<Filters filters={filters} setFilters={setFilters} />
 			<div className="flex flex-wrap justify-between gap-16 my-8">
 				<ProductCard product={product} />
 				<ProductCard product={product} />

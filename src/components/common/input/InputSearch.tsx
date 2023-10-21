@@ -18,8 +18,10 @@ const InputSearch = ({ type, placeholder, customStyles }: IInputSearch) => {
 
 	const handleOnSubmit = (e: FormEvent) => {
 		e.preventDefault();
-		router.push(`/search/p=${searchProps.value}`);
-		setFormIsActive(false);
+		if (searchProps.value) {
+			router.push(`/search/p=${searchProps.value}`);
+			setFormIsActive(false);
+		}
 	};
 
 	return (

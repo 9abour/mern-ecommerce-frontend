@@ -1,10 +1,10 @@
-import { IFilterOption } from "../types";
+import { IFilterOptions } from "../types";
 
 export class FiltersHelper {
 	public static selectOption(
-		id: number,
-		list: IFilterOption[]
-	): IFilterOption[] {
+		id: string,
+		list: IFilterOptions[]
+	): IFilterOptions[] {
 		const updatedList = list.map(option => {
 			if (option.id === id) {
 				return {

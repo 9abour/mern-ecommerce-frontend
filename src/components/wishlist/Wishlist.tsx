@@ -64,7 +64,7 @@ const Wishlist = () => {
 							<path d="M1.15 1.878a.514.514 0 0 1 .728-.727l16.971 16.971a.514.514 0 0 1-.727.727L1.151 1.878Z" />
 						</g>
 					</svg>
-					<h3 className="font-semibold">Your wishlist is empty!</h3>
+					<h3 className="font-semibold text-4xl">Your wishlist is empty!</h3>
 				</div>
 			)}
 		</section>

@@ -10,6 +10,23 @@ import { Swiper, SwiperSlide } from "swiper/react";
 const Hero = () => {
 	const swiperRef: any = useRef();
 
+	const product = {
+		id: "1",
+		slug: "angus-burger",
+		name: "Angus Burger",
+		description:
+			"a patty of ground beef grilled and placed between two halves of a bun.",
+		price: 11.2,
+		discount: 10,
+		image: "/burger.png",
+		available: true,
+		inCart: false,
+		rate: 4,
+		weight: "250g",
+		categories: ["Food", "Burgers"],
+		count: 1,
+	};
+
 	return (
 		<section className="relative w-full mx-auto ml-auto md:w-[calc(100%+24px)] h-[35rem] mt-[-86px] bg-gradient-to-b from-primary to-primaryDark md:rounded-bl-[45px] overflow-hidden">
 			<svg
@@ -75,10 +92,10 @@ const Hero = () => {
 				}}
 				className="h-full"
 			>
-				{Array.from(Array(10)).map((_, i) => (
+				{Array.from(Array(5)).map((_, i) => (
 					<SwiperSlide key={i} className="pl-4">
 						<div className="h-full flex flex-col-reverse sm:flex-row justify-center items-center md:!mx-[-24px] !px-[24px] py-[70px]">
-							<TextInfo />
+							<TextInfo product={product} />
 							<Image
 								src="/burger.png"
 								width={400}

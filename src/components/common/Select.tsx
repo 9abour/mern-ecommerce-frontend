@@ -13,7 +13,7 @@ const optionsAnimate = {
 			type: "spring",
 			bounce: 0,
 			duration: 0.7,
-			delayChildren: 0.3,
+			delayChildren: 0.2,
 			staggerChildren: 0.05,
 		},
 	},
@@ -22,7 +22,7 @@ const optionsAnimate = {
 		transition: {
 			type: "spring",
 			bounce: 0,
-			duration: 0.3,
+			duration: 0.2,
 		},
 	},
 };
@@ -50,7 +50,7 @@ const Select = ({ label, options, setOptions }: ISelect) => {
 		<div className="relative" ref={ref}>
 			<button
 				onClick={() => setOptionsIsOpen(!optionsIsOpen)}
-				className="flex items-center gap-1 text-dark"
+				className="flex items-center gap-1 text-secondaryDark"
 			>
 				<span className="text-[12px] lg:text-sm uppercase font-semibold">
 					{label}

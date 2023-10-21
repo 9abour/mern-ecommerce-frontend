@@ -9,6 +9,7 @@ export interface ICategory {
 
 export interface IPopularCategoryCard {
 	name: string;
+	slug: string;
 	image: string | StaticImageData;
 	bg: string;
 	customStyles?: string;

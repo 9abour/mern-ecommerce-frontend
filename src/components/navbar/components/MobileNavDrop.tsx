@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { IMenuButton } from "@/components/common/button/types";
 import InputSearch from "@/components/common/input/InputSearch";
 import User from "./User";
-import MobileNavDropItem from "./MobileNavDropItem";
 import NavbarMobileLink from "./NavbarMobileLink";
 import { useMediaQuery } from "react-responsive";
 import { usePathname } from "next/navigation";
@@ -14,14 +13,13 @@ const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 	const [height, setHeight] = useState(0);
 
 	const refHeight = useRef<HTMLDivElement | null>(null);
+	const pathname = usePathname();
 
 	useEffect(() => {
 		if (refHeight.current) {
 			setHeight(refHeight.current.offsetHeight);
 		}
 	}, [refHeight]);
-
-	const pathname = usePathname();
 
 	useEffect(() => {
 		if (isMenuOpen) {
@@ -71,9 +69,9 @@ const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 
 			<div className="w-full p-2">
 				<ul>
+					<NavbarMobileLink href={`/`} name="Home" />
 					<NavbarMobileLink href={`/cart`} name="Cart" />
 					<NavbarMobileLink href={`/wishlist`} name="Wishlist" />
-					<NavbarMobileLink href={`/menu`} name="Menu" />
 					<NavbarMobileLink href={`/categories`} name="Categories" />
 				</ul>
 			</div>

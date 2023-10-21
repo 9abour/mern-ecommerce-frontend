@@ -1,4 +1,4 @@
-import { IFilterOption } from "../filters/types";
+import { IFilterOptions } from "../filters/types";
 
 export interface ILineBottom {
 	customStyles?: string;
@@ -6,6 +6,6 @@ export interface ILineBottom {
 
 export interface ISelect {
 	label: string;
-	options: IFilterOption[];
-	setOptions: (options: IFilterOption[]) => void;
+	options: IFilterOptions[];
+	setOptions: (options: IFilterOptions[]) => void;
 }

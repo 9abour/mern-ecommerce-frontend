@@ -11,12 +11,14 @@ const PopularCategory = () => {
 				<div className="grid gap-2 lg:gap-4">
 					<PopularCategoryCard
 						name="Burger"
+						slug="burger"
 						image={burger}
 						bg="bg-sky-500"
 						customStyles="left-0"
 					/>
 					<PopularCategoryCard
 						name="Burger"
+						slug="burger"
 						image={burger}
 						bg="bg-[#f5d34e]"
 						customStyles="left-0"
@@ -24,6 +26,7 @@ const PopularCategory = () => {
 				</div>
 				<PopularCategoryCard
 					name="Burger"
+					slug="burger"
 					image={burger}
 					bg="bg-[#76acf5]"
 					customStyles="left-0"
@@ -33,12 +36,14 @@ const PopularCategory = () => {
 				<div className="grid gap-2 lg:gap-4">
 					<PopularCategoryCard
 						name="Burger"
+						slug="burger"
 						image={burger}
 						bg="bg-[#ff8d31]"
 						customStyles="left-0"
 					/>
 					<PopularCategoryCard
 						name="Burger"
+						slug="burger"
 						image={burger}
 						bg="bg-[#fe7f84]"
 						customStyles="left-0"

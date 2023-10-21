@@ -94,7 +94,7 @@ const Cart = () => {
 							<path d="M9.75 5a2.25 2.25 0 0 1 4.5 0v1c.566 0 1.062.002 1.5.015V5a3.75 3.75 0 1 0-7.5 0v1.015C8.688 6.002 9.184 6 9.75 6V5Zm-.22 5.47a.75.75 0 0 0-1.06 1.06L10.94 14l-2.47 2.47a.75.75 0 1 0 1.06 1.06L12 15.06l2.47 2.47a.75.75 0 0 0 1.06-1.06L13.06 14l2.47-2.47a.75.75 0 0 0-1.06-1.06L12 12.94l-2.47-2.47Z" />
 						</g>
 					</svg>
-					<h3 className="font-semibold">Your cart is empty!</h3>
+					<h3 className="font-semibold text-4xl">Your cart is empty!</h3>
 				</div>
 			)}
 		</section>

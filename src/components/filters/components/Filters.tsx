@@ -1,56 +1,108 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Select from "@/components/common/Select";
 import { RangeSlider } from "rsuite";
-import InputSearch from "@/components/common/input/InputSearch";
-import InputProductSearch from "@/components/common/input/InputProductSearch";
+import { IFiltersProps } from "@/components/search/types";
+import { IFilterOptions } from "../types";
 
-const Filters = () => {
+const Filters = ({ filters, setFilters }: IFiltersProps) => {
 	const [rangePrice, setRangePrice] = useState<[number, number]>([0, 10]);
-	const [options, setOptions] = useState<any>([
+
+	const [category, setCategory] = useState<IFilterOptions[]>([
 		{
-			id: 0,
+			id: "0",
 			content: "burger1",
 			isSelected: false,
 		},
 		{
-			id: 1,
+			id: "1",
 			content: "burger2",
 			isSelected: false,
 		},
 		{
-			id: 2,
+			id: "2",
 			content: "burger3",
 			isSelected: false,
 		},
 	]);
 
+	const [availability, setAvailability] = useState<IFilterOptions[]>([
+		{
+			id: "0",
+			content: "Available",
+			isSelected: false,
+		},
+	]);
+
+	const [rating, setRating] = useState<IFilterOptions[]>([
+		{
+			id: "0",
+			content: "1 star",
+			isSelected: false,
+		},
+		{
+			id: "1",
+			content: "2 star",
+			isSelected: false,
+		},
+		{
+			id: "2",
+			content: "3 star",
+			isSelected: false,
+		},
+		{
+			id: "3",
+			content: "4 star",
+			isSelected: false,
+		},
+		{
+			id: "4",
+			content: "5 star",
+			isSelected: false,
+		},
+	]);
+
+	useEffect(() => {
+		setFilters({
+			category,
+			availability,
+			rate: rating,
+			price: rangePrice,
+		});
+	}, [rangePrice, category, availability, rating]);
+
 	return (
 		<>
-			<div className="flex flex-col sm:flex-row items-center gap-4 my-4">
+			<div className="flex flex-col-reverse sm:flex-row items-center gap-4 my-4">
 				<div className="flex items-center justify-center sm:justify-start gap-4 container px-4 md:px-0 mx-auto [&>:first-child>div]:left-0 [&>:first-child>div]:translate-x-0 [&>:last-child>div]:left-auto [&>:last-child>div]:right-0 [&>:last-child>div]:translate-x-0">
-					<Select options={options} setOptions={setOptions} label="Category" />
 					<Select
-						options={options}
-						setOptions={setOptions}
+						options={category}
+						setOptions={setCategory}
+						label="Category"
+					/>
+					<Select
+						options={availability}
+						setOptions={setAvailability}
 						label="Availability"
 					/>
-					<Select options={options} setOptions={setOptions} label="type" />
-					<Select options={options} setOptions={setOptions} label="rating" />
+					<Select options={rating} setOptions={setRating} label="rating" />
 				</div>
 
-				<div className="w-full max-w-[500px] flex items-center justify-center gap-4 px-4 md:px-0">
-					<span className="text-[12px] lg:text-sm uppercase font-semibold">
-						Pricing
-					</span>
+				<div className="w-full max-w-[500px] flex flex-col mx-8">
+					<div className="text-start flex justify-between mb-2 font-semibold [&>span]:w-full">
+						<span>{rangePrice[0]}$</span>
+						<span className="text-center text-[12px] lg:text-sm uppercase font-semibold">
+							Pricing
+						</span>
+						<span className="text-end">{rangePrice[1]}$</span>
+					</div>
 					<RangeSlider
 						defaultValue={[10, 50]}
 						handleStyle={{ backgroundColor: "#2E2E2E" }}
 						renderTooltip={num => "$" + num}
 						value={rangePrice}
 						onChange={setRangePrice}
-						className="w-full"
 					/>
 				</div>
 			</div>

@@ -8,7 +8,13 @@ const SignUp = () => {
 		<form className="w-full max-w-[400px] flex flex-col gap-2">
 			<h1 className="font-bold text-5xl mb-4">Create Account</h1>
 
-			<FormInput type="text" name="username" placeholder="Username" required />
+			<FormInput
+				type="text"
+				name="username"
+				placeholder="Username"
+				required
+				autoFocus={true}
+			/>
 			<FormInput type="password" placeholder="Password" required />
 			<FormInput type="password" placeholder="Confirm Password" required />
 			<TextButton

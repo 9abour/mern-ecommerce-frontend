@@ -1,9 +1,11 @@
 import React from "react";
 import { IPopularCategoryCard } from "./types";
 import Image from "next/image";
+import Link from "next/link";
 
 const PopularCategoryCard = ({
 	name,
+	slug,
 	image,
 	bg,
 	customStyles,
@@ -41,9 +43,11 @@ const PopularCategoryCard = ({
 				/>
 			</div>
 
-			<h2 className="absolute bottom-3 lg:bottom-5 text-2xl sm:text-3xl lg:text-5xl font-bold text-white z-10">
-				{name}
-			</h2>
+			<Link href={`products/${slug}`}>
+				<h2 className="absolute bottom-3 lg:bottom-5 text-2xl sm:text-3xl lg:text-5xl font-bold hover:text-white text-gray-50 transition-all z-10">
+					{name}
+				</h2>
+			</Link>
 
 			<div
 				className={`absolute w-[150px] sm:w-[200px] lg:w-[250px] right-[-50px] top-[-60px] z-0 ${
