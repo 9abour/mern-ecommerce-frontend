@@ -12,14 +12,14 @@ const Tabs = ({
 	setIsActive: (e: ITab) => void;
 }) => {
 	return (
-		<div>
+		<div className="flex flex-wrap gap-1">
 			{list.map(tab => (
 				<TextButton
 					key={tab.name}
 					text={tab.name}
 					customStyles={`${
 						isActive.name === tab.name ? "!bg-dark !text-white" : ""
-					} bg-gray-200 hover:bg-secondaryDark uppercase ml-1 sm:ml-3 w-[90px] sm:w-[100px] text-[10px] sm:text-xs !text-dark hover:!text-gray-200 font-semibold`}
+					} !py-2 !px-0 bg-gray-200 hover:bg-secondaryDark uppercase w-[80px] sm:w-[100px] text-[10px] sm:text-xs !text-dark hover:!text-gray-200 font-semibold`}
 					onclick={() => setIsActive(tab)}
 				/>
 			))}

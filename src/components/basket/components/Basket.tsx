@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BasketItem from "./BasketItem";
 import { motion } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
@@ -21,6 +21,12 @@ const Basket = () => {
 		});
 		dispatch(clearBasket());
 	};
+
+	useEffect(() => {
+		if (products.length === 0) {
+			setIsOpen(true);
+		}
+	}, [products]);
 
 	return (
 		<div className="fixed bottom-0 right-4 w-[250px] h-fit rounded-t-lg border shadow-csm overflow-hidden bg-gray-50 z-50">

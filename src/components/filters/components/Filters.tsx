@@ -5,6 +5,7 @@ import Select from "@/components/common/Select";
 import { RangeSlider } from "rsuite";
 import { IFiltersProps } from "@/components/search/types";
 import { IFilterOptions } from "../types";
+import { FiltersHelper } from "../helpers/filters.helper";
 
 const Filters = ({ filters, setFilters }: IFiltersProps) => {
 	const [rangePrice, setRangePrice] = useState<[number, number]>([0, 10]);
@@ -12,17 +13,17 @@ const Filters = ({ filters, setFilters }: IFiltersProps) => {
 	const [category, setCategory] = useState<IFilterOptions[]>([
 		{
 			id: "0",
-			content: "burger1",
+			content: "Burgers",
 			isSelected: false,
 		},
 		{
 			id: "1",
-			content: "burger2",
+			content: "Food",
 			isSelected: false,
 		},
 		{
 			id: "2",
-			content: "burger3",
+			content: "Burgers",
 			isSelected: false,
 		},
 	]);
@@ -64,10 +65,14 @@ const Filters = ({ filters, setFilters }: IFiltersProps) => {
 	]);
 
 	useEffect(() => {
+		const selectedCategories = FiltersHelper.getSelectedOptions(category);
+		const selectedAvailability = FiltersHelper.getSelectedOptions(availability);
+		const selectedRating = FiltersHelper.getSelectedOptions(rating);
+
 		setFilters({
-			category,
-			availability,
-			rate: rating,
+			category: selectedCategories,
+			availability: selectedAvailability,
+			rate: selectedRating,
 			price: rangePrice,
 		});
 	}, [rangePrice, category, availability, rating]);

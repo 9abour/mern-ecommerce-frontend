@@ -12,6 +12,7 @@ import { useMediaQuery } from "usehooks-ts";
 
 const Aside = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [display, setDisplay] = useState("");
 	const isMidScreenValue = useMediaQuery("(max-width: 768px)");
 
 	useEffect(() => {
@@ -23,6 +24,16 @@ const Aside = () => {
 	}
 
 	let ref: Ref<any> = useOnClickOutside(handleOnClickOutside, isMidScreenValue);
+
+	useEffect(() => {
+		if (isMenuOpen) {
+			setDisplay("");
+		} else {
+			setTimeout(() => {
+				setDisplay("none");
+			}, 500);
+		}
+	}, [isMenuOpen]);
 
 	return (
 		<div ref={ref} className="fixed z-50">
@@ -48,16 +59,13 @@ const Aside = () => {
 						},
 					},
 					closed: {
-						width: "auto",
-
 						x: "-250px",
-						filter: "blur(2px)",
+						display: display,
 						transition: {
 							type: "spring",
 							bounce: 0,
-							duration: 0.3,
+							duration: 0.5,
 						},
-						overflow: "hidden",
 					},
 				}}
 			>

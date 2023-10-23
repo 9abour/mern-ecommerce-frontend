@@ -11,6 +11,7 @@ const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 	const isMidScreenValue = useMediaQuery({ query: "(max-width: 768px)" });
 
 	const [height, setHeight] = useState(0);
+	const [display, setDisplay] = useState("");
 
 	const refHeight = useRef<HTMLDivElement | null>(null);
 	const pathname = usePathname();
@@ -31,6 +32,16 @@ const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 		setIsMenuOpen(false);
 	}, [pathname]);
 
+	useEffect(() => {
+		if (isMenuOpen) {
+			setDisplay("");
+		} else {
+			setTimeout(() => {
+				setDisplay("none");
+			}, 500);
+		}
+	}, [isMenuOpen]);
+
 	return (
 		<motion.div
 			ref={refHeight}
@@ -49,6 +60,7 @@ const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 				},
 				closed: {
 					y: -height - 70,
+					display: display,
 					transition: {
 						type: "spring",
 						bounce: 0,

@@ -2,6 +2,7 @@
 
 import React, { ReactNode, lazy, useEffect, useState } from "react";
 import { getUser } from "@/helpers/getUser";
+import { usePathname } from "next/navigation";
 const Navbar = lazy(() => import("../navbar/components/Navbar"));
 const Aside = lazy(() => import("../aside/components/Aside"));
 const Footer = lazy(() => import("../footer/components/Footer"));
@@ -12,6 +13,7 @@ const Basket = lazy(() => import("../basket/components/Basket"));
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [user, setUser] = useState(null);
+	const pathname = usePathname();
 
 	useEffect(() => {
 		(async () => {
@@ -23,13 +25,11 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 				setIsLoading(false);
 			}
 		})();
-	}, []);
+	}, [pathname]);
 
-	if (isLoading) {
-		return <Loader />;
-	}
-
-	return user ? (
+	return isLoading ? (
+		<Loader />
+	) : user ? (
 		<>
 			<Navbar />
 			<div className="flex pt-[70px]">
