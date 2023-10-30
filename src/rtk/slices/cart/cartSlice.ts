@@ -77,6 +77,24 @@ const cartSlice = createSlice({
 				}
 			});
 		},
+		updateProductCount: (state, action) => {
+			const { id, count } = action.payload;
+
+			const updated = state.products.map(product => {
+				if (product.id === id) {
+					return {
+						...product,
+						count,
+					};
+				} else {
+					return {
+						...product,
+					};
+				}
+			});
+
+			state.products = updated;
+		},
 	},
 });
 
@@ -87,4 +105,5 @@ export const {
 	clearCart,
 	increaseProductCount,
 	decreaseProductCount,
+	updateProductCount,
 } = cartSlice.actions;

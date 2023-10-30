@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "../production/ProductCard";
 import Filters from "../filters/components/Filters";
 import { usePathname } from "next/navigation";
-import { IFilterOptions, IFilters } from "../filters/types";
+import { IFilters } from "../filters/types";
 import { FiltersHelper } from "../filters/helpers/filters.helper";
 
 const Products = () => {
@@ -181,7 +181,7 @@ const Products = () => {
 		category: [],
 		availability: [],
 		rate: [],
-		price: [0, 0],
+		price: [0, 100],
 	});
 
 	const { category, availability, rate, price } = filters;

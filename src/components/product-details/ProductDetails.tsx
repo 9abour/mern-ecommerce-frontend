@@ -1,16 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TextButton from "../common/button/TextButton";
 import { AiFillStar } from "react-icons/ai";
 import AddToCartButton from "../common/button/AddToCartButton";
 import IconButton from "../common/button/IconButton";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
-import { useAppSelector } from "@/rtk/store/store";
+import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
 import ProductCard from "../production/ProductCard";
 import { productInCart } from "../cart/helper/productInCart";
 import { useRouter } from "next/navigation";
+import { updateProductCount } from "@/rtk/slices/cart/cartSlice";
 
 const ProductDetails = () => {
 	const [count, setCount] = useState(1);
@@ -37,6 +38,14 @@ const ProductDetails = () => {
 	const inCart = productInCart(product.id, products);
 
 	const { push } = useRouter();
+
+	const dispatch = useAppDispatch();
+
+	useEffect(() => {
+		if (inCart) {
+			dispatch(updateProductCount({ id: product.id, count }));
+		}
+	}, [count]);
 
 	return (
 		<section className="relative container mx-auto flex flex-col lg:flex-row items-center gap-[4rem] py-16 px-6 lg:px-16 shadow-clg rounded-3xl overflow-hidden z-0">

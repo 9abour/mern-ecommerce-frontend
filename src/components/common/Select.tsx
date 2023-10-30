@@ -77,7 +77,7 @@ const Select = ({ label, options, setOptions }: ISelect) => {
 								setOptions(FiltersHelper.selectOption(option.id, options))
 							}
 						>
-							{option.content}
+							<span className="text-sm">{option.content}</span>
 						</Checkbox>
 					</motion.div>
 				))}

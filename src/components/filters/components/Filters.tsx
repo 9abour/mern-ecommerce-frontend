@@ -8,7 +8,7 @@ import { IFilterOptions } from "../types";
 import { FiltersHelper } from "../helpers/filters.helper";
 
 const Filters = ({ filters, setFilters }: IFiltersProps) => {
-	const [rangePrice, setRangePrice] = useState<[number, number]>([0, 10]);
+	const [rangePrice, setRangePrice] = useState<[number, number]>([0, 100]);
 
 	const [category, setCategory] = useState<IFilterOptions[]>([
 		{
@@ -103,7 +103,7 @@ const Filters = ({ filters, setFilters }: IFiltersProps) => {
 						<span className="text-end">{rangePrice[1]}$</span>
 					</div>
 					<RangeSlider
-						defaultValue={[10, 50]}
+						defaultValue={rangePrice}
 						handleStyle={{ backgroundColor: "#2E2E2E" }}
 						renderTooltip={num => "$" + num}
 						value={rangePrice}

@@ -46,10 +46,8 @@ export class FiltersHelper {
 	}
 
 	public static filteredByRating(rate: IFilterOptions[], products: IProduct[]) {
-		return rate.map((r: IFilterOptions) =>
-			products.filter(
-				product => product.rate === Number(r.content.toString().split(" ")[0])
-			)
+		return products.filter(product =>
+			rate.map(r => product.rate === Number(r.content.toString().split(" ")[0]))
 		);
 	}
 }
