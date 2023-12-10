@@ -12,6 +12,7 @@ import ProductCard from "../production/ProductCard";
 import { productInCart } from "../cart/helper/productInCart";
 import { useRouter } from "next/navigation";
 import { updateProductCount } from "@/rtk/slices/cart/cartSlice";
+import { TbBasketCheck, TbBasketPlus } from "react-icons/tb";
 
 const ProductDetails = () => {
 	const [count, setCount] = useState(1);

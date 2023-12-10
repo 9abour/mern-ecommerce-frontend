@@ -4,6 +4,7 @@ export interface ITextButton {
 	text: string;
 	textColor?: string;
 	customStyles?: string;
+	type?: "button" | "submit" | undefined;
 	onclick?: () => void;
 }
 

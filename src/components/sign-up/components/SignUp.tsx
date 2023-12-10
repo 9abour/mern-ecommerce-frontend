@@ -21,6 +21,10 @@ const SignUp = () => {
 				text="Sign Up"
 				customStyles="mt-2 font-semibold text-xl bg-primary"
 			/>
+			<TextButton
+				text="Sign Up with Google"
+				customStyles="mt-2 font-semibold text-xl bg-[#4285F4a3] hover:bg-[#4285F4] text-white"
+			/>
 
 			<div>
 				<p>

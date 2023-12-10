@@ -6,6 +6,7 @@ import axios from "axios";
 import React, { FormEvent } from "react";
 import { toast } from "sonner";
 import Link from "next/link";
+import firebase from "../../../../firebase/clientApp";
 
 const SignIn = () => {
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -17,12 +18,32 @@ const SignIn = () => {
 		};
 
 		try {
-			const { data } = await axios.post("/api/auth/signin", credentials);
+			await axios.post("/api/auth/signin", credentials);
 
 			toast.success("Authorized");
 			window.location.pathname = "/";
 		} catch (error) {
 			toast.error("Unauthorized");
+		}
+	};
+
+	const joinWithGoogle = async () => {
+		var provider = new firebase.auth.GoogleAuthProvider();
+
+		try {
+			const { accessToken }: any = (
+				await firebase.auth().signInWithPopup(provider)
+			).credential;
+
+			await axios.post("/api/auth/signin", {
+				accessToken: accessToken,
+			});
+
+			toast.success("Authorized");
+
+			window.location.pathname = "/";
+		} catch (error) {
+			console.log(error);
 		}
 	};
 
@@ -49,6 +70,12 @@ const SignIn = () => {
 			<TextButton
 				text="Sign In"
 				customStyles="mt-2 font-semibold text-xl bg-primary"
+			/>
+			<TextButton
+				type="button"
+				text="Sign In with Google"
+				customStyles="mt-2 font-semibold text-xl bg-[#4285F4a3] hover:bg-[#4285F4] text-white"
+				onclick={joinWithGoogle}
 			/>
 
 			<p>

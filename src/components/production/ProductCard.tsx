@@ -5,7 +5,7 @@ import AddToCartButton from "../common/button/AddToCartButton";
 import { IProduct } from "../products/types";
 import IconButton from "../common/button/IconButton";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
-import { TbBasketCheck, TbBasketMinus, TbBasketPlus } from "react-icons/tb";
+import { TbBasketCheck, TbBasketPlus } from "react-icons/tb";
 import { BiShow } from "react-icons/bi";
 import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
 import {

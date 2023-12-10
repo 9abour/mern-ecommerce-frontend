@@ -2,6 +2,8 @@ import { verify } from "jsonwebtoken";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
+// check if it's a google token or username and password token
+
 export const GET = async () => {
 	const cookieStore = cookies();
 
@@ -16,7 +18,7 @@ export const GET = async () => {
 	const secret = process.env.NEXT_PUBLIC_JWT_SECRET || "";
 
 	try {
-		verify(value, secret);
+		verify(value, secret, {});
 
 		const response = {
 			user: "Secret User",

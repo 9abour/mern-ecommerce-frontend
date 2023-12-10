@@ -7,17 +7,23 @@ const MAX_AGE = 60 * 60 * 24 * 30;
 export const POST = async (request: Request) => {
 	const data = await request.json();
 
-	const { username, password } = data;
+	const { username, password, accessToken } = data;
 
-	// check if the credentials valid or not
-	if (username != "admin" || password != "admin") {
-		return NextResponse.json({ message: "Unauthorized!" }, { status: 401 });
+	let token;
+
+	if (!accessToken) {
+		// check if the credentials valid or not
+		if (username != "admin" || password != "admin") {
+			return NextResponse.json({ message: "Unauthorized!" }, { status: 401 });
+		}
+
+		// get the jwt secret
+		const secret = process.env.NEXT_PUBLIC_JWT_SECRET || "";
+
+		token = sign({ username }, secret, { expiresIn: MAX_AGE });
+	} else {
+		token = accessToken;
 	}
-
-	// get the jwt secret
-	const secret = process.env.NEXT_PUBLIC_JWT_SECRET || "";
-
-	const token = sign({ username }, secret, { expiresIn: MAX_AGE });
 
 	// Save to cookies
 	const serialized = serialize("accessToken", token, {
