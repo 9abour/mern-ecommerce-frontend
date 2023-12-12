@@ -18,7 +18,7 @@ export const GET = async () => {
 	const secret = process.env.NEXT_PUBLIC_JWT_SECRET || "";
 
 	try {
-		verify(value, secret, {});
+		verify(value, secret);
 
 		const response = {
 			user: "Secret User",

@@ -1,20 +1,17 @@
-import axios, { AxiosError } from "axios";
-
 export const getUser = async () => {
 	try {
-		const { data } = await axios.get("/api/auth/user");
+		const { user } = await fetch("/api/auth/user").then(data => data.json());
 
-		console.log(data);
+		console.log(user);
 
 		return {
-			user: data,
+			user,
 			error: null,
 		};
 	} catch (e) {
-		const error = e as AxiosError;
-
+		console.log(e);
 		return {
-			error,
+			error: e,
 			user: null,
 		};
 	}
