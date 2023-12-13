@@ -2,20 +2,9 @@
 
 import React from "react";
 import TextButton from "./TextButton";
-import axios from "axios";
-import { toast } from "sonner";
+import { signOff } from "@/helpers";
 
 const SignOff = () => {
-	const signOff = async () => {
-		try {
-			await axios.post("/api/auth/signoff");
-			window.location.reload();
-			toast.success("Signed Off");
-		} catch (e) {
-			console.log(e);
-		}
-	};
-
 	return (
 		<TextButton
 			text="Sign Off"

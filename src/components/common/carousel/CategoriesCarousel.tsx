@@ -3,6 +3,24 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import CategoryCard from "../../categories/components/CategoryCard";
 import { ICategory } from "@/components/categories/types";
 
+const breakpoints = {
+	1200: {
+		slidesPerView: 4,
+	},
+	991: {
+		slidesPerView: 3,
+	},
+	800: {
+		slidesPerView: 2,
+	},
+	768: {
+		slidesPerView: 2,
+	},
+	640: {
+		slidesPerView: 2.1,
+	},
+};
+
 const CategoriesCarousel = ({ swiperRef }: any) => {
 	const card: ICategory = {
 		name: "Angus Burger",
@@ -20,23 +38,7 @@ const CategoriesCarousel = ({ swiperRef }: any) => {
 			onSwiper={swiper => {
 				swiperRef.current = swiper;
 			}}
-			breakpoints={{
-				1200: {
-					slidesPerView: 4,
-				},
-				991: {
-					slidesPerView: 3,
-				},
-				800: {
-					slidesPerView: 2,
-				},
-				768: {
-					slidesPerView: 2,
-				},
-				640: {
-					slidesPerView: 2.1,
-				},
-			}}
+			breakpoints={breakpoints}
 			className="md:!mx-[-24px] !px-[24px] sm"
 		>
 			{Array.from(Array(10)).map((_, i) => (
