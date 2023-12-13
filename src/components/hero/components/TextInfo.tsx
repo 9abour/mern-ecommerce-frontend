@@ -1,5 +1,5 @@
 import LineBottom from "@/components/common/line/LineBottom";
-import { IProduct } from "@/components/products/types";
+import { IProduct } from "@/components/products/index.types";
 import Link from "next/link";
 import React from "react";
 

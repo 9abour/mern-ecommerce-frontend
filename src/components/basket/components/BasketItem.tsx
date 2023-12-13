@@ -1,5 +1,5 @@
 import IconButton from "@/components/common/button/IconButton";
-import { IProduct } from "@/components/products/types";
+import { IProduct } from "@/components/products/index.types";
 import { removeFromBasket } from "@/rtk/slices/basket/basketSlice";
 import { useAppDispatch } from "@/rtk/store/store";
 import Link from "next/link";

@@ -5,14 +5,12 @@ import ProductCard from "../production/components/product-card/ProductCard";
 import Filters from "../filters/components/Filters";
 import { usePathname } from "next/navigation";
 import { IFilters } from "../filters/index.types";
-import { FiltersHelper } from "../filters/helpers/filters.helper";
+import { getCurrentProductsCategory } from "./helpers";
 
 const Products = () => {
-	const currentProductsCategory = usePathname()
-		.split("/")
-		.slice(-1)
-		.toString()
-		.toUpperCase();
+	const currentPath = usePathname();
+
+	const currentProductsCategory = getCurrentProductsCategory(currentPath);
 
 	const products = [
 		{

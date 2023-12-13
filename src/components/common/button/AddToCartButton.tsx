@@ -5,7 +5,7 @@ import IconButton from "@/components/common/button/IconButton";
 import { TbShoppingBagCheck, TbShoppingBagPlus } from "react-icons/tb";
 import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
 import { addToCart, removeFromCart } from "@/rtk/slices/cart/cartSlice";
-import { IProduct } from "@/components/products/types";
+import { IProduct } from "@/components/products/index.types";
 import { usePathname, useRouter } from "next/navigation";
 import { useCheckProductIn } from "@/hooks/useCheckProductIn";
 

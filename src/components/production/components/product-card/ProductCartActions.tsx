@@ -1,6 +1,6 @@
 import { productInBasket } from "@/components/basket/helper";
 import IconButton from "@/components/common/button/IconButton";
-import { IProduct } from "@/components/products/types";
+import { IProduct } from "@/components/products/index.types";
 import { useCheckProductIn } from "@/hooks/useCheckProductIn";
 import { addToBasket, removeFromBasket } from "@/rtk/slices/basket/basketSlice";
 import {

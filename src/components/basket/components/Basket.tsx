@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
-import { IProduct } from "@/components/products/types";
+import { IProduct } from "@/components/products/index.types";
 import { getTotal } from "../helper/getTotal";
 import { clearBasket } from "@/rtk/slices/basket/basketSlice";
 import { useAddAllProductsToCart } from "../hooks";

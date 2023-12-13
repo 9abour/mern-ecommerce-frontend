@@ -1,4 +1,4 @@
-import { IProduct } from "@/components/products/types";
+import { IProduct } from "@/components/products/index.types";
 import { IFilterOptions } from "../index.types";
 
 export class FiltersHelper {

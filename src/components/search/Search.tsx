@@ -1,14 +1,16 @@
 "use client";
 
-import { useParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import ProductCard from "../production/components/product-card/ProductCard";
 import Filters from "../filters/components/Filters";
 import { IFilters } from "../filters/index.types";
+import { getSearchResult } from "./helpers/getSearchResult";
 
 const Search = () => {
-	const { p } = useParams();
-	const resultKey = p.toString().split("p%3D")[1];
+	const currentPath = usePathname();
+
+	const searchResult = getSearchResult(currentPath);
 
 	const products = [
 		{
@@ -183,7 +185,7 @@ const Search = () => {
 	return (
 		<div className="px-4">
 			<h2 className="text-center text-2xl lg:text-4xl font-semibold mb-12">
-				Search results for: {resultKey}
+				Search results for: {searchResult}
 			</h2>
 
 			<Filters filters={filters} setFilters={setFilters} />
