@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 import React, { useState } from "react";
-import ProductCard from "../production/product-card/ProductCard";
+import ProductCard from "../production/components/product-card/ProductCard";
 import Filters from "../filters/components/Filters";
 import { IFilters } from "../filters/index.types";
 

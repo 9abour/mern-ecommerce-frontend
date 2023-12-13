@@ -1,16 +1,8 @@
 import React from "react";
-import { ITab, ITabs } from "./types";
-import TextButton from "../common/button/TextButton";
+import { ITabsProps } from "../index.types";
+import TextButton from "../../common/button/TextButton";
 
-const Tabs = ({
-	list,
-	isActive,
-	setIsActive,
-}: {
-	list: ITabs;
-	isActive: ITab;
-	setIsActive: (e: ITab) => void;
-}) => {
+const Tabs = ({ list, isActive, setIsActive }: ITabsProps) => {
 	return (
 		<div className="flex flex-wrap gap-1">
 			{list.map(tab => (

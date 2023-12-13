@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import ProductCard from "../production/product-card/ProductCard";
+import ProductCard from "../production/components/product-card/ProductCard";
 import Filters from "../filters/components/Filters";
 import { usePathname } from "next/navigation";
 import { IFilters } from "../filters/index.types";

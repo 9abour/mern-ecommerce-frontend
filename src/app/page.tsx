@@ -5,7 +5,9 @@ const Hero = lazy(() => import("@/components/hero/components/Hero"));
 const AllCategories = lazy(
 	() => import("@/components/categories/components/AllCategories")
 );
-const Production = lazy(() => import("@/components/production/Production"));
+const Production = lazy(
+	() => import("@/components/production/components/Production")
+);
 
 export default function Home() {
 	return (

@@ -8,7 +8,7 @@ import AddToCartButton from "../common/button/AddToCartButton";
 import IconButton from "../common/button/IconButton";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
 import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
-import ProductCard from "../production/product-card/ProductCard";
+import ProductCard from "../production/components/product-card/ProductCard";
 import { useRouter } from "next/navigation";
 import { updateProductCount } from "@/rtk/slices/cart/cartSlice";
 import { productInCart } from "../cart/helper";

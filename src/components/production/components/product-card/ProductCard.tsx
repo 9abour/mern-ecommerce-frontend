@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import AddToCartButton from "../../common/button/AddToCartButton";
-import { IProduct } from "../../products/types";
+import AddToCartButton from "../../../common/button/AddToCartButton";
+import { IProduct } from "../../../products/types";
 import { useAppSelector } from "@/rtk/store/store";
 import { useCheckProductIn } from "@/hooks/useCheckProductIn";
 import Link from "next/link";
