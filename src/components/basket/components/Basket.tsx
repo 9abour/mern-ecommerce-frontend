@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import BasketItem from "./BasketItem";
 import { motion } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
 import { IProduct } from "@/components/products/types";
 import { getTotal } from "../helper/getTotal";
 import { clearBasket } from "@/rtk/slices/basket/basketSlice";
 import { useAddAllProductsToCart } from "../hooks";
+import BasketItem from "./BasketItem";
 
 const Basket = () => {
 	const [isOpen, setIsOpen] = useState(false);

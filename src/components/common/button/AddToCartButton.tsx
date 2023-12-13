@@ -8,7 +8,7 @@ import { addToCart, removeFromCart } from "@/rtk/slices/cart/cartSlice";
 import { IProduct } from "@/components/products/types";
 import { usePathname, useRouter } from "next/navigation";
 import { useCheckProductIn } from "@/hooks/useCheckProductIn";
-import { productInBasket } from "@/components/basket/helper/getProduct";
+import { productInBasket } from "@/components/basket/helper/index";
 
 const AddToCartButton = ({
 	customStyles,

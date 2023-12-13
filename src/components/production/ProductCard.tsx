@@ -15,7 +15,7 @@ import {
 import { useCheckProductIn } from "@/hooks/useCheckProductIn";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { productInBasket } from "../basket/helper/getProduct";
+import { productInBasket } from "@/components/basket/helper/index";
 import { addToBasket, removeFromBasket } from "@/rtk/slices/basket/basketSlice";
 
 const ProductCard = ({ product }: { product: IProduct }) => {
