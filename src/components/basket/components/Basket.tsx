@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
 import { IProduct } from "@/components/products/types";
 import { getTotal } from "../helper/getTotal";
-import { addToCart } from "@/rtk/slices/cart/cartSlice";
 import { clearBasket } from "@/rtk/slices/basket/basketSlice";
+import { useAddAllProductsToCart } from "../hooks";
 
 const Basket = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -15,12 +15,7 @@ const Basket = () => {
 
 	const dispatch = useAppDispatch();
 
-	const handleAddAllToCart = () => {
-		products.map(product => {
-			dispatch(addToCart(product));
-		});
-		dispatch(clearBasket());
-	};
+	const { addAllProductsToCart } = useAddAllProductsToCart(products);
 
 	useEffect(() => {
 		if (products.length === 0) {
@@ -83,7 +78,7 @@ const Basket = () => {
 					</button>
 					<button
 						className="py-4 rounded-full uppercase text-xs text-gray-500 hover:text-dark transition duration-300 font-semibold"
-						onClick={handleAddAllToCart}
+						onClick={addAllProductsToCart}
 					>
 						Add to cart
 					</button>
