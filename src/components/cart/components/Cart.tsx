@@ -5,8 +5,8 @@ import Table from "./Table";
 import TextButton from "../../common/button/TextButton";
 import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
 import { clearCart } from "@/rtk/slices/cart/cartSlice";
-import { getCartTotal } from "../helper/getCartTotal";
 import { ICartTotal } from "../types";
+import { getCartTotal } from "../helper";
 
 const Cart = () => {
 	const { products } = useAppSelector(state => state.cartSlice);
