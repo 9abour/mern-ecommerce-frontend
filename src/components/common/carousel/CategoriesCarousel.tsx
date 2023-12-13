@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import CategoryCard from "../../categories/CategoryCard";
+import CategoryCard from "../../categories/components/CategoryCard";
 import { ICategory } from "@/components/categories/types";
 
 const CategoriesCarousel = ({ swiperRef }: any) => {

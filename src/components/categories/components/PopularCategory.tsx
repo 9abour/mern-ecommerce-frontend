@@ -1,7 +1,7 @@
 import React from "react";
 import PopularCategoryCard from "./PopularCategoryCard";
-import burger from "../../../public/burger.png";
-import Heading from "../common/typography/Heading";
+import burger from "../../../../public/burger.png";
+import Heading from "../../common/typography/Heading";
 
 const PopularCategory = () => {
 	return (

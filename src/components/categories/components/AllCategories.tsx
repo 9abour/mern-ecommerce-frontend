@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useRef } from "react";
-import Heading from "../common/typography/Heading";
+import Heading from "../../common/typography/Heading";
 import "swiper/css";
-import CategoriesCarousel from "../common/carousel/CategoriesCarousel";
-import IconButton from "../common/button/IconButton";
+import CategoriesCarousel from "../../common/carousel/CategoriesCarousel";
+import IconButton from "../../common/button/IconButton";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 
 const AllCategories = () => {
