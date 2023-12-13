@@ -1,4 +1,4 @@
-import { IFilters } from "../filters/types";
+import { IFilters } from "../filters/index.types";
 
 export interface IFiltersProps {
 	filters: IFilters;

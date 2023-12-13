@@ -1,5 +1,5 @@
 import { IProduct } from "@/components/products/types";
-import { IFilterOptions } from "../types";
+import { IFilterOptions } from "../index.types";
 
 export class FiltersHelper {
 	public static selectOption(

@@ -1,4 +1,4 @@
-import { IFilterOptions } from "../filters/types";
+import { IFilterOptions } from "../filters/index.types";
 
 export interface ILineBottom {
 	customStyles?: string;

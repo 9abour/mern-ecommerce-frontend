@@ -2,9 +2,9 @@
 
 import { useParams } from "next/navigation";
 import React, { useState } from "react";
-import ProductCard from "../production/ProductCard";
+import ProductCard from "../production/product-card/ProductCard";
 import Filters from "../filters/components/Filters";
-import { IFilters } from "../filters/types";
+import { IFilters } from "../filters/index.types";
 
 const Search = () => {
 	const { p } = useParams();

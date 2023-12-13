@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Heading from "../common/typography/Heading";
-import ProductCard from "./ProductCard";
+import ProductCard from "./product-card/ProductCard";
 import Tabs from "./Tabs";
 import TextButton from "../common/button/TextButton";
 import { useRouter } from "next/navigation";

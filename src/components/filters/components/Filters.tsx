@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Select from "@/components/common/select/Select";
 import { RangeSlider } from "rsuite";
 import { IFiltersProps } from "@/components/search/types";
-import { IFilterOptions } from "../types";
+import { IFilterOptions } from "../index.types";
 import { FiltersHelper } from "../helpers/filters.helper";
 
 const Filters = ({ filters, setFilters }: IFiltersProps) => {

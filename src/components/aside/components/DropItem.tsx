@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { IDropMotionItem } from "@/components/navbar/types";
+import { IDropMotionItem } from "@/components/navbar/index.types";
 
 const itemVariantsY: Variants = {
 	open: {

@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import ProductCard from "../production/ProductCard";
+import ProductCard from "../production/product-card/ProductCard";
 import Filters from "../filters/components/Filters";
 import { usePathname } from "next/navigation";
-import { IFilters } from "../filters/types";
+import { IFilters } from "../filters/index.types";
 import { FiltersHelper } from "../filters/helpers/filters.helper";
 
 const Products = () => {

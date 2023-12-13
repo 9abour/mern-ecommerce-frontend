@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { IFooterLink } from "../types";
+import { IFooterLink } from "../index.types";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 

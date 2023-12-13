@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { INavbarLink } from "../types";
+import { INavbarLink } from "../index.types";
 
 const NavbarMobileLink = ({ href, name }: INavbarLink) => {
 	return (
