@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { IInputProductSearch, IInputSearch } from "./types";
+import { IInputProductSearch } from "./types";
 import useInput from "@/hooks/useInput";
 
 const InputProductSearch = ({
@@ -10,7 +10,7 @@ const InputProductSearch = ({
 	customStyles,
 	label,
 }: IInputProductSearch) => {
-	const [searchProps, resetSearch] = useInput("");
+	const [searchProps] = useInput("");
 
 	return (
 		<>

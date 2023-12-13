@@ -19,3 +19,9 @@ export interface IFormInput extends IInputSearch {
 	required?: boolean;
 	autoFocus?: boolean;
 }
+
+export interface ISubmitSearchHookProps {
+	searchProps: string | number;
+	setFormIsActive: (isActive: boolean) => void;
+	resetSearch: () => void;
+}

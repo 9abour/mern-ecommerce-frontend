@@ -1,32 +1,27 @@
 "use client";
 
-import React, { FormEvent, useState } from "react";
+import React, { useState } from "react";
 import IconButton from "../button/IconButton";
 import { IInputSearch } from "./types";
 import { IoSearchSharp } from "react-icons/io5";
 import useInput from "@/hooks/useInput";
 import Link from "next/link";
 import ThrobbingLoading from "../loading/ThrobbingLoading";
-import { useRouter } from "next/navigation";
+import { useSubmitSearch } from "./hooks/useSubmitSearch";
 
 const InputSearch = ({ type, placeholder, customStyles }: IInputSearch) => {
 	const [searchProps, resetSearch] = useInput("");
-	const [searchSuggestions, setSearchSuggestions] = useState(0);
 	const [formIsActive, setFormIsActive] = useState(false);
 
-	const router = useRouter();
-
-	const handleOnSubmit = (e: FormEvent) => {
-		e.preventDefault();
-		if (searchProps.value) {
-			router.push(`/search/p=${searchProps.value}`);
-			setFormIsActive(false);
-		}
-	};
+	const { submit } = useSubmitSearch({
+		searchProps: searchProps.value,
+		setFormIsActive,
+		resetSearch,
+	});
 
 	return (
 		<form
-			onSubmit={handleOnSubmit}
+			onSubmit={submit}
 			className={`relative w-full md:w-10/12 h-[50px] min-h-[50px] border ${
 				formIsActive && "border-primary"
 			} shadow-cmd rounded-full p-[4px] justify-between gap-2 bg-white ${customStyles}`}

@@ -12,7 +12,7 @@ const FormInput = ({
 	name,
 	autoFocus,
 }: IFormInput) => {
-	const [searchProps, resetSearch] = useInput("");
+	const [searchProps] = useInput("");
 
 	return (
 		<input
