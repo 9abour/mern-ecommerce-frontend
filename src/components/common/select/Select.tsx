@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { ISelect } from "./types";
+import { ISelect } from "../index.types";
 import { BiSolidDownArrowSquare } from "react-icons/bi";
 import { Variants, motion } from "framer-motion";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
-import { FiltersHelper } from "../filters/helpers/filters.helper";
+import { FiltersHelper } from "../../filters/helpers/filters.helper";
 import { Checkbox } from "rsuite";
 
 const optionsAnimate = {

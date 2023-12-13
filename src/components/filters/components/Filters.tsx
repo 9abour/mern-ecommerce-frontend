@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Select from "@/components/common/Select";
+import Select from "@/components/common/select/Select";
 import { RangeSlider } from "rsuite";
 import { IFiltersProps } from "@/components/search/types";
 import { IFilterOptions } from "../types";

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, Ref } from "react";
 import Menu from "./Menu";
-import LineBottom from "../../common/LineBottom";
+import LineBottom from "../../common/line/LineBottom";
 import SignOff from "../../common/button/SignOff";
 import MenuButton from "../../common/button/MenuButton";
 import { motion } from "framer-motion";

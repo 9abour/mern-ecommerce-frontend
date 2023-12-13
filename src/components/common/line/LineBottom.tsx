@@ -1,5 +1,5 @@
 import React from "react";
-import { ILineBottom } from "./types";
+import { ILineBottom } from "../index.types";
 
 const LineBottom = ({ customStyles }: ILineBottom) => {
 	return (

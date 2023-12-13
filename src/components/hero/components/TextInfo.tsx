@@ -1,4 +1,4 @@
-import LineBottom from "@/components/common/LineBottom";
+import LineBottom from "@/components/common/line/LineBottom";
 import { IProduct } from "@/components/products/types";
 import Link from "next/link";
 import React from "react";

@@ -1,7 +1,7 @@
 import React from "react";
 import { FaBowlFood } from "react-icons/fa6";
 import ListItem from "./ListItem";
-import LineBottom from "../../common/LineBottom";
+import LineBottom from "../../common/line/LineBottom";
 
 const List = () => {
 	return (

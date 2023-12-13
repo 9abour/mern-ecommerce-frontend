@@ -1,7 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import CategoryCard from "../../categories/components/CategoryCard";
-import { ICategory } from "@/components/categories/types";
+import { ICategory } from "@/components/categories/index.types";
 
 const breakpoints = {
 	1200: {

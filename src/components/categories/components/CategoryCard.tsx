@@ -1,5 +1,5 @@
 import React from "react";
-import { ICategory } from "../types";
+import { ICategory } from "../index.types";
 import img from "../../../../public/burger.png";
 import Image from "next/image";
 import IconButton from "../../common/button/IconButton";

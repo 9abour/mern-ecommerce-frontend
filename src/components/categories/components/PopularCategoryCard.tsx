@@ -1,5 +1,5 @@
 import React from "react";
-import { IPopularCategoryCard } from "../types";
+import { IPopularCategoryCard } from "../index.types";
 import Image from "next/image";
 import Link from "next/link";
 

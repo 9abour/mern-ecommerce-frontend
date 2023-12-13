@@ -5,7 +5,7 @@ import Table from "./Table";
 import TextButton from "../../common/button/TextButton";
 import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
 import { clearCart } from "@/rtk/slices/cart/cartSlice";
-import { ICartTotal } from "../types";
+import { ICartTotal } from "../index.types";
 import { getCartTotal } from "../helper";
 
 const Cart = () => {
