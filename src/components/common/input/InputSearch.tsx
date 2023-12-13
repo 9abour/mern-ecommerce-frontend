@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import IconButton from "../button/IconButton";
 import { IInputSearch } from "./types";
 import { IoSearchSharp } from "react-icons/io5";
-import useInput from "@/hooks/useInput";
 import Link from "next/link";
 import ThrobbingLoading from "../loading/ThrobbingLoading";
 import { useSubmitSearch } from "./hooks/useSubmitSearch";
+import useInput from "@/hooks/useInput";
 
 const InputSearch = ({ type, placeholder, customStyles }: IInputSearch) => {
 	const [searchProps, resetSearch] = useInput("");

@@ -3,10 +3,10 @@ import React from "react";
 import AddToCartButton from "../../../common/button/AddToCartButton";
 import { IProduct } from "../../../products/index.types";
 import { useAppSelector } from "@/rtk/store/store";
-import { useCheckProductIn } from "@/hooks/useCheckProductIn";
 import Link from "next/link";
 import ProductCartActions from "./ProductCartActions";
 import ProductCardStars from "./ProductCardStars";
+import { useCheckProductIn } from "@/hooks";
 
 const ProductCard = ({ product }: { product: IProduct }) => {
 	const { id, slug, name, price, image, available, rate } = product;

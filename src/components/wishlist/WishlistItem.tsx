@@ -8,7 +8,7 @@ import {
 } from "@/rtk/slices/wishlist/wishlistSlice";
 import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
 import AddToCartButton from "../common/button/AddToCartButton";
-import { useCheckProductIn } from "@/hooks/useCheckProductIn";
+import { useCheckProductIn } from "@/hooks";
 
 const WishlistItem = ({ product }: { product: IWishlistProduct }) => {
 	const { id, image, name, price, history } = product;

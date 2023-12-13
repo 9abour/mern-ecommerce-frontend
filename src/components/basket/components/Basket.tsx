@@ -6,8 +6,8 @@ import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
 import { IProduct } from "@/components/products/index.types";
 import { getTotal } from "../helper/getTotal";
 import { clearBasket } from "@/rtk/slices/basket/basketSlice";
-import { useAddAllProductsToCart } from "../hooks";
 import BasketItem from "./BasketItem";
+import { useAddAllProductsToCart } from "@/hooks";
 
 const Basket = () => {
 	const [isOpen, setIsOpen] = useState(false);

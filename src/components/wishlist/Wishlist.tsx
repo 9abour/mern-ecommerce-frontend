@@ -4,19 +4,15 @@ import React from "react";
 import WishlistItem from "./WishlistItem";
 import TextButton from "../common/button/TextButton";
 import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
-import { addToCart } from "@/rtk/slices/cart/cartSlice";
 import { clearWishlist } from "@/rtk/slices/wishlist/wishlistSlice";
+import { useAddAllProductsToCart } from "@/hooks";
 
 const Wishlist = () => {
 	const { products } = useAppSelector(state => state.wishlistSlice);
 
 	const dispatch = useAppDispatch();
 
-	const handleAddAllToCart = () => {
-		products.map(product => {
-			dispatch(addToCart(product));
-		});
-	};
+	const { addAllProductsToCart } = useAddAllProductsToCart(products);
 
 	return (
 		<section className="w-full max-w-[900px] mx-auto bg-white shadow-clg rounded-3xl p-4">
@@ -37,7 +33,7 @@ const Wishlist = () => {
 						<TextButton
 							text="Add all"
 							customStyles="block mt-4 uppercase text-sm shadow-csmYellow hover:shadow-clg bg-primary hover:bg-dark hover:text-white text-dark transition duration-300 font-semibold"
-							onclick={handleAddAllToCart}
+							onclick={addAllProductsToCart}
 						/>
 					</div>
 				</>

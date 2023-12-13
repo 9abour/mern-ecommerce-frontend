@@ -9,10 +9,9 @@ import IconButton from "@/components/common/button/IconButton";
 import { AiFillHeart } from "react-icons/ai";
 import MenuButton from "@/components/common/button/MenuButton";
 import MobileNavDrop from "./MobileNavDrop";
-import { useOnClickOutside } from "@/hooks/useOnClickOutside";
-import { useIsWindowScrolled } from "@/hooks/useIsWindowScrolled";
 import { useRouter } from "next/navigation";
 import { useAppSelector } from "@/rtk/store/store";
+import { useIsWindowScrolled, useOnClickOutside } from "@/hooks";
 
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);

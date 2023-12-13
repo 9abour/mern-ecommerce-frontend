@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ITarget } from "./types";
+import { ITarget } from "./index.types";
 
 const useInput = (
 	initialState: string | number

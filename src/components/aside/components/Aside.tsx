@@ -7,8 +7,8 @@ import SignOff from "../../common/button/SignOff";
 import MenuButton from "../../common/button/MenuButton";
 import { motion } from "framer-motion";
 import DropMotionItem from "./DropItem";
-import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import { useMediaQuery } from "usehooks-ts";
+import { useOnClickOutside } from "@/hooks";
 
 const Aside = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
