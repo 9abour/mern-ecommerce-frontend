@@ -9,9 +9,9 @@ const SignUp = () => {
 			<h1 className="font-bold text-5xl mb-4">Create Account</h1>
 
 			<FormInput
-				type="text"
-				name="username"
-				placeholder="Username"
+				type="email"
+				name="email"
+				placeholder="Email"
 				required
 				autoFocus={true}
 			/>
