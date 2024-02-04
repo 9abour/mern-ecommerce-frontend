@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getUser } from "./helpers";
 export const config = {
 	matcher: ["/((?!api|.*\\..*).*)"],
 };

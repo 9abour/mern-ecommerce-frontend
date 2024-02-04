@@ -57,15 +57,19 @@ html {
 
 @keyframes animloader {
 	0% {
+		border-color: transparent;
+	}
+
+	20% {
 		border-color: #fbc644 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0)
 			rgba(255, 255, 255, 0);
 	}
 
-	33% {
+	40% {
 		border-color: #fbc644 #fbc644 rgba(255, 255, 255, 0) rgba(255, 255, 255, 0);
 	}
 
-	66% {
+	60% {
 		border-color: #fbc644 #fbc644 #fbc644 rgba(255, 255, 255, 0);
 	}
 
