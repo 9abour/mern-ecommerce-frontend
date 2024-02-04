@@ -1,7 +1,6 @@
 "use client";
 
 import React, { ReactNode, lazy, useEffect, useState } from "react";
-import { getUser } from "@/helpers/getUser";
 import { usePathname } from "next/navigation";
 const Navbar = lazy(() => import("../navbar/components/Navbar"));
 const Aside = lazy(() => import("../aside/components/Aside"));
