@@ -8,10 +8,11 @@ import CartButton from "@/components/common/button/CartButton";
 import IconButton from "@/components/common/button/IconButton";
 import { AiFillHeart } from "react-icons/ai";
 import MenuButton from "@/components/common/button/MenuButton";
-import MobileNavDrop from "./MobileNavDrop";
+import MobileNavDrop from "./mobile/MobileNavDrop";
 import { useRouter } from "next/navigation";
 import { useAppSelector } from "@/rtk/store/store";
 import { useIsWindowScrolled, useOnClickOutside } from "@/hooks";
+import {IoIosAdd} from "react-icons/io";
 
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,19 +47,28 @@ const Navbar = () => {
 					/>
 				</div>
 				<div className="!hidden items-center gap-2 md:!flex rounded-full bg-white pl-1">
-					<CartButton />
+					<div className="relative">
+						<IconButton
+							icon={<IoIosAdd size={35} color="white"/>}
+							customStyles="bg-dark"
+							onclick={() => router.push("/dashboard")}
+						/>
+					</div>
+
+					<CartButton/>
 
 					<div className="relative">
 						<IconButton
-							icon={<AiFillHeart size={20} color="white" />}
+							icon={<AiFillHeart size={20} color="white"/>}
 							customStyles="bg-dark"
 							onclick={() => router.push("/wishlist")}
 						/>
-						<span className="absolute w-[50%] h-[50%] -top-[6px] -right-[6px] rounded-full text-xs font-bold bg-secondaryDark text-white text-center flex justify-center items-center">
+						<span
+							className="absolute w-[50%] h-[50%] -top-[6px] -right-[6px] rounded-full text-xs font-bold bg-secondaryDark text-white text-center flex justify-center items-center">
 							{products.length}
 						</span>
 					</div>
-					<User />
+					<User/>
 				</div>
 
 				<MenuButton
@@ -67,7 +77,7 @@ const Navbar = () => {
 					customStyles="bg-primary [&>button]:bg-white [&>button>span]:bg-primary"
 				/>
 			</nav>
-			<MobileNavDrop isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+			<MobileNavDrop isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
 		</div>
 	);
 };

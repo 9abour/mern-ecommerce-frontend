@@ -1,46 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { IMenuButton } from "@/components/common/button/types";
 import InputSearch from "@/components/common/input/InputSearch";
-import User from "./User";
+import User from "../User";
 import NavbarMobileLink from "./NavbarMobileLink";
-import { useMediaQuery } from "react-responsive";
-import { usePathname } from "next/navigation";
+import {useHandleMenu} from "@/components/navbar/hooks/useHandleMenu";
+import {useHandleHeight} from "@/components/navbar/hooks/useHandleHeight";
 
 const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
-	const isMidScreenValue = useMediaQuery({ query: "(max-width: 768px)" });
-
-	const [height, setHeight] = useState(0);
-	const [display, setDisplay] = useState("");
-
 	const refHeight = useRef<HTMLDivElement | null>(null);
-	const pathname = usePathname();
 
-	useEffect(() => {
-		if (refHeight.current) {
-			setHeight(refHeight.current.offsetHeight);
-		}
-	}, [refHeight]);
-
-	useEffect(() => {
-		if (isMenuOpen) {
-			setIsMenuOpen(isMidScreenValue);
-		}
-	}, [isMidScreenValue]);
-
-	useEffect(() => {
-		setIsMenuOpen(false);
-	}, [pathname]);
-
-	useEffect(() => {
-		if (isMenuOpen) {
-			setDisplay("");
-		} else {
-			setTimeout(() => {
-				setDisplay("none");
-			}, 500);
-		}
-	}, [isMenuOpen]);
+	const {display} = useHandleMenu({isMenuOpen, setIsMenuOpen});
+	const {height} = useHandleHeight(refHeight)
 
 	return (
 		<motion.div
@@ -81,10 +52,10 @@ const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 
 			<div className="w-full p-2">
 				<ul>
-					<NavbarMobileLink href={`/`} name="Home" />
-					<NavbarMobileLink href={`/cart`} name="Cart" />
-					<NavbarMobileLink href={`/wishlist`} name="Wishlist" />
+					<NavbarMobileLink href={`/dashboard`} name="Dashboard" />
 					<NavbarMobileLink href={`/categories`} name="Categories" />
+					<NavbarMobileLink href={`/wishlist`} name="Wishlist" />
+					<NavbarMobileLink href={`/cart`} name="Cart" />
 				</ul>
 			</div>
 		</motion.div>
