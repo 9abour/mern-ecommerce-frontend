@@ -6,11 +6,8 @@ import {IMenuButton} from "@/components/common/button/types";
 export const useHandleMenu = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
     const [display, setDisplay] = useState("");
 
-
-
     const isMidScreenValue = useMediaQuery({ query: "(max-width: 768px)" });
     const pathname = usePathname();
-
 
     useEffect(() => {
         if (isMenuOpen) {
