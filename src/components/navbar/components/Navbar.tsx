@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, {useReducer} from "react";
 import Logo from "./Logo";
 import InputSearch from "@/components/common/input/InputSearch";
 import User from "./User";
@@ -12,19 +12,12 @@ import MobileNavDrop from "./MobileNavDrop";
 import { useRouter } from "next/navigation";
 import { useAppSelector } from "@/rtk/store/store";
 import { useIsWindowScrolled, useOnClickOutside } from "@/hooks";
+import {MdCreate} from "react-icons/md";
 
 const Navbar = () => {
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isMenuOpen, toggle] = useReducer(state => !state, false)
 
-	const handleClickOutside = () => {
-		if (isMenuOpen) {
-			setIsMenuOpen(true);
-		} else {
-			setIsMenuOpen(false);
-		}
-	};
-
-	const ref: any = useOnClickOutside(handleClickOutside);
+	const ref: any = useOnClickOutside(toggle);
 
 	const router = useRouter();
 
@@ -46,28 +39,37 @@ const Navbar = () => {
 					/>
 				</div>
 				<div className="!hidden items-center gap-2 md:!flex rounded-full bg-white pl-1">
-					<CartButton />
+					<CartButton/>
 
 					<div className="relative">
 						<IconButton
-							icon={<AiFillHeart size={20} color="white" />}
+							icon={<MdCreate size={20} color="white" />}
 							customStyles="bg-dark"
 							onclick={() => router.push("/wishlist")}
 						/>
-						<span className="absolute w-[50%] h-[50%] -top-[6px] -right-[6px] rounded-full text-xs font-bold bg-secondaryDark text-white text-center flex justify-center items-center">
+					</div>
+
+					<div className="relative">
+						<IconButton
+							icon={<AiFillHeart size={20} color="white"/>}
+							customStyles="bg-dark"
+							onclick={() => router.push("/wishlist")}
+						/>
+						<span
+							className="absolute w-[50%] h-[50%] -top-[6px] -right-[6px] rounded-full text-xs font-bold bg-secondaryDark text-white text-center flex justify-center items-center">
 							{products.length}
 						</span>
 					</div>
-					<User />
+					<User/>
 				</div>
 
 				<MenuButton
 					isMenuOpen={isMenuOpen}
-					setIsMenuOpen={setIsMenuOpen}
+					setIsMenuOpen={toggle}
 					customStyles="bg-primary [&>button]:bg-white [&>button>span]:bg-primary"
 				/>
 			</nav>
-			<MobileNavDrop isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+			<MobileNavDrop isMenuOpen={isMenuOpen} setIsMenuOpen={toggle}/>
 		</div>
 	);
 };
