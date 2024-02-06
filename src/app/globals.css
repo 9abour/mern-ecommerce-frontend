@@ -6,6 +6,9 @@
 	.aside-container::-webkit-scrollbar {
 		width: 0;
 	}
+	.dashboard-taps-button {
+		@apply w-full flex items-center justify-center gap-2 font-semibold py-2 bg-gray-200 hover:bg-primary transition duration-500
+	}
 }
 
 @layer base {
@@ -52,10 +55,10 @@ html {
 	position: relative;
 	border: 10px solid;
 	box-sizing: border-box;
-	animation: animloader 1s linear infinite alternate;
+	animation: animLoader 1s linear infinite alternate;
 }
 
-@keyframes animloader {
+@keyframes animLoader {
 	0% {
 		border-color: transparent;
 	}
