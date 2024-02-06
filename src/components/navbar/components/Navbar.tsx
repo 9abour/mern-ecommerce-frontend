@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import { useAppSelector } from "@/rtk/store/store";
 import { useIsWindowScrolled, useOnClickOutside } from "@/hooks";
 import {IoIosAdd} from "react-icons/io";
+import {MdDashboard} from "react-icons/md";
 
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,7 +50,7 @@ const Navbar = () => {
 				<div className="!hidden items-center gap-2 md:!flex rounded-full bg-white pl-1">
 					<div className="relative">
 						<IconButton
-							icon={<IoIosAdd size={35} color="white"/>}
+							icon={<MdDashboard size={20} color="white"/>}
 							customStyles="bg-dark"
 							onclick={() => router.push("/dashboard")}
 						/>
