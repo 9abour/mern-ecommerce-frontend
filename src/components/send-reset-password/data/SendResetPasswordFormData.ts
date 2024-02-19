@@ -1,6 +1,5 @@
 import {
 	IFormLinks,
-	IHandleFormSubmit,
 } from "@/components/common/form/types/index.types";
 import { IFormInput } from "@/components/common/input/types";
 
@@ -14,10 +13,9 @@ export const sendResetPasswordFormInputsData: IFormInput[] = [
 	},
 ];
 
-export const sendResetPasswordFormIHandleSubmitData: IHandleFormSubmit = {
-	text: "Send Reset Password",
-	submitFunc: () => {},
-};
+
+export const sendResetPasswordFormSubmitText: string = "Send Reset Password";
+
 
 export const sendResetPasswordFormILinksData: IFormLinks[] = [
 	{

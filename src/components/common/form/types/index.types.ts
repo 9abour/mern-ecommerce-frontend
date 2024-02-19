@@ -1,10 +1,5 @@
+import { FormEvent } from "react";
 import { IFormInput } from "../../input/types";
-
-export type IHandleFormSubmit = {
-	text: string;
-	submitFunc: () => void;
-};
-
 export type IFormLinks = {
 	text?: string;
 	link: {
@@ -15,7 +10,8 @@ export type IFormLinks = {
 export type IForm = {
 	title: string;
 	inputs: IFormInput[];
-	handleSubmit: IHandleFormSubmit;
+	submitText: string;
+	submitFunc: (e: FormEvent) => void;
 	links: IFormLinks[];
 	onFormValueChange: ({ value, key }: Record<string, string>) => void;
 };

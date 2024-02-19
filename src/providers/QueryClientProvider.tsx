@@ -1,3 +1,5 @@
+"use client"
+
 import { IChildren } from "@/types/index.types";
 import { QueryClient, QueryClientProvider } from "react-query";
 

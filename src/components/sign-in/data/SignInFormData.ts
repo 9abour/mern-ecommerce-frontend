@@ -1,6 +1,5 @@
 import {
 	IFormLinks,
-	IHandleFormSubmit,
 } from "@/components/common/form/types/index.types";
 import { IFormInput } from "@/components/common/input/types";
 
@@ -20,10 +19,7 @@ export const singInFormInputsData: IFormInput[] = [
 	},
 ];
 
-export const singInFormIHandleSubmitData: IHandleFormSubmit = {
-	text: "Sign In",
-	submitFunc: () => {},
-};
+export const singInFormSubmitText: string = "Sign In";
 
 export const singInFormILinksData: IFormLinks[] = [
 	{

@@ -7,12 +7,13 @@ import Link from "next/link";
 const Form = ({
 	title,
 	inputs,
-	handleSubmit,
+	submitText,
+	submitFunc,
 	links,
 	onFormValueChange,
 }: IForm) => {
 	return (
-		<form className="w-full max-w-[600px] flex flex-col gap-2">
+		<form className="w-full max-w-[600px] flex flex-col gap-2" onSubmit={submitFunc}>
 			<h1 className="font-bold text-5xl mb-4">{title}</h1>
 
 			{inputs.map(input => (
@@ -21,15 +22,14 @@ const Form = ({
 					type={input.type}
 					name={input.name}
 					placeholder={input.placeholder}
-					required={input.required}
 					autoFocus={input.autoFocus}
 					handleChangeValue={onFormValueChange}
 				/>
 			))}
 
 			<TextButton
-				text={handleSubmit.text}
-				onclick={handleSubmit.submitFunc}
+				type="submit"
+				text={submitText}
 				customStyles="mt-2 font-semibold text-xl bg-primary"
 			/>
 

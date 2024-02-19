@@ -1,8 +1,10 @@
+import { useState } from "react";
+
 const useHandleFormInputChange = () => {
-	const formValues: Record<string, string> = {};
+	const [formValues, setFormValues] = useState<Record<string, string>>({});
 
 	const onFormValueChange = ({ value, key }: Record<string, string>) => {
-		formValues[key] = value;
+		setFormValues((prevFormValues) => ({...prevFormValues, [key]: value}))
 	};
 
 	return {

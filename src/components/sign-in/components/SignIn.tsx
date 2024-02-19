@@ -3,9 +3,9 @@
 import React from "react";
 import Form from "@/components/common/form/Form";
 import {
-	singInFormIHandleSubmitData,
 	singInFormILinksData,
 	singInFormInputsData,
+	singInFormSubmitText
 } from "../data/SignInFormData";
 
 const SignIn = () => {
@@ -13,8 +13,10 @@ const SignIn = () => {
 		<Form
 			title="Welcome Back"
 			inputs={singInFormInputsData}
-			handleSubmit={singInFormIHandleSubmitData}
+			submitText={singInFormSubmitText}
+			submitFunc={() => {}}
 			links={singInFormILinksData}
+			onFormValueChange={() => {}}
 		/>
 	);
 };
