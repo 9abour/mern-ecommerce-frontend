@@ -3,7 +3,6 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import TextButton from "../common/button/TextButton";
-import { AiFillStar } from "react-icons/ai";
 import AddToCartButton from "../common/button/AddToCartButton";
 import IconButton from "../common/button/IconButton";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
