@@ -12,7 +12,7 @@ const Form = ({ title, inputs, handleSubmit, links }: IForm) => {
 	};
 
 	return (
-		<form className="w-full max-w-[400px] flex flex-col gap-2">
+		<form className="w-full max-w-[600px] flex flex-col gap-2">
 			<h1 className="font-bold text-5xl mb-4">{title}</h1>
 
 			{inputs.map(input => (

@@ -11,7 +11,7 @@ const Basket = lazy(() => import("../basket/components/Basket"));
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
 	const [isLoading, setIsLoading] = useState(true);
-	const [user, setUser] = useState("user");
+	const [user, setUser] = useState("");
 	const pathname = usePathname();
 
 	useEffect(() => {

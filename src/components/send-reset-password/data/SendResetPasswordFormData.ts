@@ -4,7 +4,7 @@ import {
 } from "@/components/common/form/types/index.types";
 import { IFormInput } from "@/components/common/input/types";
 
-export const singInFormInputsData: IFormInput[] = [
+export const sendResetPasswordFormInputsData: IFormInput[] = [
 	{
 		name: "email",
 		type: "email",
@@ -12,20 +12,14 @@ export const singInFormInputsData: IFormInput[] = [
 		required: true,
 		autoFocus: true,
 	},
-	{
-		name: "password",
-		type: "password",
-		placeholder: "Password",
-		required: true,
-	},
 ];
 
-export const singInFormIHandleSubmitData: IHandleFormSubmit = {
-	text: "Sign In",
+export const sendResetPasswordFormIHandleSubmitData: IHandleFormSubmit = {
+	text: "Send Reset Password",
 	submitFunc: () => {},
 };
 
-export const singInFormILinksData: IFormLinks[] = [
+export const sendResetPasswordFormILinksData: IFormLinks[] = [
 	{
 		text: `Don't have an account? `,
 		link: {
@@ -34,10 +28,10 @@ export const singInFormILinksData: IFormLinks[] = [
 		},
 	},
 	{
-		text: `Forgot password? `,
+		text: `Already have an account? `,
 		link: {
-			href: "/send-reset-password",
-			text: "Reset",
+			href: "/signin",
+			text: "Sign In",
 		},
 	},
 ];
