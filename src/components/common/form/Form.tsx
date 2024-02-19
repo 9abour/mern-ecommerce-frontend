@@ -4,13 +4,13 @@ import FormInput from "../input/FormInput";
 import TextButton from "../button/TextButton";
 import Link from "next/link";
 
-const Form = ({ title, inputs, handleSubmit, links }: IForm) => {
-	const formValues: Record<string, string> = {};
-
-	const onFormValueChange = ({ value, key }: any) => {
-		formValues[key] = value;
-	};
-
+const Form = ({
+	title,
+	inputs,
+	handleSubmit,
+	links,
+	onFormValueChange,
+}: IForm) => {
 	return (
 		<form className="w-full max-w-[600px] flex flex-col gap-2">
 			<h1 className="font-bold text-5xl mb-4">{title}</h1>

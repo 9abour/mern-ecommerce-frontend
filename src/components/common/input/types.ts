@@ -18,17 +18,11 @@ export interface IFormInput extends IInputSearch {
 	name: string;
 	required?: boolean;
 	autoFocus?: boolean;
-	handleChangeValue?: ({
-		value,
-		key,
-	}: {
-		value: string | number;
-		key: string;
-	}) => void;
+	handleChangeValue?: ({ value, key }: Record<string, string>) => void;
 }
 
 export interface ISubmitSearchHookProps {
-	searchProps: string | number;
+	searchProps: string;
 	setFormIsActive: (isActive: boolean) => void;
 	resetSearch: () => void;
 }

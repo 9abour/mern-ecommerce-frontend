@@ -2,10 +2,10 @@ import { useState } from "react";
 import { ITarget } from "./index.types";
 
 const useInput = (
-	initialState: string | number
+	initialState: string
 ): [
 	{
-		value: string | number;
+		value: string;
 		onChange: (e: ITarget) => void;
 	},
 	() => void
@@ -15,7 +15,7 @@ const useInput = (
 	return [
 		{
 			value,
-			onChange: (e: ITarget) => setValue(e.target.value),
+			onChange: (e: ITarget) => setValue(e.target.value.toString()),
 		},
 		() => setValue(initialState),
 	];

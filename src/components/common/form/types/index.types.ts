@@ -17,4 +17,5 @@ export type IForm = {
 	inputs: IFormInput[];
 	handleSubmit: IHandleFormSubmit;
 	links: IFormLinks[];
+	onFormValueChange: ({ value, key }: Record<string, string>) => void;
 };
