@@ -1,6 +1,4 @@
-import {
-	IFormLinks,
-} from "@/components/common/form/types/index.types";
+import { IFormLinks } from "@/components/common/form/types/index.types";
 import { IFormInput } from "@/components/common/input/types";
 
 export const signUpFormInputsData: IFormInput[] = [
@@ -28,18 +26,18 @@ export const signUpFormInputsData: IFormInput[] = [
 		type: "password",
 		placeholder: "Password",
 		required: true,
-		min: 8
+		min: 8,
 	},
 	{
 		name: "confirmPassword",
 		type: "password",
 		placeholder: "Confirm Password",
 		required: true,
-		min: 8
+		min: 8,
 	},
 ];
 
-export const signUpFormISubmitText: string = "Sign Up"
+export const signUpFormISubmitText: string = "Sign Up";
 
 export const signUpFormILinksData: IFormLinks[] = [
 	{

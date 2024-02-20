@@ -1,6 +1,4 @@
-import {
-	IFormLinks,
-} from "@/components/common/form/types/index.types";
+import { IFormLinks } from "@/components/common/form/types/index.types";
 import { IFormInput } from "@/components/common/input/types";
 
 export const singInFormInputsData: IFormInput[] = [

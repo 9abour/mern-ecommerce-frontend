@@ -13,18 +13,24 @@ import useFormValidation from "@/hooks/useFormValidation";
 
 const SignUp = () => {
 	const { formValues, onFormValueChange } = useHandleFormInputChange();
-	const schema = generateZodSchema(signUpFormInputsData, [{ condition: formValues.password == formValues.confirmPassword,
-		msg: "Passwords don't match",
-		path: ["confirmPassword"]
-	}]);
 
-	const {validationErrors, checkFormValidation} = useFormValidation(schema, formValues);
+	const schema = generateZodSchema(signUpFormInputsData, [
+		{
+			condition: formValues.password == formValues.confirmPassword,
+			msg: "Passwords don't match",
+			path: ["confirmPassword"],
+		},
+	]);
 
-	
+	const { validationErrors, checkFormValidation } = useFormValidation(
+		schema,
+		formValues
+	);
+
 	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault();
 		checkFormValidation();
-	}
+	};
 
 	return (
 		<Form
