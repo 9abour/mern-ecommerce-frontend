@@ -1,3 +1,5 @@
+import { ZodIssue } from "zod";
+
 export interface IInput {
 	type: string;
 	value: string;
@@ -19,6 +21,8 @@ export interface IFormInput extends IInputSearch {
 	required?: boolean;
 	autoFocus?: boolean;
 	handleChangeValue?: ({ value, key }: Record<string, string>) => void;
+	validationError?: ZodIssue | null;
+	min?: number;
 }
 
 export interface ISubmitSearchHookProps {

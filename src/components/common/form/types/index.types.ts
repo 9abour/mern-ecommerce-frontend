@@ -12,6 +12,7 @@ export type IForm = {
 	inputs: IFormInput[];
 	submitText: string;
 	submitFunc: (e: FormEvent) => void;
-	links: IFormLinks[];
-	onFormValueChange: ({ value, key }: Record<string, string>) => void;
+	links?: IFormLinks[];
+	onFormValueChange?: ({ value, key }: Record<string, string>) => void;
+	validationErrors?: any;
 };

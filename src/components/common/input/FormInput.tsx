@@ -12,6 +12,7 @@ const FormInput = ({
 	name,
 	autoFocus,
 	handleChangeValue,
+	validationError
 }: IFormInput) => {
 	const [searchProps] = useInput("");
 	const { value, onChange } = searchProps;
@@ -23,16 +24,19 @@ const FormInput = ({
 	}, [searchProps.value]);
 
 	return (
-		<input
-			type={type}
-			placeholder={placeholder}
-			className={`w-full h-[50px] min-h-[50px] border shadow-cmd rounded-full px-4 justify-between gap-2 text-xl bg-white outline-none focus:border-primary ${customStyles}`}
-			value={value}
-			onChange={onChange}
-			required={required}
-			name={name}
-			autoFocus={autoFocus}
-		/>
+		<div>
+			<input
+				type={type}
+				placeholder={placeholder}
+				className={`w-full h-[50px] min-h-[50px] border shadow-cmd rounded-full px-4 justify-between gap-2 text-xl bg-white outline-none focus:border-primary ${customStyles}`}
+				value={value}
+				onChange={onChange}
+				required={required}
+				name={name}
+				autoFocus={autoFocus}
+			/>
+			{validationError ? <p className="text-red-600 ml-4">{validationError.message}</p> : null}
+		</div>
 	);
 };
 

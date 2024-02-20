@@ -28,12 +28,14 @@ export const signUpFormInputsData: IFormInput[] = [
 		type: "password",
 		placeholder: "Password",
 		required: true,
+		min: 8
 	},
 	{
 		name: "confirmPassword",
 		type: "password",
 		placeholder: "Confirm Password",
 		required: true,
+		min: 8
 	},
 ];
 

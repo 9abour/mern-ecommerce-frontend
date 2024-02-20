@@ -3,6 +3,7 @@ import { IForm } from "./types/index.types";
 import FormInput from "../input/FormInput";
 import TextButton from "../button/TextButton";
 import Link from "next/link";
+import getZodErrorPath from "@/helpers/getZodErrorPath";
 
 const Form = ({
 	title,
@@ -11,7 +12,9 @@ const Form = ({
 	submitFunc,
 	links,
 	onFormValueChange,
+	validationErrors
 }: IForm) => {
+	
 	return (
 		<form className="w-full max-w-[600px] flex flex-col gap-2" onSubmit={submitFunc}>
 			<h1 className="font-bold text-5xl mb-4">{title}</h1>
@@ -24,6 +27,7 @@ const Form = ({
 					placeholder={input.placeholder}
 					autoFocus={input.autoFocus}
 					handleChangeValue={onFormValueChange}
+					validationError={getZodErrorPath(input.name, validationErrors)}
 				/>
 			))}
 
@@ -33,7 +37,8 @@ const Form = ({
 				customStyles="mt-2 font-semibold text-xl bg-primary"
 			/>
 
-			<ul>
+			{
+				links ? <ul>
 				{links.map(link => (
 					<li key={link.text} className="mt-2">
 						<p>
@@ -47,7 +52,9 @@ const Form = ({
 						</p>
 					</li>
 				))}
-			</ul>
+			</ul> : null
+			}
+			
 		</form>
 	);
 };
