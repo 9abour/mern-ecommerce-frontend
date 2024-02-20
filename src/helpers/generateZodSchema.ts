@@ -14,11 +14,11 @@ const generateZodSchema = (inputs: IFormInput[], checks: IZodSchemaCheck[]) => {
   const validations = inputs.map(input => {
     switch (input.type) {
       case "email":
-        return {[input.name]: z.string().email().min(input.min ?? input.required ? 1 : 0)}
+        return {[input.name]: z.string().email().min(input.min ? input.min : input.required ? 1 : 0)}
       case "number":
-        return {[input.name]: z.number().min(input.min ?? input.required ? 1 : 0)}
+        return {[input.name]: z.number().min(input.min ? input.min : input.required ? 1 : 0)}
       default:
-        return {[input.name]: z.string().min(input.min ?? input.required ? 1 : 0)}
+        return {[input.name]: z.string().min(input.min ? input.min : input.required ? 1 : 0)}
     }
   });
 
