@@ -5,7 +5,7 @@ import WishlistItem from "./WishlistItem";
 import TextButton from "../common/button/TextButton";
 import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
 import { clearWishlist } from "@/rtk/slices/wishlist/wishlistSlice";
-import { useAddAllProductsToCart } from "@/hooks";
+import { useAddAllProductsToCart } from "@/hooks/useAddAllProductsToCart";
 
 const Wishlist = () => {
 	const { products } = useAppSelector(state => state.wishlistSlice);

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { ISelect } from "../index.types";
+import { ISelect } from "../types/index.types";
 import { BiSolidDownArrowSquare } from "react-icons/bi";
 import { Variants, motion } from "framer-motion";
 import { FiltersHelper } from "../../filters/helpers/filters.helper";
 import { Checkbox } from "rsuite";
-import { useOnClickOutside } from "@/hooks";
+import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 
 const optionsAnimate = {
 	open: {

@@ -12,11 +12,14 @@ const Form = ({
 	submitFunc,
 	links,
 	onFormValueChange,
-	validationErrors
+	validationErrors,
+	isLoading,
 }: IForm) => {
-	
 	return (
-		<form className="w-full max-w-[600px] flex flex-col gap-2" onSubmit={submitFunc}>
+		<form
+			className="w-full max-w-[600px] flex flex-col gap-2"
+			onSubmit={submitFunc}
+		>
 			<h1 className="font-bold text-5xl mb-4">{title}</h1>
 
 			{inputs.map(input => (
@@ -33,28 +36,27 @@ const Form = ({
 
 			<TextButton
 				type="submit"
-				text={submitText}
+				text={isLoading ? "Loading..." : submitText}
 				customStyles="mt-2 font-semibold text-xl bg-primary"
 			/>
 
-			{
-				links ? <ul>
-				{links.map(link => (
-					<li key={link.text} className="mt-2">
-						<p>
-							{link.text}
-							<Link
-								href={link.link.href}
-								className="!font-semibold !text-blue-600"
-							>
-								{link.link.text}
-							</Link>
-						</p>
-					</li>
-				))}
-			</ul> : null
-			}
-			
+			{links ? (
+				<ul>
+					{links.map(link => (
+						<li key={link.text} className="mt-2">
+							<p>
+								{link.text}
+								<Link
+									href={link.link.href}
+									className="!font-semibold !text-blue-600"
+								>
+									{link.link.text}
+								</Link>
+							</p>
+						</li>
+					))}
+				</ul>
+			) : null}
 		</form>
 	);
 };

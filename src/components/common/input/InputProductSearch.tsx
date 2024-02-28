@@ -2,7 +2,7 @@
 
 import React from "react";
 import { IInputProductSearch } from "./types";
-import useInput from "@/hooks/useInput";
+import useInput from "@/components/form/hooks/useInput";
 
 const InputProductSearch = ({
 	type,

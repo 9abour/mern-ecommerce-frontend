@@ -6,7 +6,7 @@ import { useAppSelector } from "@/rtk/store/store";
 import Link from "next/link";
 import ProductCartActions from "./ProductCartActions";
 import ProductCardStars from "./ProductCardStars";
-import { useCheckProductIn } from "@/hooks";
+import useCheckProductIn from "@/hooks/useCheckProductIn";
 
 const ProductCard = ({ product }: { product: IProduct }) => {
 	const { id, slug, name, price, image, available, rate } = product;

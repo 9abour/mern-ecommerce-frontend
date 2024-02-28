@@ -15,4 +15,5 @@ export type IForm = {
 	links?: IFormLinks[];
 	onFormValueChange?: ({ value, key }: Record<string, string>) => void;
 	validationErrors?: any;
+	isLoading?: boolean;
 };

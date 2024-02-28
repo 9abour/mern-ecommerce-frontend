@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
 import { addToCart, removeFromCart } from "@/rtk/slices/cart/cartSlice";
 import { IProduct } from "@/components/products/index.types";
 import { usePathname, useRouter } from "next/navigation";
-import { useCheckProductIn } from "@/hooks";
+import useCheckProductIn from "@/hooks/useCheckProductIn";
 
 const AddToCartButton = ({
 	customStyles,

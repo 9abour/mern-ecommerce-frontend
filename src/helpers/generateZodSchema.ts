@@ -20,8 +20,8 @@ const generateZodSchema = (
 				return {
 					[input.name]: z
 						.string()
-						.email()
-						.min(input.min ? input.min : input.required ? 1 : 0),
+						.min(input.min ? input.min : input.required ? 1 : 0)
+						.email(),
 				};
 			case "number":
 				return {

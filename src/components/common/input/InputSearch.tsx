@@ -7,7 +7,7 @@ import { IoSearchSharp } from "react-icons/io5";
 import Link from "next/link";
 import ThrobbingLoading from "../loading/ThrobbingLoading";
 import { useSubmitSearch } from "./hooks/useSubmitSearch";
-import useInput from "@/hooks/useInput";
+import useInput from "@/components/form/hooks/useInput";
 
 const InputSearch = ({ type, placeholder, customStyles }: IInputSearch) => {
 	const [searchProps, resetSearch] = useInput("");

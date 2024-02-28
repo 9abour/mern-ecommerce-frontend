@@ -8,7 +8,7 @@ import MenuButton from "../../common/button/MenuButton";
 import { motion } from "framer-motion";
 import DropMotionItem from "./DropItem";
 import { useMediaQuery } from "usehooks-ts";
-import { useOnClickOutside } from "@/hooks";
+import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 
 const Aside = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);

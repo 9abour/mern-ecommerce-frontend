@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { IFormInput } from "./types";
-import useInput from "@/hooks/useInput";
+import useInput from "@/components/form/hooks/useInput";
 
 const FormInput = ({
 	type,
@@ -12,7 +12,7 @@ const FormInput = ({
 	name,
 	autoFocus,
 	handleChangeValue,
-	validationError
+	validationError,
 }: IFormInput) => {
 	const [searchProps] = useInput("");
 	const { value, onChange } = searchProps;
@@ -35,7 +35,9 @@ const FormInput = ({
 				name={name}
 				autoFocus={autoFocus}
 			/>
-			{validationError ? <p className="text-red-600 ml-4">{validationError.message}</p> : null}
+			{validationError ? (
+				<p className="text-red-600 ml-4">{validationError.message}</p>
+			) : null}
 		</div>
 	);
 };
