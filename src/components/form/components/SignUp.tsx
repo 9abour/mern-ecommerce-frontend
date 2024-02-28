@@ -7,14 +7,13 @@ import useHandleFormInputChange from "@/components/common/form/hooks/useHandleFo
 import generateZodSchema from "@/helpers/generateZodSchema";
 import useFormValidation from "@/components/form/hooks/useFormValidation";
 import { useMutation } from "react-query";
-import HandleApiRequests from "@/helpers/handleApiRequests";
-import AUTH from "@/enums/auth.enum";
 import useHandleNotifications from "@/hooks/useHandleNotifications";
 import {
 	signUpFormILinksData,
 	signUpFormISubmitText,
 	signUpFormInputsData,
 } from "@/components/form/data/SignUpData";
+import signUpMutation from "@/components/form/helpers/signUpMutation";
 
 const SignUp = () => {
 	const { formValues, onFormValueChange } = useHandleFormInputChange();
@@ -33,26 +32,15 @@ const SignUp = () => {
 	);
 	const { sendNotifications } = useHandleNotifications();
 
-	const mutation = useMutation(
-		async () => {
-			const data = await HandleApiRequests.handleApiRequest({
-				method: "POST",
-				body: formValues,
-				endpoint: AUTH.REGISTER,
-			});
-
-			return data;
+	const mutation = useMutation(() => signUpMutation(formValues), {
+		onError: error => {
+			console.log(error);
+			sendNotifications(error, null);
 		},
-		{
-			onError: error => {
-				console.log(error);
-				sendNotifications(error, null);
-			},
-			onSuccess: data => {
-				sendNotifications(null, data);
-			},
-		}
-	);
+		onSuccess: data => {
+			sendNotifications(null, data);
+		},
+	});
 
 	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault();
