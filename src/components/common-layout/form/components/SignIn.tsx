@@ -32,7 +32,10 @@ const SignIn = () => {
 		},
 		onSuccess: data => {
 			sendNotifications(null, data);
-			window.location.replace("/");
+
+			setTimeout(() => {
+				window.location.replace("/");
+			}, 500);
 		},
 	});
 
