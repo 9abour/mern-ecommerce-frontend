@@ -1,4 +1,4 @@
-import { IProduct } from "@/components/products/index.types";
+import { IProduct } from "@/components/product/products/index.types";
 import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "sonner";
 

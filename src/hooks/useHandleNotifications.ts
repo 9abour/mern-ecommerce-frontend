@@ -3,19 +3,6 @@ import { sendNotificationFunc } from "@/hooks/types/index.types";
 import { toast } from "sonner";
 
 const useHandleNotifications = (): sendNotificationFunc => {
-	const sendNotifications = <Data>(
-		error: unknown | null,
-		data: null | Data
-	) => {
-		if (error) {
-			handleErrors(error);
-		}
-
-		if (data) {
-			handleData(data);
-		}
-	};
-
 	const handleErrors = (error: unknown) => {
 		const axiosError = handleAxiosError(error);
 		const errors = axiosError.errors;
@@ -28,6 +15,19 @@ const useHandleNotifications = (): sendNotificationFunc => {
 	const handleData = (data: any) => {
 		const msg = data.data.msg;
 		toast.success(msg);
+	};
+
+	const sendNotifications = <Data>(
+		error: unknown | null,
+		data: null | Data
+	) => {
+		if (error) {
+			handleErrors(error);
+		}
+
+		if (data) {
+			handleData(data);
+		}
 	};
 
 	return {

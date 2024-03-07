@@ -4,11 +4,19 @@ import React, { ReactNode, lazy, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { UserType } from "@/types/index.types";
 import Loader from "@/components/common/loading/Loader";
-const Navbar = lazy(() => import("../navbar/components/Navbar"));
-const Aside = lazy(() => import("../aside/components/Aside"));
-const Footer = lazy(() => import("../footer/components/Footer"));
-const JoinLayout = lazy(() => import("../join/Layout"));
-const Basket = lazy(() => import("../basket/components/Basket"));
+const Navbar = lazy(
+	() => import("@/components/common-layout/navbar/components/Navbar")
+);
+const Aside = lazy(
+	() => import("@/components/common-layout/aside/components/Aside")
+);
+const Basket = lazy(
+	() => import("@/components/purchase-management/basket/components/Basket")
+);
+const Footer = lazy(
+	() => import("@/components/common-layout/footer/components/Footer")
+);
+const JoinLayout = lazy(() => import("@/components/join/Layout"));
 
 const DashboardLayout = ({
 	children,

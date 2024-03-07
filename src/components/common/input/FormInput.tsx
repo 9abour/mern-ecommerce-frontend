@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { IFormInput } from "./types";
-import useInput from "@/components/form/hooks/useInput";
+import useInput from "@/components/common-layout/form/hooks/useInput";
 
 const FormInput = ({
 	type,

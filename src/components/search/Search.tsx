@@ -2,10 +2,10 @@
 
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-import ProductCard from "../production/components/product-card/ProductCard";
 import Filters from "../filters/components/Filters";
 import { IFilters } from "../filters/index.types";
 import { getSearchResult } from "./helpers/getSearchResult";
+import ProductCard from "@/components/product/production/components/product-card/ProductCard";
 
 const Search = () => {
 	const currentPath = usePathname();

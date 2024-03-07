@@ -1,4 +1,4 @@
-import { IProduct } from "@/components/products/index.types";
+import { IProduct } from "@/components/product/products/index.types";
 import { clearBasket } from "@/rtk/slices/basket/basketSlice";
 import { addToCart } from "@/rtk/slices/cart/cartSlice";
 import { useAppDispatch } from "@/rtk/store/store";
