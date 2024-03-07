@@ -1,15 +1,16 @@
-"use client";
-
 import React, { FormEvent } from "react";
 import Form from "@/components/common/form/Form";
+import useFormValidation from "@/components/form/hooks/useFormValidation";
+import useHandleFormInputChange from "@/components/common/form/hooks/useHandleFormInputChange";
+import generateZodSchema from "@/helpers/generateZodSchema";
+import useHandleNotifications from "@/hooks/useHandleNotifications";
+import { useMutation } from "react-query";
+import signInMutation from "@/components/form/mutations/signIn";
 import {
 	singInFormILinksData,
 	singInFormInputsData,
 	singInFormSubmitText,
-} from "../data/SignInFormData";
-import useFormValidation from "@/components/form/hooks/useFormValidation";
-import useHandleFormInputChange from "@/components/common/form/hooks/useHandleFormInputChange";
-import generateZodSchema from "@/helpers/generateZodSchema";
+} from "@/components/form/data/signInFormData";
 
 const SignIn = () => {
 	const { formValues, onFormValueChange } = useHandleFormInputChange();
@@ -21,9 +22,24 @@ const SignIn = () => {
 		formValues
 	);
 
-	const handleSubmit = (e: FormEvent) => {
+	const { sendNotifications } = useHandleNotifications();
+
+	const mutation = useMutation(() => signInMutation(formValues), {
+		onError: error => {
+			sendNotifications(error, null);
+		},
+		onSuccess: data => {
+			sendNotifications(null, data);
+			window.location.replace("/");
+		},
+	});
+
+	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault();
-		checkFormValidation();
+
+		if (await checkFormValidation()) {
+			mutation.mutate();
+		}
 	};
 
 	return (
@@ -35,6 +51,7 @@ const SignIn = () => {
 			links={singInFormILinksData}
 			onFormValueChange={onFormValueChange}
 			validationErrors={validationErrors}
+			isLoading={mutation.isLoading}
 		/>
 	);
 };

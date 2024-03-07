@@ -28,7 +28,9 @@ const FormInput = ({
 			<input
 				type={type}
 				placeholder={placeholder}
-				className={`w-full h-[50px] min-h-[50px] border shadow-cmd rounded-full px-4 justify-between gap-2 text-xl bg-white outline-none focus:border-primary ${customStyles}`}
+				className={`w-full h-[50px] min-h-[50px] border shadow-cmd rounded-full px-4 justify-between gap-2 text-xl bg-white outline-none focus:border-primary ${
+					validationError ? "!border-red-600" : ""
+				} ${customStyles}`}
 				value={value}
 				onChange={onChange}
 				required={required}

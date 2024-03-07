@@ -15,6 +15,7 @@ class HandleApiRequests {
 			method,
 			url: `${BASE_API_URL}/${endpoint}`,
 			data: body,
+			headers,
 		});
 
 		return data;

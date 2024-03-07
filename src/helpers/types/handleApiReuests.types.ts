@@ -8,5 +8,5 @@ export type IHandleApiRequestArgs<Data> = {
 	body?: Data;
 	queryParams?: Record<string, string>;
 	withCredentials?: boolean;
-	headers?: AxiosHeaders;
+	headers?: Record<string, string>;
 };

@@ -1,15 +1,9 @@
+import AllCategories from "@/components/categories/components/AllCategories";
 import PopularCategory from "@/components/categories/components/PopularCategory";
-import { lazy } from "react";
+import Hero from "@/components/hero/components/Hero";
+import Production from "@/components/production/components/Production";
 
-const Hero = lazy(() => import("@/components/hero/components/Hero"));
-const AllCategories = lazy(
-	() => import("@/components/categories/components/AllCategories")
-);
-const Production = lazy(
-	() => import("@/components/production/components/Production")
-);
-
-export default function Home() {
+export default async function Home() {
 	return (
 		<>
 			<Hero />

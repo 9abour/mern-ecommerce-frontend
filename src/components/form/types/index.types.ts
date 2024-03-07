@@ -4,4 +4,4 @@ export interface IUserResponse {
 	error: AxiosError | null;
 }
 
-export type SignUpMutationArgs = Record<string, string>;
+export type BodyKeyValue = Record<string, string>;

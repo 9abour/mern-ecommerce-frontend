@@ -1,24 +1,24 @@
 "use client";
 
 import Form from "@/components/common/form/Form";
-import React, { FormEvent } from "react";
-
 import useHandleFormInputChange from "@/components/common/form/hooks/useHandleFormInputChange";
-import generateZodSchema from "@/helpers/generateZodSchema";
-import useFormValidation from "@/components/form/hooks/useFormValidation";
-import { useMutation } from "react-query";
-import useHandleNotifications from "@/hooks/useHandleNotifications";
-import signUpMutation from "@/components/form/mutations/signUp";
 import {
-	signUpFormILinksData,
-	signUpFormISubmitText,
-	signUpFormInputsData,
-} from "@/components/form/data/signUpData";
+	resetPasswordFormData,
+	resetPasswordFormInputsData,
+} from "@/components/form/data/resetPassword";
+import useFormValidation from "@/components/form/hooks/useFormValidation";
+import resetPassword from "@/components/form/mutations/resetPassword";
+import generateZodSchema from "@/helpers/generateZodSchema";
+import useHandleNotifications from "@/hooks/useHandleNotifications";
+import { useParams } from "next/navigation";
+import React, { FormEvent } from "react";
+import { useMutation } from "react-query";
 
-const SignUp = () => {
+const ResetPassword = () => {
 	const { formValues, onFormValueChange } = useHandleFormInputChange();
+	const { token } = useParams();
 
-	const schema = generateZodSchema(signUpFormInputsData, [
+	const schema = generateZodSchema(resetPasswordFormInputsData, [
 		{
 			condition: formValues.password == formValues.confirmPassword,
 			msg: "Passwords don't match",
@@ -30,9 +30,10 @@ const SignUp = () => {
 		schema,
 		formValues
 	);
+
 	const { sendNotifications } = useHandleNotifications();
 
-	const mutation = useMutation(() => signUpMutation(formValues), {
+	const mutation = useMutation(() => resetPassword(formValues, token), {
 		onError: error => {
 			sendNotifications(error, null);
 		},
@@ -43,6 +44,7 @@ const SignUp = () => {
 
 	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault();
+
 		if (await checkFormValidation()) {
 			mutation.mutate();
 		}
@@ -50,16 +52,16 @@ const SignUp = () => {
 
 	return (
 		<Form
-			title="Create Account"
-			inputs={signUpFormInputsData}
-			submitText={signUpFormISubmitText}
+			title="Reset Password"
+			inputs={resetPasswordFormInputsData}
+			submitText="Send"
 			submitFunc={handleSubmit}
-			links={signUpFormILinksData}
 			onFormValueChange={onFormValueChange}
+			links={resetPasswordFormData}
 			validationErrors={validationErrors}
 			isLoading={mutation.isLoading}
 		/>
 	);
 };
 
-export default SignUp;
+export default ResetPassword;

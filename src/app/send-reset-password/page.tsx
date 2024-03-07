@@ -1,8 +1,8 @@
-import SendResetPasswordForm from "@/components/form/components/SendResetPasswordForm";
+import SendResetPassword from "@/components/form/components/SendResetPassword";
 import React from "react";
 
 const page = () => {
-	return <SendResetPasswordForm />;
+	return <SendResetPassword />;
 };
 
 export default page;

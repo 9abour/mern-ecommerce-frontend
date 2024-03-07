@@ -4,12 +4,12 @@ import "slick-carousel/slick/slick-theme.css";
 import "rsuite/dist/rsuite.min.css";
 import { Outfit } from "next/font/google";
 import { ReduxProvider } from "@/rtk/Provider";
-import { lazy } from "react";
 import { Metadata } from "next";
 import { Toaster } from "sonner";
 import QueryProvider from "@/providers/QueryClientProvider";
-const DashboardLayout = lazy(() => import("@/components/secure/Layout"));
-
+import DashboardLayout from "@/components/secure/Layout";
+import getUser from "@/helpers/getUser";
+import { cookies } from "next/headers";
 
 const inter = Outfit({ subsets: ["latin"] });
 
@@ -18,18 +18,23 @@ export const metadata: Metadata = {
 	description: "E-commerce app",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
+	const cookieStore = cookies();
+	const accessToken = cookieStore.get("accessToken")?.value;
+
+	const user = await getUser(accessToken);
+
 	return (
 		<html lang="en">
 			<body className={inter.className}>
 				<QueryProvider>
 					<Toaster richColors position="bottom-left" />
 					<ReduxProvider>
-						<DashboardLayout>{children}</DashboardLayout>
+						<DashboardLayout user={user}>{children}</DashboardLayout>
 					</ReduxProvider>
 				</QueryProvider>
 			</body>

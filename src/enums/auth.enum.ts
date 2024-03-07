@@ -5,6 +5,7 @@ enum AUTH {
 	RESET_PASSWORD = "resetPassword",
 	VERIFY_ACCOUNT = "verify",
 	REFRESH_TOKEN = "refreshToken",
+	WHOAMI = "whoami",
 }
 
 export default AUTH;
