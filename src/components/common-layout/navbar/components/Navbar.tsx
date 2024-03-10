@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Logo from "./Logo";
 import InputSearch from "@/components/common/input/InputSearch";
 import User from "./User";
@@ -15,9 +15,11 @@ import { MdDashboardCustomize } from "react-icons/md";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import { useIsWindowScrolled } from "@/hooks/useIsWindowScrolled";
 import { UserType } from "@/types/index.types";
+import UserContext from "@/context/UserContext";
 
-const Navbar = ({ user }: { user: UserType | null }) => {
+const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const { user } = useContext(UserContext);
 
 	const handleClickOutside = () => {
 		if (isMenuOpen) {

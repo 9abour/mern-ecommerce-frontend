@@ -10,6 +10,7 @@ import QueryProvider from "@/providers/QueryClientProvider";
 import DashboardLayout from "@/components/secure/Layout";
 import getUser from "@/helpers/getUser";
 import { cookies } from "next/headers";
+import { UserProvider } from "@/context/UserContext";
 
 const inter = Outfit({ subsets: ["latin"] });
 
@@ -34,7 +35,9 @@ export default async function RootLayout({
 				<QueryProvider>
 					<Toaster richColors position="bottom-left" />
 					<ReduxProvider>
-						<DashboardLayout user={user}>{children}</DashboardLayout>
+						<UserProvider user={user}>
+							<DashboardLayout>{children}</DashboardLayout>
+						</UserProvider>
 					</ReduxProvider>
 				</QueryProvider>
 			</body>
