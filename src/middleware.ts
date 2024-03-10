@@ -4,21 +4,21 @@ export const config = {
 	matcher: ["/((?!api|.*\\..*).*)"],
 };
 
-const protectedRoutes = [
-	"/auth/signin",
-	"/auth/signup",
-	"/auth/send-reset-password",
-	"/auth/reset-password",
-];
+const protectedRoutes = ["/auth"];
 
 export default async function middleware(req: NextRequest) {
 	const accessToken = req.cookies.get("accessToken")?.value;
 
 	const user = await getUser(accessToken);
 
-	if (user && protectedRoutes.includes(req.nextUrl.pathname)) {
+	const isProtectedRoute = protectedRoutes.some(route => {
+		// Check if the request path starts with the protected route
+		return req.nextUrl.pathname.startsWith(route);
+	});
+
+	if (user && isProtectedRoute) {
 		return NextResponse.redirect(new URL("/", req.nextUrl));
-	} else if (!user && !protectedRoutes.includes(req.nextUrl.pathname)) {
+	} else if (!user && !isProtectedRoute) {
 		return NextResponse.redirect(new URL("/auth/signin", req.url));
 	}
 	return NextResponse.next();

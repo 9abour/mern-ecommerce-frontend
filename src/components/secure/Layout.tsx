@@ -4,6 +4,7 @@ import React, { ReactNode, lazy, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { UserType } from "@/types/index.types";
 import Loader from "@/components/common/loading/Loader";
+import useRefreshToken from "@/components/auth/hooks/useRefreshToken";
 const Navbar = lazy(
 	() => import("@/components/common-layout/navbar/components/Navbar")
 );
@@ -33,6 +34,8 @@ const DashboardLayout = ({
 			setIsLoading(false);
 		}, 1000);
 	}, [pathname]);
+
+	useRefreshToken(user);
 
 	return isLoading ? (
 		<Loader />
