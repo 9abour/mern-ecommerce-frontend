@@ -7,6 +7,8 @@ import Cookies from "js-cookie";
 import { useEffect } from "react";
 
 const useRefreshToken = (user: UserType | null) => {
+	const accessToken = Cookies.get("accessToken");
+
 	useEffect(() => {
 		const handleRefreshToken = async (refreshToken: string) => {
 			const headers = {
@@ -23,23 +25,20 @@ const useRefreshToken = (user: UserType | null) => {
 				const { accessToken }: any = data;
 
 				Cookies.set("accessToken", accessToken);
-				window.location.replace("/");
 			} catch (error) {
 				Cookies.remove("accessToken");
 				Cookies.remove("refreshToken");
-
-				console.log(error);
 			}
 		};
 
-		if (!user) {
+		if (!user || !accessToken) {
 			const refreshToken = Cookies.get("refreshToken");
 
 			if (refreshToken) {
 				handleRefreshToken(refreshToken);
 			}
 		}
-	}, [user]);
+	}, [user, accessToken]);
 };
 
 export default useRefreshToken;

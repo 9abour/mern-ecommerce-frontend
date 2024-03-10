@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 export const useSubmitSearch = ({
 	searchProps,
 	setFormIsActive,
-	resetSearch,
+	reset,
 }: ISubmitSearchHookProps) => {
 	const { push } = useRouter();
 
@@ -16,7 +16,7 @@ export const useSubmitSearch = ({
 			push(`/search/p=${searchProps}`);
 			setFormIsActive(false);
 
-			resetSearch();
+			reset();
 		}
 	};
 

@@ -28,5 +28,5 @@ export interface IFormInput extends IInputSearch {
 export interface ISubmitSearchHookProps {
 	searchProps: string;
 	setFormIsActive: (isActive: boolean) => void;
-	resetSearch: () => void;
+	reset: () => void;
 }

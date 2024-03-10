@@ -1,24 +1,22 @@
 import { ITarget } from "@/hooks/types/index.types";
 import { useState } from "react";
 
-const useInput = (
-	initialState: string
-): [
-	{
-		value: string;
-		onChange: (e: ITarget) => void;
-	},
-	() => void
-] => {
+const useInput = (initialState: string) => {
 	const [value, setValue] = useState(initialState);
 
-	return [
-		{
-			value,
-			onChange: (e: ITarget) => setValue(e.target.value.toString()),
-		},
-		() => setValue(initialState),
-	];
+	const changeValue = (e: ITarget) => {
+		setValue(e.target.value.toString());
+	};
+
+	const reset = () => {
+		setValue("");
+	};
+
+	return {
+		value,
+		changeValue,
+		reset,
+	};
 };
 
 export default useInput;

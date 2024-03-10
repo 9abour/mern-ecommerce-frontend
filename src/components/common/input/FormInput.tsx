@@ -14,14 +14,13 @@ const FormInput = ({
 	handleChangeValue,
 	validationError,
 }: IFormInput) => {
-	const [searchProps] = useInput("");
-	const { value, onChange } = searchProps;
+	const { value, changeValue } = useInput("");
 
 	useEffect(() => {
 		if (handleChangeValue) {
-			handleChangeValue({ value: searchProps.value, key: name });
+			handleChangeValue({ value: value, key: name });
 		}
-	}, [searchProps.value]);
+	}, [value]);
 
 	return (
 		<div>
@@ -32,7 +31,7 @@ const FormInput = ({
 					validationError ? "!border-red-600" : ""
 				} ${customStyles}`}
 				value={value}
-				onChange={onChange}
+				onChange={changeValue}
 				required={required}
 				name={name}
 				autoFocus={autoFocus}

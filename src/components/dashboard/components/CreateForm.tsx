@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import FormInput from "@/components/common/input/FormInput";
 import TextButton from "@/components/common/button/TextButton";
 import { usePathname } from "next/navigation";
 import useCreateProduct from "@/components/dashboard/hooks/useCreateProduct";
 import ProductImage from "@/components/dashboard/components/ProductImage";
+import SelectProductCategories from "@/components/dashboard/components/SelectProductCategories";
 
 const CreateForm = () => {
 	const [selectedImage, setSelectedImage] = useState<File | null>(null);
@@ -55,13 +56,16 @@ const CreateForm = () => {
 	return (
 		<form
 			className="w-full max-w-[600px] mx-auto flex flex-col gap-2 mt-24"
-			onSubmit={handleSubmit}
+			onSubmit={e => {
+				e.preventDefault();
+				handleSubmit();
+			}}
 		>
 			<h1 className="font-bold text-3xl mb-4 capitalize">
 				Create {lastDirectory}
 			</h1>
 
-			<div className="grid grid-cols-2 gap-2">
+			<div className="grid grid-cols-4 gap-2">
 				{productInputs.map(
 					({
 						name,
@@ -101,6 +105,8 @@ const CreateForm = () => {
 						)
 				)}
 			</div>
+
+			<SelectProductCategories />
 
 			<ProductImage
 				selectedImage={selectedImage}

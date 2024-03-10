@@ -7,7 +7,7 @@
 		width: 0;
 	}
 	.dashboard-taps-button {
-		@apply w-full flex items-center justify-center gap-2 font-semibold py-2 bg-gray-200 hover:bg-primary transition duration-500
+		@apply w-full flex items-center justify-center gap-2 font-semibold py-2 bg-gray-200 hover:bg-primary transition duration-500;
 	}
 }
 
@@ -45,6 +45,16 @@ html {
 
 .rs-slider-handle::before {
 	@apply !border-primary;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
 }
 
 .loader {

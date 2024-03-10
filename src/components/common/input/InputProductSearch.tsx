@@ -10,7 +10,7 @@ const InputProductSearch = ({
 	customStyles,
 	label,
 }: IInputProductSearch) => {
-	const [searchProps] = useInput("");
+	const { value, changeValue } = useInput("");
 
 	return (
 		<>
@@ -23,8 +23,8 @@ const InputProductSearch = ({
 				type={type}
 				placeholder={placeholder}
 				className={`w-full md:w-10/12 h-[50px] min-h-[50px] border shadow-cmd rounded-full px-4 justify-between gap-2 bg-white outline-none ${customStyles}`}
-				value={searchProps.value}
-				onChange={searchProps.onChange}
+				value={value}
+				onChange={changeValue}
 			/>
 		</>
 	);
