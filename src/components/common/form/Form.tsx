@@ -38,6 +38,7 @@ const Form = ({
 				type="submit"
 				text={isLoading ? "Loading..." : submitText}
 				customStyles="mt-2 font-semibold text-xl bg-primary"
+				onclick={submitFunc}
 			/>
 
 			{links ? (

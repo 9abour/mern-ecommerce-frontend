@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export type IChildren = {
+export type ChildrenType = {
 	children: ReactNode;
 };
 

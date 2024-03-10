@@ -35,17 +35,14 @@ const InputSearch = ({ type, placeholder, customStyles }: IInputSearch) => {
 				onFocus={() => setFormIsActive(true)}
 				onBlur={() => setFormIsActive(false)}
 			/>
-			{formIsActive && searchProps.value ? (
-				<IconButton
-					icon={<ThrobbingLoading />}
-					customStyles="bg-primary cursor-auto"
-				/>
-			) : (
-				<IconButton
-					icon={<IoSearchSharp size={25} color="white" />}
-					customStyles="bg-primary cursor-auto"
-				/>
-			)}
+
+			<div className="w-[40px] h-[40px] flex justify-center items-center rounded-full bg-primary cursor-auto transition-all">
+				{formIsActive && searchProps.value ? (
+					<ThrobbingLoading />
+				) : (
+					<IoSearchSharp size={25} color="white" />
+				)}
+			</div>
 
 			{/* Show suggestions if there */}
 			{formIsActive && searchProps.value && (

@@ -1,7 +1,7 @@
 "use client";
 
 import useHandlePageScroll from "@/hooks/scroll-control/useHandlePageScroll";
-import { ChildrenType } from "@/types/context";
+import { ChildrenType } from "@/types/index.types";
 import { createContext, useState } from "react";
 
 const initialState = {

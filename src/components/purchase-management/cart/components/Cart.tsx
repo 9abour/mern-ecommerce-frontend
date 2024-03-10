@@ -75,6 +75,7 @@ const Cart = () => {
 						<TextButton
 							text="checkout"
 							customStyles="block mt-4 uppercase text-sm shadow-csmYellow hover:shadow-clg bg-primary hover:bg-dark hover:text-white text-dark transition duration-300 font-semibold"
+							onclick={() => console.log("checkout")}
 						/>
 					</div>
 				</>

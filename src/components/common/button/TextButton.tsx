@@ -8,7 +8,7 @@ const TextButton = ({ text, customStyles, onclick, type }: ITextButton) => {
 			className={`px-4 py-2 rounded-full transition-all ${
 				customStyles ? customStyles : ""
 			}`}
-			onClick={onclick}
+			onClick={() => onclick()}
 		>
 			{text}
 		</button>

@@ -7,7 +7,7 @@ const IconButton = ({ icon, customStyles, onclick, disabled }: IIconButton) => {
 			className={`w-[40px] h-[40px] flex justify-center items-center rounded-full transition-all ${
 				customStyles ? customStyles : ""
 			}`}
-			onClick={onclick}
+			onClick={() => onclick()}
 			disabled={disabled}
 			aria-label="icon"
 		>

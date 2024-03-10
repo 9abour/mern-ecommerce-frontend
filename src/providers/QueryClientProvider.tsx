@@ -1,18 +1,12 @@
-"use client"
+"use client";
 
-import { IChildren } from "@/types/index.types";
+import { ChildrenType } from "@/types/index.types";
 import { QueryClient, QueryClientProvider } from "react-query";
 
+const QueryProvider = ({ children }: ChildrenType) => {
+	const client = new QueryClient();
 
-const QueryProvider = ({children}: IChildren) => {
-  const client = new QueryClient()
-
-  return (
-    <QueryClientProvider client={client}>
-      {children}
-    </QueryClientProvider>
-
-  )
-}
+	return <QueryClientProvider client={client}>{children}</QueryClientProvider>;
+};
 
 export default QueryProvider;

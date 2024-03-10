@@ -5,7 +5,7 @@ export interface ITextButton {
 	textColor?: string;
 	customStyles?: string;
 	type?: "button" | "submit" | undefined;
-	onclick?: Function;
+	onclick: Function;
 }
 
 export interface IIconButton {
@@ -13,7 +13,7 @@ export interface IIconButton {
 	bgColor?: string;
 	customStyles?: string;
 	disabled?: boolean;
-	onclick?: Function;
+	onclick: Function;
 }
 
 export interface IMenuButton {

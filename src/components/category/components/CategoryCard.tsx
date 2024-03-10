@@ -36,6 +36,7 @@ const CategoryCard = ({ category }: { category: ICategory }) => {
 						icon={<BsArrowRightShort size={25} />}
 						bgColor={"bg-" + color}
 						customStyles="text-white mr-4 duration-300 ease-in-out"
+						onclick={() => console.log("Category Card")}
 					/>
 				</div>
 			</div>

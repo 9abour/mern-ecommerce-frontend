@@ -2,7 +2,7 @@
 
 import React, { lazy, useContext, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { IChildren, UserType } from "@/types/index.types";
+import { ChildrenType } from "@/types/index.types";
 import Loader from "@/components/common/loading/Loader";
 import useRefreshToken from "@/components/auth/hooks/useRefreshToken";
 import UserContext from "@/context/UserContext";
@@ -20,7 +20,7 @@ const Footer = lazy(
 );
 const JoinLayout = lazy(() => import("@/components/join/Layout"));
 
-const DashboardLayout = ({ children }: IChildren) => {
+const DashboardLayout = ({ children }: ChildrenType) => {
 	const [isLoading, setIsLoading] = useState(true);
 	const pathname = usePathname();
 	const { user } = useContext(UserContext);
