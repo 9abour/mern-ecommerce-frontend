@@ -4,7 +4,7 @@ import Form from "@/components/common/form/Form";
 import React, { FormEvent } from "react";
 
 import useHandleFormInputChange from "@/components/common/form/hooks/useHandleFormInputChange";
-import generateZodSchema from "@/helpers/generateZodSchema";
+import generateZodSchema from "@/helpers/zod/generateZodSchema";
 import useHandleNotifications from "@/hooks/useHandleNotifications";
 import {
 	signUpFormILinksData,

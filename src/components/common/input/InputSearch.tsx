@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { IInputSearch } from "./types";
-import { IoSearchSharp } from "react-icons/io5";
+import { IoSearch } from "react-icons/io5";
 import Link from "next/link";
 import ThrobbingLoading from "../loading/ThrobbingLoading";
 import { useSubmitSearch } from "./hooks/useSubmitSearch";
@@ -39,7 +39,7 @@ const InputSearch = ({ type, placeholder, customStyles }: IInputSearch) => {
 				{formIsActive && value ? (
 					<ThrobbingLoading />
 				) : (
-					<IoSearchSharp size={25} color="white" />
+					<IoSearch size={25} className="text-dark" />
 				)}
 			</div>
 

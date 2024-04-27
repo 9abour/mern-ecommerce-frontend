@@ -5,7 +5,7 @@ export interface ITextButton {
 	textColor?: string;
 	customStyles?: string;
 	type?: "button" | "submit" | undefined;
-	onclick: Function;
+	onclick?: Function;
 }
 
 export interface IIconButton {

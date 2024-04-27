@@ -8,6 +8,7 @@ export const sendResetPasswordFormInputsData: IFormInput[] = [
 		placeholder: "Email",
 		required: true,
 		autoFocus: true,
+		containerStyles: "col-span-4",
 	},
 ];
 

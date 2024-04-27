@@ -52,7 +52,7 @@ const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 
 			<div className="w-full p-2">
 				<ul>
-					<NavbarMobileLink href={`/dashboard`} name="Dashboard" />
+					<NavbarMobileLink href={`/dashboard/category`} name="Dashboard" />
 					<NavbarMobileLink href={`/categories`} name="Categories" />
 					<NavbarMobileLink href={`/wishlist`} name="Wishlist" />
 					<NavbarMobileLink href={`/cart`} name="Cart" />

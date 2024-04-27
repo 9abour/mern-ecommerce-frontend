@@ -8,12 +8,14 @@ export const resetPasswordFormInputsData: IFormInput[] = [
 		placeholder: "New password",
 		required: true,
 		autoFocus: true,
+		containerStyles: "col-span-4",
 	},
 	{
 		name: "confirmNewPassword",
 		type: "password",
 		placeholder: "Confirm new password",
 		required: true,
+		containerStyles: "col-span-4",
 	},
 ];
 

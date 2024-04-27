@@ -1,5 +1,5 @@
 import IconButton from "@/components/common/button/IconButton";
-import { IProduct } from "@/components/product/products/index.types";
+import { UserProductType } from "@/components/product/products/index.types";
 import { productInBasket } from "@/components/purchase-management/basket/helper";
 import useCheckProductIn from "@/hooks/useCheckProductIn";
 import { addToBasket, removeFromBasket } from "@/rtk/slices/basket/basketSlice";
@@ -14,7 +14,7 @@ import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { BiShow } from "react-icons/bi";
 import { TbBasketCheck, TbBasketPlus } from "react-icons/tb";
 
-const ProductCartActions = (product: IProduct) => {
+const ProductCartActions = (product: UserProductType) => {
 	const { id, slug } = product;
 
 	const { products } = useAppSelector(state => state.wishlistSlice);

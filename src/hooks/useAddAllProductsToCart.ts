@@ -1,4 +1,4 @@
-import { IProduct } from "@/components/product/products/index.types";
+import { UserProductType } from "@/components/product/products/index.types";
 import { clearBasket } from "@/rtk/slices/basket/basketSlice";
 import { addToCart } from "@/rtk/slices/cart/cartSlice";
 import { useAppDispatch } from "@/rtk/store/store";
@@ -10,7 +10,7 @@ import { useAppDispatch } from "@/rtk/store/store";
  * @return {void}
  */
 
-export const useAddAllProductsToCart = (products: IProduct[]) => {
+export const useAddAllProductsToCart = (products: UserProductType[]) => {
 	const dispatch = useAppDispatch();
 
 	/**

@@ -23,7 +23,7 @@ const ProductDetails = () => {
 		description: "new",
 		price: 10,
 		discount: 10,
-		image: "/burger.png",
+		imageUrl: "/burger.png",
 		available: true,
 		inCart: false,
 		rate: 4,
@@ -81,7 +81,7 @@ const ProductDetails = () => {
 					/>
 				</div>
 
-				<Rate rateNumber={product.rate} />
+				<Rate rateNumber={product.rate} size={25} />
 
 				<p className="max-w-[500px] ml-8 font-semibold text-dark">
 					An Angus burger is a hamburger made using beef from Angus cattle. The

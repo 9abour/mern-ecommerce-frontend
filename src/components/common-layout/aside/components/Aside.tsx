@@ -36,7 +36,7 @@ const Aside = () => {
 	}, [isMenuOpen]);
 
 	return (
-		<div ref={ref} className="fixed z-50">
+		<div ref={ref} className="fixed z-30">
 			<MenuButton
 				isMenuOpen={isMenuOpen}
 				setIsMenuOpen={setIsMenuOpen}

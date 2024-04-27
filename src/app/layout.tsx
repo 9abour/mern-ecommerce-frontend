@@ -11,6 +11,7 @@ import DashboardLayout from "@/components/secure/Layout";
 import getUser from "@/helpers/getUser";
 import { cookies } from "next/headers";
 import { UserProvider } from "@/context/UserContext";
+import DialogProvider from "@/context/dialog/DialogProvider";
 
 const inter = Outfit({ subsets: ["latin"] });
 
@@ -31,14 +32,16 @@ export default async function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<QueryProvider>
-					<Toaster richColors position="bottom-left" />
-					<ReduxProvider>
-						<UserProvider user={user}>
-							<DashboardLayout>{children}</DashboardLayout>
-						</UserProvider>
-					</ReduxProvider>
-				</QueryProvider>
+				<DialogProvider>
+					<QueryProvider>
+						<Toaster richColors position="bottom-left" />
+						<ReduxProvider>
+							<UserProvider initialUser={user}>
+								<DashboardLayout>{children}</DashboardLayout>
+							</UserProvider>
+						</ReduxProvider>
+					</QueryProvider>
+				</DialogProvider>
 			</body>
 		</html>
 	);

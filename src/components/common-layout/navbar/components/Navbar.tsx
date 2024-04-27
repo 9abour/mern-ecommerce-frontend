@@ -14,7 +14,6 @@ import { useAppSelector } from "@/rtk/store/store";
 import { MdDashboardCustomize } from "react-icons/md";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import { useIsWindowScrolled } from "@/hooks/useIsWindowScrolled";
-import { UserType } from "@/types/index.types";
 import UserContext from "@/context/UserContext";
 
 const Navbar = () => {
@@ -36,7 +35,7 @@ const Navbar = () => {
 	const { products } = useAppSelector(state => state.wishlistSlice);
 
 	return (
-		<div ref={ref} className="relative z-[99999]">
+		<div ref={ref} className="relative z-40">
 			<nav
 				className={`fixed transition duration-200 w-full h-[70px] flex justify-between items-center gap-4 md:gap-12 bg-white ${
 					useIsWindowScrolled() ? "!bg-dark shadow-csm" : "bg-white md:bg-white"

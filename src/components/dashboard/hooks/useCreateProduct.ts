@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { IProductFormInputs } from "@/components/dashboard/types/productForm.types";
+import { UserProductTypeFormInputs } from "@/components/dashboard/types/productForm.types";
 import { defaultProductInputs } from "@/components/dashboard/data/createProductFormData";
 
 const useCreateProduct = () => {
 	const [productInputs, setProductInputs] =
-		useState<IProductFormInputs>(defaultProductInputs);
+		useState<UserProductTypeFormInputs>(defaultProductInputs);
 
 	const handleChangeInput = (
 		name: string,
 		value: string,
-		productInputs: IProductFormInputs
+		productInputs: UserProductTypeFormInputs
 	) => {
-		const updated: IProductFormInputs = productInputs.map(inputInfo => {
+		const updated: UserProductTypeFormInputs = productInputs.map(inputInfo => {
 			if (inputInfo.name == name) {
 				return {
 					...inputInfo,

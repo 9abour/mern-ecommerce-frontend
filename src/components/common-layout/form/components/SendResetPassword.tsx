@@ -6,7 +6,7 @@ import {
 	sendResetPasswordFormInputsData,
 } from "../data/sendResetPasswordFormData";
 import useHandleFormInputChange from "@/components/common/form/hooks/useHandleFormInputChange";
-import generateZodSchema from "@/helpers/generateZodSchema";
+import generateZodSchema from "@/helpers/zod/generateZodSchema";
 import Form from "@/components/common/form/Form";
 import { useMutation } from "react-query";
 import useHandleNotifications from "@/hooks/useHandleNotifications";

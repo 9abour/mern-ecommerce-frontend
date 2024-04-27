@@ -1,8 +1,8 @@
-import { IProduct } from "@/components/product/products/index.types";
+import { UserProductType } from "@/components/product/products/index.types";
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface IBasketState {
-	products: IProduct[];
+	products: UserProductType[];
 }
 const initialState: IBasketState = {
 	products: [],

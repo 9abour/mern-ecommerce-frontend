@@ -1,15 +1,16 @@
 import Image from "next/image";
 import React from "react";
-import { IProduct } from "../../../products/index.types";
+import { UserProductType } from "../../../products/index.types";
 import { useAppSelector } from "@/rtk/store/store";
 import Link from "next/link";
 import ProductCartActions from "./ProductCartActions";
 import ProductCardStars from "./ProductCardStars";
 import useCheckProductIn from "@/hooks/useCheckProductIn";
 import AddToCartButton from "@/components/common/button/AddToCartButton";
+import Rate from "@/components/common/product/Rate";
 
-const ProductCard = ({ product }: { product: IProduct }) => {
-	const { id, slug, name, price, image, available, rate } = product;
+const ProductCard = ({ product }: { product: UserProductType }) => {
+	const { id, slug, name, price, imageUrl, rate, count } = product;
 
 	const cartProducts = useAppSelector(state => state.cartSlice.products);
 	const inCart = useCheckProductIn(id, cartProducts);
@@ -24,7 +25,7 @@ const ProductCard = ({ product }: { product: IProduct }) => {
 				<div className="relative w-full h-full rounded-xl overflow-hidden">
 					<div className="w-[150px]">
 						<Image
-							src={image}
+							src={imageUrl}
 							width={150}
 							height={150}
 							alt=""
@@ -45,10 +46,10 @@ const ProductCard = ({ product }: { product: IProduct }) => {
 				</Link>
 
 				<p className="text-slate-300 text-sm uppercase">
-					{available ? "Available" : "Not Available"}
+					{count ? `Available (${count})` : "Not Available"}
 				</p>
 
-				<ProductCardStars rate={rate} />
+				<Rate rateNumber={rate} size={16} customStyles={`flex-jc-c`} />
 
 				<span className="text-xl font-extrabold">$ {price}</span>
 			</div>

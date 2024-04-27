@@ -20,6 +20,28 @@
 	}
 }
 
+@layer utilities {
+	.flex-jc-c {
+		@apply flex justify-center items-center;
+	}
+	.flex-jb-c {
+		@apply flex justify-between items-center;
+	}
+	.flex-je-c {
+		@apply flex justify-evenly items-center;
+	}
+	.flex-ic-c {
+		@apply flex items-center;
+	}
+
+	.translate-x-center {
+		@apply -translate-x-2/4 left-2/4;
+	}
+	.translate-y-center {
+		@apply -translate-y-2/4 top-2/4;
+	}
+}
+
 body,
 html {
 	scroll-behavior: smooth !important;
@@ -66,6 +88,34 @@ input[type="number"] {
 	border: 10px solid;
 	box-sizing: border-box;
 	animation: animLoader 1s linear infinite alternate;
+}
+
+.dialog__wrapper {
+	@apply fixed w-screen h-screen bg-dark bg-opacity-50 top-0 left-0 z-50;
+
+	&.delete {
+		& > div {
+			@apply !bg-red-50;
+		}
+	}
+
+	.delete {
+		@apply !bg-[#FF4F36] !shadow-red-200;
+	}
+}
+
+@layer components {
+}
+.top__arrow {
+	position: absolute;
+	top: -5px;
+	left: 10px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 5px 5px 5px;
+	border-color: transparent transparent transparent transparent;
+	@apply border-b-white;
 }
 
 @keyframes animLoader {

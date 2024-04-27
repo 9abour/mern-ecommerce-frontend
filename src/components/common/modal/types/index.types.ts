@@ -9,7 +9,7 @@ export type TooltipPropsType = {
 export type Dialog = {
 	title: string;
 	message: string;
-	conformText: string;
+	conformText?: string;
 	icon?: ReactNode;
 	type?: "delete" | "warning";
 };

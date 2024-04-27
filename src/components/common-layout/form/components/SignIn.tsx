@@ -3,7 +3,7 @@
 import React, { FormEvent } from "react";
 import Form from "@/components/common/form/Form";
 import useHandleFormInputChange from "@/components/common/form/hooks/useHandleFormInputChange";
-import generateZodSchema from "@/helpers/generateZodSchema";
+import generateZodSchema from "@/helpers/zod/generateZodSchema";
 import useHandleNotifications from "@/hooks/useHandleNotifications";
 import { useMutation } from "react-query";
 import useFormValidation from "@/components/common-layout/form/hooks/useFormValidation";

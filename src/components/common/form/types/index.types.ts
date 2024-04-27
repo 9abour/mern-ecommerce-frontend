@@ -1,5 +1,6 @@
-import { FormEvent } from "react";
+import { FormEvent, ReactNode } from "react";
 import { IFormInput } from "../../input/types";
+import { ColorResult } from "react-color";
 export type IFormLinks = {
 	text?: string;
 	link: {
@@ -16,4 +17,12 @@ export type IForm = {
 	onFormValueChange?: ({ value, key }: Record<string, string>) => void;
 	validationErrors?: any;
 	isLoading?: boolean;
+	children?: ReactNode;
+};
+
+export type CustomColorPickerProps = {
+	color: string;
+	hideColorInput: () => void;
+	isColorInputOpen: boolean;
+	changeColor: (color: ColorResult) => void;
 };

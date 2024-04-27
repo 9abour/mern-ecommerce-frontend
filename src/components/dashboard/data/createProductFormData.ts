@@ -6,7 +6,7 @@ const defaultProductInputs = [
 		required: true,
 		autoFocus: true,
 		value: "",
-		customStyles: "col-span-4",
+		containerStyles: "col-span-4",
 	},
 	{
 		type: "number",
@@ -14,7 +14,7 @@ const defaultProductInputs = [
 		placeholder: "Price",
 		required: true,
 		value: "",
-		customStyles: "col-span-2",
+		containerStyles: "col-span-2",
 	},
 	{
 		type: "number",
@@ -22,15 +22,7 @@ const defaultProductInputs = [
 		placeholder: "Stock count",
 		required: true,
 		value: "",
-		customStyles: "col-span-1",
-	},
-	{
-		type: "number",
-		name: "rate",
-		placeholder: "Rate",
-		required: true,
-		value: "",
-		customStyles: "col-span-1",
+		containerStyles: "col-span-2",
 	},
 	{
 		type: "textarea",
@@ -39,7 +31,8 @@ const defaultProductInputs = [
 		required: true,
 		value: "",
 		customStyles:
-			"w-full h-[100px] min-h-[100px] border shadow-cmd rounded-xl py-2 px-4 justify-between gap-2 text-xl bg-white outline-none focus:border-primary col-span-4",
+			"w-full h-[100px] min-h-[100px] border shadow-cmd rounded-xl py-2 px-4 justify-between gap-2 text-xl bg-white outline-none focus:border-primary",
+		containerStyles: "col-span-4",
 	},
 ];
 

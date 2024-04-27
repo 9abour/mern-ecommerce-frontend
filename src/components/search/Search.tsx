@@ -194,7 +194,6 @@ const Search = () => {
 				{products.map(product => (
 					<ProductCard key={product.id} product={product} />
 				))}
-				F
 			</div>
 		</div>
 	);

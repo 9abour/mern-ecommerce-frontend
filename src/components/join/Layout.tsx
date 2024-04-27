@@ -1,8 +1,9 @@
 "use client";
 
-import React, { ReactNode } from "react";
+import { ChildrenType } from "@/types/index.types";
+import React from "react";
 
-const JoinLayout = ({ children }: { children: ReactNode }) => {
+const JoinLayout = ({ children }: ChildrenType) => {
 	return (
 		<div className="w-screen h-screen grid place-items-center">{children}</div>
 	);

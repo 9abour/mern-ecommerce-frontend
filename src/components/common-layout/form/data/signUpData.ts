@@ -8,18 +8,21 @@ export const signUpFormInputsData: IFormInput[] = [
 		placeholder: "First Name",
 		required: true,
 		autoFocus: true,
+		containerStyles: "col-span-2",
 	},
 	{
 		name: "lastName",
 		type: "text",
 		placeholder: "Last Name",
 		required: true,
+		containerStyles: "col-span-2",
 	},
 	{
 		name: "email",
 		type: "email",
 		placeholder: "Email",
 		required: true,
+		containerStyles: "col-span-4",
 	},
 	{
 		name: "password",
@@ -27,6 +30,7 @@ export const signUpFormInputsData: IFormInput[] = [
 		placeholder: "Password",
 		required: true,
 		min: 8,
+		containerStyles: "col-span-4",
 	},
 	{
 		name: "confirmPassword",
@@ -34,6 +38,7 @@ export const signUpFormInputsData: IFormInput[] = [
 		placeholder: "Confirm Password",
 		required: true,
 		min: 8,
+		containerStyles: "col-span-4",
 	},
 ];
 

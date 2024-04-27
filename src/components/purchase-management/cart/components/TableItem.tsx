@@ -10,16 +10,17 @@ import {
 } from "@/rtk/slices/cart/cartSlice";
 import { useAppDispatch } from "@/rtk/store/store";
 import IconButton from "@/components/common/button/IconButton";
+import Rate from "@/components/common/product/Rate";
 
 const TableItem = ({ product }: { product: ICartProduct }) => {
-	const { id, name, price, image, count, freeDelivery, weight } = product;
+	const { id, name, price, imageUrl, count, rate } = product;
 	const dispatch = useAppDispatch();
 	return (
 		<tbody>
 			<tr className="bg-gray-200 flex justify-between items-center gap-1 sm:gap-2 rounded-2xl p-2 md:p-3 mt-4">
 				<td className="w-[80px] h-[60px] md:w-[100px] md:h-[80px] bg-white rounded-xl p-2">
 					<Image
-						src={image}
+						src={imageUrl}
 						width={70}
 						height={70}
 						alt=""
@@ -27,17 +28,10 @@ const TableItem = ({ product }: { product: ICartProduct }) => {
 					/>
 				</td>
 				<td>
-					{freeDelivery && (
-						<span className="font-semibold bg-primary text-secondaryDark rounded-full px-2 text-xs sm:text-sm">
-							Free Delivery
-						</span>
-					)}
 					<h4 className="font-semibold text-dark text-sm sm:text-xl lg:text-2xl">
 						{name}
 					</h4>
-					<span className="font-semibold bg-gray-300 text-secondaryDark rounded-full px-2">
-						{weight}
-					</span>
+					<Rate rateNumber={rate} size={16} />
 				</td>
 				<td className="flex justify-center items-center gap-2">
 					<IconButton
@@ -60,7 +54,7 @@ const TableItem = ({ product }: { product: ICartProduct }) => {
 				<td className="md:px-2">
 					<IconButton
 						icon={<IoCloseSharp size={25} />}
-						customStyles="bg-transparent text-red-600 hover:bg-red-600 hover:text-white w-[25px] h-[25px] sm:!w-[40px] sm:!h-[40px]"
+						customStyles="bg-transparent text-red-400 hover:bg-red-600 hover:text-white w-[25px] h-[25px] sm:!w-[40px] sm:!h-[40px]"
 						onclick={() => dispatch(removeFromCart(product))}
 					/>
 				</td>

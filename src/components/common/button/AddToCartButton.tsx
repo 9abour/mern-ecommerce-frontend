@@ -7,14 +7,15 @@ import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
 import { addToCart, removeFromCart } from "@/rtk/slices/cart/cartSlice";
 import { usePathname, useRouter } from "next/navigation";
 import useCheckProductIn from "@/hooks/useCheckProductIn";
-import { IProduct } from "@/components/product/products/index.types";
+import { UserProductType } from "@/components/product/products/index.types";
+import { IoBagAdd, IoBagCheck } from "react-icons/io5";
 
 const AddToCartButton = ({
 	customStyles,
 	product,
 }: {
 	customStyles?: string;
-	product: IProduct;
+	product: UserProductType;
 }) => {
 	const dispatch = useAppDispatch();
 	const { products } = useAppSelector(state => state.cartSlice);
@@ -26,14 +27,8 @@ const AddToCartButton = ({
 
 	return (
 		<IconButton
-			icon={
-				inCart ? (
-					<TbShoppingBagCheck size={25} />
-				) : (
-					<TbShoppingBagPlus size={25} />
-				)
-			}
-			customStyles={`text-white bg-gradient-to-b from-primary to-primaryDark ${customStyles}`}
+			icon={inCart ? <IoBagCheck size={20} /> : <IoBagAdd size={20} />}
+			customStyles={`text-dark bg-gradient-to-b from-primary to-primaryDark ${customStyles}`}
 			onclick={() => {
 				pathname[pathname.length - 1] !== "wishlist" || !inCart
 					? dispatch(inCart ? removeFromCart(product) : addToCart(product))

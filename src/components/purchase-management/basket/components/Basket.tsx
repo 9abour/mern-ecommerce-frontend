@@ -7,7 +7,7 @@ import { getTotal } from "../helper/getTotal";
 import { clearBasket } from "@/rtk/slices/basket/basketSlice";
 import BasketItem from "./BasketItem";
 import { useAddAllProductsToCart } from "@/hooks/useAddAllProductsToCart";
-import { IProduct } from "@/components/product/products/index.types";
+import { UserProductType } from "@/components/product/products/index.types";
 
 const Basket = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -59,7 +59,7 @@ const Basket = () => {
 				}}
 			>
 				<ul className="m-0 border-b">
-					{products.map((product: IProduct, i) => (
+					{products.map((product: UserProductType, i) => (
 						<BasketItem key={i} product={product} />
 					))}
 				</ul>
@@ -71,7 +71,7 @@ const Basket = () => {
 
 				<div className="flex justify-between items-center mx-2 gap-4">
 					<button
-						className="py-4 rounded-full uppercase text-xs text-red-600 hover:text-red-700 transition duration-300 font-semibold"
+						className="py-4 rounded-full uppercase text-xs text-red-400 hover:text-red-700 transition duration-300 font-semibold"
 						onClick={() => dispatch(clearBasket())}
 					>
 						Clear

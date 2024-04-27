@@ -19,6 +19,21 @@ class HandleApiRequests {
 
 		return data;
 	};
+	public static handlePublicApiRequest = async <Data>({
+		method,
+		headers,
+		body,
+		url,
+	}: IHandleApiRequestArgs<Data>): Promise<IApiResponse<Data>> => {
+		const { data } = await axios({
+			method,
+			url,
+			data: body,
+			headers,
+		});
+
+		return data;
+	};
 }
 
 export default HandleApiRequests;

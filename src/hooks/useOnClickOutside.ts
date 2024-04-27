@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 
 export const useOnClickOutside = (
-	callback: any,
+	callback: Function,
 	screenSize: boolean = true
 ) => {
 	const ref = useRef<HTMLElement>();

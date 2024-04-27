@@ -8,12 +8,14 @@ export const singInFormInputsData: IFormInput[] = [
 		placeholder: "Email",
 		required: true,
 		autoFocus: true,
+		containerStyles: "col-span-4",
 	},
 	{
 		name: "password",
 		type: "password",
 		placeholder: "Password",
 		required: true,
+		containerStyles: "col-span-4",
 	},
 ];
 

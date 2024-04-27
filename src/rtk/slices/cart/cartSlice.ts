@@ -1,8 +1,7 @@
-import { IProduct } from "@/components/product/products/index.types";
+import { UserProductType } from "@/components/product/products/index.types";
 import { createSlice } from "@reduxjs/toolkit";
-import { toast } from "sonner";
 
-export interface ICartProduct extends IProduct {
+export interface ICartProduct extends UserProductType {
 	count: number;
 }
 
@@ -34,7 +33,6 @@ const cartSlice = createSlice({
 					inCart: true,
 				};
 				state.products.push(newCartProduct);
-				toast.success(`"${newCartProduct.name}" added to cart successfully`);
 			}
 		},
 		removeFromCart: (state, action) => {
@@ -43,11 +41,9 @@ const cartSlice = createSlice({
 			);
 
 			state.products = updated;
-			toast.success(`"${action.payload.name}" removed from cart successfully`);
 		},
 		clearCart: state => {
 			state.products = [];
-			toast.success(`Cart cleared successfully`);
 		},
 		increaseProductCount: (state, action) => {
 			state.products.map(product => {

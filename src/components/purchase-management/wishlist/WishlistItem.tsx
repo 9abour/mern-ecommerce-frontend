@@ -22,7 +22,7 @@ const WishlistItem = ({ product }: { product: IWishlistProduct }) => {
 				<td className="flex items-center gap-2">
 					<IconButton
 						icon={<IoCloseSharp size={25} />}
-						customStyles="bg-transparent text-red-600 hover:bg-red-600 hover:text-white w-[25px] h-[25px] sm:!w-[40px] sm:!h-[40px]"
+						customStyles="bg-transparent text-red-400 hover:bg-red-600 hover:text-white w-[25px] h-[25px] sm:!w-[40px] sm:!h-[40px]"
 						onclick={() => dispatch(removeFromWishlist(product))}
 					/>
 					<div className="w-[60px] h-[50px] md:w-[100px] md:h-[80px] bg-white rounded-xl p-2">

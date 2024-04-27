@@ -4,7 +4,6 @@ import React, { lazy, useContext, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ChildrenType } from "@/types/index.types";
 import Loader from "@/components/common/loading/Loader";
-import useRefreshToken from "@/components/auth/hooks/useRefreshToken";
 import UserContext from "@/context/UserContext";
 const Navbar = lazy(
 	() => import("@/components/common-layout/navbar/components/Navbar")
@@ -26,16 +25,14 @@ const DashboardLayout = ({ children }: ChildrenType) => {
 	const { user } = useContext(UserContext);
 
 	useEffect(() => {
-		setTimeout(() => {
-			setIsLoading(false);
-		}, 1000);
+		setIsLoading(false);
 	}, [pathname]);
 
-	useRefreshToken(user);
+	if (isLoading) {
+		return <Loader />;
+	}
 
-	return isLoading ? (
-		<Loader />
-	) : user ? (
+	return user ? (
 		<>
 			<Navbar />
 			<div className="flex pt-[70px]">

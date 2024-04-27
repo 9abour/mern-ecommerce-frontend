@@ -1,9 +1,9 @@
 import LineBottom from "@/components/common/line/LineBottom";
-import { IProduct } from "@/components/product/products/index.types";
+import { UserProductType } from "@/components/product/products/index.types";
 import Link from "next/link";
 import React from "react";
 
-const TextInfo = ({ product }: { product: IProduct }) => {
+const TextInfo = ({ product }: { product: UserProductType }) => {
 	const { name, slug, description } = product;
 	return (
 		<div className="text-white">

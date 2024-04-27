@@ -1,4 +1,4 @@
-import { IProduct } from "@/components/product/products/index.types";
+import { UserProductType } from "@/components/product/products/index.types";
 import { IFilterOptions } from "../index.types";
 
 export class FiltersHelper {
@@ -28,7 +28,7 @@ export class FiltersHelper {
 	}
 
 	public static filteredByCategories(
-		products: IProduct[],
+		products: UserProductType[],
 		categories: IFilterOptions[]
 	) {
 		return products.filter((product: any) =>
@@ -37,7 +37,7 @@ export class FiltersHelper {
 	}
 
 	public static filteredByAvailability(
-		products: IProduct[],
+		products: UserProductType[],
 		availability: IFilterOptions[]
 	) {
 		return products.filter(
@@ -45,7 +45,10 @@ export class FiltersHelper {
 		);
 	}
 
-	public static filteredByRating(rate: IFilterOptions[], products: IProduct[]) {
+	public static filteredByRating(
+		rate: IFilterOptions[],
+		products: UserProductType[]
+	) {
 		return products.filter(product =>
 			rate.map(r => product.rate === Number(r.content.toString().split(" ")[0]))
 		);

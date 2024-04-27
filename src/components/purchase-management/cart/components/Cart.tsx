@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Table from "./Table";
+import CartProducts from "./CartProducts";
 import { useAppDispatch, useAppSelector } from "@/rtk/store/store";
 import { clearCart } from "@/rtk/slices/cart/cartSlice";
 import { ICartTotal } from "../index.types";
 import { getCartTotal } from "../helper";
 import TextButton from "@/components/common/button/TextButton";
+import CartTotal from "@/components/purchase-management/cart/components/CartTotal";
 
 const Cart = () => {
 	const { products } = useAppSelector(state => state.cartSlice);
@@ -26,44 +27,8 @@ const Cart = () => {
 			{products.length ? (
 				<>
 					<div className="flex flex-col lg:flex-row justify-between">
-						<div className="w-full lg:w-8/12">
-							<h4 className="text-2xl font-semibold text-dark">
-								Shopping <span className="font-normal">Cart</span>
-							</h4>
-							<Table />
-						</div>
-
-						<div className="w-full lg:w-4/12 mt-8 lg:mt-0">
-							<h4 className="text-2xl font-semibold text-dark lg:ml-4">
-								Cart <span className="font-normal">Total</span>
-							</h4>
-							<div className="h-fit lg:pl-4 pt-4 lg:pb-8">
-								<table className="h-full flex justify-between items-center bg-secondaryDark rounded-2xl text-white text-lg p-4">
-									<thead className="[&>tr>th]:p-2 [&>tr>th]:text-start">
-										<tr>
-											<th>Count</th>
-										</tr>
-										<tr>
-											<th>Discount</th>
-										</tr>
-										<tr>
-											<th>Total</th>
-										</tr>
-									</thead>
-									<tbody className="[&>tr>td]:p-2 text-primary">
-										<tr>
-											<td>{total.count} item</td>
-										</tr>
-										<tr>
-											<td>{total.discount} $</td>
-										</tr>
-										<tr>
-											<td>{total.total} $</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
+						<CartProducts />
+						<CartTotal total={total} />
 					</div>
 
 					<div className="flex justify-end gap-4">

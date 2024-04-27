@@ -1,8 +1,7 @@
-import { IProduct } from "@/components/product/products/index.types";
+import { UserProductType } from "@/components/product/products/index.types";
 import { createSlice } from "@reduxjs/toolkit";
-import { toast } from "sonner";
 
-export interface IWishlistProduct extends IProduct {
+export interface IWishlistProduct extends UserProductType {
 	history: string;
 }
 
@@ -18,66 +17,11 @@ const initialState: IWishlistState = {
 			slug: "angus-burger",
 			description: "new",
 			price: 10,
-			discount: 10,
-			image: "/burger.png",
-			available: true,
+			imageUrl: "/burger.png",
 			inCart: false,
 			count: 1,
 			rate: 4,
-			weight: "250g",
 			categories: ["Food", "Burgers"],
-			freeDelivery: true,
-			history: "October 3, 2023",
-		},
-		{
-			id: "2",
-			name: "Angus Burger",
-			slug: "angus-burger",
-			description: "new",
-			price: 10,
-			discount: 10,
-			image: "/burger.png",
-			available: true,
-			inCart: false,
-			count: 1,
-			rate: 4,
-			weight: "250g",
-			categories: ["Food", "Burgers"],
-			freeDelivery: true,
-			history: "October 3, 2023",
-		},
-		{
-			id: "3",
-			name: "Angus Burger",
-			slug: "angus-burger",
-			description: "new",
-			price: 10,
-			discount: 10,
-			image: "/burger.png",
-			available: true,
-			inCart: false,
-			count: 1,
-			rate: 4,
-			weight: "250g",
-			categories: ["Food", "Burgers"],
-			freeDelivery: true,
-			history: "October 3, 2023",
-		},
-		{
-			id: "4",
-			name: "Angus Burger",
-			slug: "angus-burger",
-			description: "new",
-			price: 10,
-			discount: 10,
-			image: "/burger.png",
-			available: true,
-			inCart: false,
-			count: 1,
-			rate: 4,
-			weight: "250g",
-			categories: ["Food", "Burgers"],
-			freeDelivery: true,
 			history: "October 3, 2023",
 		},
 	],
@@ -103,9 +47,6 @@ const wishlistSlice = createSlice({
 					history: new Date().toString().split(" ").slice(0, 3).join(" "),
 				};
 				state.products.push(newWishlistProduct);
-				toast.success(
-					`"${newWishlistProduct.name}" added to wishlist successfully`
-				);
 			}
 		},
 		removeFromWishlist: (state, action) => {
@@ -114,13 +55,9 @@ const wishlistSlice = createSlice({
 			);
 
 			state.products = updated;
-			toast.success(
-				`"${action.payload.name}" removed from wishlist successfully`
-			);
 		},
 		clearWishlist: state => {
 			state.products = [];
-			toast.success(`Cart cleared successfully`);
 		},
 	},
 });

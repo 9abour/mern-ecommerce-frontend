@@ -13,6 +13,7 @@ const FormInput = ({
 	autoFocus,
 	handleChangeValue,
 	validationError,
+	containerStyles,
 }: IFormInput) => {
 	const { value, changeValue } = useInput("");
 
@@ -23,21 +24,34 @@ const FormInput = ({
 	}, [value]);
 
 	return (
-		<div>
-			<input
-				type={type}
-				placeholder={placeholder}
-				className={`w-full h-[50px] min-h-[50px] border shadow-cmd rounded-full px-4 justify-between gap-2 text-xl bg-white outline-none focus:border-primary ${
-					validationError ? "!border-red-600" : ""
-				} ${customStyles}`}
-				value={value}
-				onChange={changeValue}
-				required={required}
-				name={name}
-				autoFocus={autoFocus}
-			/>
+		<div className={containerStyles}>
+			{type === "textarea" ? (
+				<textarea
+					value={value}
+					onChange={changeValue}
+					name={name}
+					autoFocus={autoFocus}
+					className={`${customStyles} ${
+						validationError ? "!border-red-400" : ""
+					}`}
+					placeholder={placeholder}
+				/>
+			) : (
+				<input
+					type={type}
+					className={`w-full h-[50px] min-h-[50px] border shadow-cmd rounded-full px-4 justify-between gap-2 text-xl bg-white outline-none focus:border-primary ${
+						validationError ? "!border-red-400" : ""
+					} ${customStyles}`}
+					value={value}
+					onChange={changeValue}
+					name={name}
+					autoFocus={autoFocus}
+					placeholder={placeholder}
+				/>
+			)}
+
 			{validationError ? (
-				<p className="text-red-600 ml-4">{validationError.message}</p>
+				<p className="text-red-400 ml-4 mb-2">{validationError.message}</p>
 			) : null}
 		</div>
 	);
