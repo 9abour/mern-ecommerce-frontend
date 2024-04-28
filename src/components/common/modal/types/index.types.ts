@@ -6,10 +6,10 @@ export type TooltipPropsType = {
 	customStyles?: string;
 };
 
-export type Dialog = {
+export type DialogType = {
 	title: string;
 	message: string;
-	conformText?: string;
+	conformText: string;
 	icon?: ReactNode;
 	type?: "delete" | "warning";
 };

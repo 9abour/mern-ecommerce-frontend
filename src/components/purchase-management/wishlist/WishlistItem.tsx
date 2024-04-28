@@ -11,7 +11,7 @@ import IconButton from "@/components/common/button/IconButton";
 import AddToCartButton from "@/components/common/button/AddToCartButton";
 
 const WishlistItem = ({ product }: { product: IWishlistProduct }) => {
-	const { id, image, name, price, history } = product;
+	const { id, imageUrl, name, price, history } = product;
 	const dispatch = useAppDispatch();
 	const { products } = useAppSelector(state => state.cartSlice);
 	const inCart = useCheckProductIn(product.id, products);
@@ -27,7 +27,7 @@ const WishlistItem = ({ product }: { product: IWishlistProduct }) => {
 					/>
 					<div className="w-[60px] h-[50px] md:w-[100px] md:h-[80px] bg-white rounded-xl p-2">
 						<Image
-							src={image}
+							src={imageUrl}
 							width={70}
 							height={70}
 							alt=""

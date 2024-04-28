@@ -36,15 +36,6 @@ export class FiltersHelper {
 		);
 	}
 
-	public static filteredByAvailability(
-		products: UserProductType[],
-		availability: IFilterOptions[]
-	) {
-		return products.filter(
-			product => product.available === availability[0].isSelected
-		);
-	}
-
 	public static filteredByRating(
 		rate: IFilterOptions[],
 		products: UserProductType[]

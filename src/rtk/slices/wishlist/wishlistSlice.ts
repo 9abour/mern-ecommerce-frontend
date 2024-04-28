@@ -19,6 +19,7 @@ const initialState: IWishlistState = {
 			price: 10,
 			imageUrl: "/burger.png",
 			inCart: false,
+			discount: 0,
 			count: 1,
 			rate: 4,
 			categories: ["Food", "Burgers"],

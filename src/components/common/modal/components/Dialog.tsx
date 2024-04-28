@@ -1,5 +1,5 @@
 import TextButton from "@/components/common/button/TextButton";
-import { Dialog } from "@/components/common/modal/types/index.types";
+import { DialogType } from "@/components/common/modal/types/index.types";
 import { DialogContext } from "@/context/dialog/DialogProvider";
 import React, { useContext } from "react";
 
@@ -9,7 +9,7 @@ const Dialog = ({
 	conformText,
 	icon,
 	type = "warning",
-}: Dialog) => {
+}: DialogType) => {
 	const { toggleDialog, confirmAction } = useContext(DialogContext);
 
 	return (

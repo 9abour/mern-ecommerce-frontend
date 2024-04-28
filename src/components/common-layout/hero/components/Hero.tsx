@@ -6,23 +6,22 @@ import Image from "next/image";
 import IconButton from "@/components/common/button/IconButton";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { UserProductType } from "@/components/product/products/index.types";
 
 const Hero = () => {
 	const swiperRef: any = useRef();
 
-	const product = {
+	const product: UserProductType = {
 		id: "1",
 		slug: "angus-burger",
 		name: "Angus Burger",
 		description:
 			"a patty of ground beef grilled and placed between two halves of a bun.",
 		price: 11.2,
-		discount: 10,
-		image: "/burger.png",
-		available: true,
+		imageUrl: "/burger.png",
 		inCart: false,
+		discount: 0,
 		rate: 4,
-		weight: "250g",
 		categories: ["Food", "Burgers"],
 		count: 1,
 	};
