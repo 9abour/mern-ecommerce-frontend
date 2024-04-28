@@ -4,7 +4,6 @@ import { UserProductType } from "../../../products/index.types";
 import { useAppSelector } from "@/rtk/store/store";
 import Link from "next/link";
 import ProductCartActions from "./ProductCartActions";
-import ProductCardStars from "./ProductCardStars";
 import useCheckProductIn from "@/hooks/useCheckProductIn";
 import AddToCartButton from "@/components/common/button/AddToCartButton";
 import Rate from "@/components/common/product/Rate";
@@ -26,8 +25,8 @@ const ProductCard = ({ product }: { product: UserProductType }) => {
 					<div className="w-[150px]">
 						<Image
 							src={imageUrl}
-							width={150}
-							height={150}
+							width={120}
+							height={120}
 							alt=""
 							className="mx-auto drop-shadow-xl object-cover"
 						/>

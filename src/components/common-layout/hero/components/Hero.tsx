@@ -18,7 +18,8 @@ const Hero = () => {
 		description:
 			"a patty of ground beef grilled and placed between two halves of a bun.",
 		price: 11.2,
-		imageUrl: "/burger.png",
+		imageUrl:
+			"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
 		inCart: false,
 		discount: 0,
 		rate: 4,
@@ -96,7 +97,7 @@ const Hero = () => {
 						<div className="h-full flex flex-col-reverse sm:flex-row justify-center items-center md:!mx-[-24px] !px-[24px] py-[70px]">
 							<TextInfo product={product} />
 							<Image
-								src="/burger.png"
+								src="https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png"
 								width={400}
 								height={400}
 								alt=""

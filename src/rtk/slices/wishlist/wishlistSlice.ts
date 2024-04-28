@@ -17,7 +17,8 @@ const initialState: IWishlistState = {
 			slug: "angus-burger",
 			description: "new",
 			price: 10,
-			imageUrl: "/burger.png",
+			imageUrl:
+				"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
 			inCart: false,
 			discount: 0,
 			count: 1,

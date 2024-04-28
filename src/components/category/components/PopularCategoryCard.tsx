@@ -13,7 +13,7 @@ const PopularCategoryCard = ({
 }: IPopularCategoryCard) => {
 	return (
 		<div
-			className={`relative w-full p-4 lg:p-6 rounded-[22.5px] lg:rounded-[45px] overflow-hidden h-full min-h-[150px] lg:min-h-[250px] ${
+			className={`relative w-full p-2 lg:p-6 rounded-[22.5px] lg:rounded-[45px] overflow-hidden h-full min-h-[150px] lg:min-h-[250px] ${
 				customStyles ? customStyles : ""
 			} ${bg}`}
 		>
@@ -29,7 +29,7 @@ const PopularCategoryCard = ({
 			</div>
 
 			<div
-				className={`absolute right-0 bottom-0 sm:bottom-8 sm:top-4 w-3/4 h-4/6 md:w-2/4 md:h-2/4 z-10 ${
+				className={`absolute right-0 bottom-4 sm:bottom-8 sm:top-4 w-3/5 sm:w-3/5 h-4/6 md:w-2/4 md:h-2/4 z-10 ${
 					fullHeight &&
 					"!w-full !h-fit !top-[50%] !translate-y-[-50%] [&>img]:w-full"
 				}`}

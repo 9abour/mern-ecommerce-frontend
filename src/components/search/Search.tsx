@@ -6,7 +6,6 @@ import Filters from "../filters/components/Filters";
 import { IFilters } from "../filters/index.types";
 import { getSearchResult } from "./helpers/getSearchResult";
 import ProductCard from "@/components/product/production/components/product-card/ProductCard";
-import { ProductType } from "@/components/product/products/index.types";
 
 const Search = () => {
 	const currentPath = usePathname();
@@ -21,13 +20,12 @@ const Search = () => {
 			description: "new",
 			price: 10,
 			discount: 10,
-			imageUrl: "/burger.png",
+			imageUrl:
+				"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
 			inCart: false,
 			rate: 4,
-			weight: "250g",
-			categories: ["Food", "Burgers"],
+			categories: [],
 			count: 1,
-			freeDelivery: true,
 		},
 	];
 
