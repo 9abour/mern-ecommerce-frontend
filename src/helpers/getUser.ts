@@ -12,6 +12,7 @@ const getUser = async (
 		headers: {
 			auth: accessToken,
 		},
+		cache: "reload",
 	});
 
 	if (!response.ok) {
