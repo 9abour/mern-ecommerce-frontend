@@ -1,9 +1,9 @@
 import TextButton from "@/components/common/button/TextButton";
-import { Dialog } from "@/components/common/modal/types/index.types";
+import { DialogPropsType } from "@/components/common/modal/types/index.types";
 import { DialogContext } from "@/context/dialog/DialogProvider";
 import React, { useContext } from "react";
 
-const Modal = ({ title, message, icon, type = "warning" }: Dialog) => {
+const Modal = ({ title, message, icon, type = "warning" }: DialogPropsType) => {
 	const { toggleDialog } = useContext(DialogContext);
 
 	return (

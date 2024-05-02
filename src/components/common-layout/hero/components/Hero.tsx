@@ -17,6 +17,7 @@ const Hero = () => {
 		description:
 			"a patty of ground beef grilled and placed between two halves of a bun.",
 		price: 11.2,
+		discount: 0,
 		imageUrl:
 			"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
 		inCart: false,

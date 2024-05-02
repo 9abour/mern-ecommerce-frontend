@@ -6,7 +6,7 @@ export type TooltipPropsType = {
 	customStyles?: string;
 };
 
-export type Dialog = {
+export type DialogPropsType = {
 	title: string;
 	message: string;
 	conformText?: string;

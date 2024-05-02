@@ -40,9 +40,7 @@ export class FiltersHelper {
 		products: UserProductType[],
 		availability: IFilterOptions[]
 	) {
-		return products.filter(
-			product => product.available === availability[0].isSelected
-		);
+		return products.filter(product => product.count > 0);
 	}
 
 	public static filteredByRating(

@@ -5,6 +5,7 @@ export interface ProductType {
 	description: string;
 	price: number;
 	imageUrl: string;
+	discount: number;
 	categories: string[];
 	count: number;
 	rate: number;

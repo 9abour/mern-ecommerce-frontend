@@ -1,5 +1,5 @@
 import TextButton from "@/components/common/button/TextButton";
-import { Dialog } from "@/components/common/modal/types/index.types";
+import { DialogPropsType } from "@/components/common/modal/types/index.types";
 import { DialogContext } from "@/context/dialog/DialogProvider";
 import React, { useContext } from "react";
 
@@ -9,7 +9,7 @@ const Dialog = ({
 	conformText,
 	icon,
 	type = "warning",
-}: Dialog) => {
+}: DialogPropsType) => {
 	const { toggleDialog, confirmAction } = useContext(DialogContext);
 
 	return (
@@ -22,7 +22,7 @@ const Dialog = ({
 				<p className="my-4 text-grey-monsoon">{message}</p>
 				<div className="mt-6">
 					<TextButton
-						text={conformText}
+						text={conformText || ""}
 						customStyles={`bg-primary-ceruleanBlue text-white hover:bg-opacity-90 shadow-button shadow-grey-iron transition-all ${type}`}
 						onclick={confirmAction}
 					/>
