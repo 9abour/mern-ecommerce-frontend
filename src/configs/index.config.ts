@@ -1,4 +1,4 @@
-const BASE_API_URL = `http://localhost:5000`;
+const BASE_API_URL = `http://${process.env.NEXT_PUBLIC_LOCALHOST}:5000`;
 
 enum CLOUDINARY_CONFIG {
 	CLOUD_NAME = "driq6cudi",
