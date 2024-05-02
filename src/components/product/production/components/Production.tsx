@@ -30,8 +30,7 @@ const Production = () => {
 			description: "new",
 			price: 10,
 			discount: 10,
-			imageUrl:
-				"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
+			imageUrl: "",
 			inCart: false,
 			rate: 4,
 			categories: [],
@@ -44,8 +43,7 @@ const Production = () => {
 			description: "new",
 			price: 10,
 			discount: 10,
-			imageUrl:
-				"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
+			imageUrl: "",
 			available: true,
 			inCart: false,
 			rate: 4,
@@ -61,8 +59,7 @@ const Production = () => {
 			description: "new",
 			price: 10,
 			discount: 10,
-			imageUrl:
-				"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
+			imageUrl: "",
 			available: true,
 			inCart: false,
 			rate: 4,
@@ -78,8 +75,7 @@ const Production = () => {
 			description: "new",
 			price: 10,
 			discount: 10,
-			imageUrl:
-				"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
+			imageUrl: "",
 			available: true,
 			inCart: false,
 			rate: 4,
@@ -95,8 +91,7 @@ const Production = () => {
 			description: "new",
 			price: 10,
 			discount: 10,
-			imageUrl:
-				"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
+			imageUrl: "",
 			available: true,
 			inCart: false,
 			rate: 4,
@@ -112,8 +107,7 @@ const Production = () => {
 			description: "new",
 			price: 10,
 			discount: 10,
-			imageUrl:
-				"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
+			imageUrl: "",
 			available: true,
 			inCart: false,
 			rate: 4,
@@ -129,8 +123,7 @@ const Production = () => {
 			description: "new",
 			price: 10,
 			discount: 10,
-			imageUrl:
-				"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
+			imageUrl: "",
 			available: true,
 			inCart: false,
 			rate: 4,
@@ -146,8 +139,7 @@ const Production = () => {
 			description: "new",
 			price: 10,
 			discount: 10,
-			imageUrl:
-				"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
+			imageUrl: "",
 			available: true,
 			inCart: false,
 			rate: 4,
@@ -163,8 +155,7 @@ const Production = () => {
 			description: "new",
 			price: 10,
 			discount: 10,
-			imageUrl:
-				"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
+			imageUrl: "",
 			available: true,
 			inCart: false,
 			rate: 4,
@@ -180,8 +171,7 @@ const Production = () => {
 			description: "new",
 			price: 10,
 			discount: 10,
-			imageUrl:
-				"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
+			imageUrl: "",
 			available: true,
 			inCart: false,
 			rate: 4,

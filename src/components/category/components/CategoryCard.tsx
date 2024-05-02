@@ -13,9 +13,7 @@ const CategoryCard = ({ category }: { category: ICategory }) => {
 					className={`absolute w-[150px] h-[150px] top-[-50px] left-[50%] translate-x-[-50%] rounded-full bg-[#fbc644] shadow-circleYellow`}
 				>
 					<Image
-						src={
-							"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png"
-						}
+						src={""}
 						width={150}
 						height={150}
 						alt=""

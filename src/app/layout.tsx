@@ -26,8 +26,7 @@ export default async function RootLayout({
 	children: React.ReactNode;
 }) {
 	const cookieStore = cookies();
-	const accessToken =
-		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDBhMDdiZTQzNTYyYmZhZDYzZTE2ZSIsImZpcnN0TmFtZSI6Ik1vaGFtZWQiLCJsYXN0TmFtZSI6IkFiZFNhYm91ciIsImVtYWlsIjoiOWFib3VyQGdtYWlsLmNvbSIsImltYWdlVXJsIjoiIiwid2lzaGxpc3QiOltdLCJjYXJ0IjpbXSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE0NjMwNTQxLCJleHAiOjE3MTQ2MzIzNDF9.vXpIhyuxzRmLCQJkUwjIYKI3ChPotKhh_UyirCuWoYQ";
+	const accessToken = cookieStore.get("accessToken")?.value;
 	const user = await getUser(accessToken);
 
 	return (

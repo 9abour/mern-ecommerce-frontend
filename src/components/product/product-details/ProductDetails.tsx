@@ -23,8 +23,7 @@ const ProductDetails = () => {
 		description: "new",
 		price: 10,
 		discount: 10,
-		imageUrl:
-			"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
+		imageUrl: "",
 		inCart: false,
 		rate: 4,
 		categories: [],
@@ -51,9 +50,7 @@ const ProductDetails = () => {
 				<div className="relative max-h-full px-8 py-4 z-0">
 					<div className="relative w-full mx-auto rounded-xl overflow-hidden">
 						<Image
-							src={
-								"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png"
-							}
+							src={""}
 							width={400}
 							height={400}
 							alt=""
