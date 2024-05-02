@@ -10,22 +10,7 @@ export interface IWishlistState {
 }
 
 const initialState: IWishlistState = {
-	products: [
-		{
-			id: "1",
-			name: "Angus Burger",
-			slug: "angus-burger",
-			description: "new",
-			price: 10,
-			imageUrl: "",
-			inCart: false,
-			discount: 0,
-			count: 1,
-			rate: 4,
-			categories: ["Food", "Burgers"],
-			history: "October 3, 2023",
-		},
-	],
+	products: [],
 };
 
 const wishlistSlice = createSlice({

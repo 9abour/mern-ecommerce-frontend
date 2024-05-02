@@ -3,7 +3,7 @@ import { StaticImageData } from "next/image";
 export interface ICategory {
 	name: string;
 	color: string;
-	image: string;
+	imageUrl: string;
 	info?: string;
 }
 

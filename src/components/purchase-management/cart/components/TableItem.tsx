@@ -18,7 +18,7 @@ const TableItem = ({ product }: { product: ICartProduct }) => {
 	return (
 		<tbody>
 			<tr className="bg-gray-200 flex justify-between items-center gap-1 sm:gap-2 rounded-2xl p-2 md:p-3 mt-4">
-				<td className="w-[80px] h-[60px] md:w-[100px] md:h-[80px] bg-white rounded-xl p-2">
+				<td className="w-[80px] h-[60px] md:w-[80px] md:h-[80px] bg-white rounded-xl p-2">
 					<Image
 						src={imageUrl}
 						width={70}

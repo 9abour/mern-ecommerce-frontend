@@ -25,7 +25,7 @@ const WishlistItem = ({ product }: { product: IWishlistProduct }) => {
 						customStyles="bg-transparent text-red-400 hover:bg-red-600 hover:text-white w-[25px] h-[25px] sm:!w-[40px] sm:!h-[40px]"
 						onclick={() => dispatch(removeFromWishlist(product))}
 					/>
-					<div className="w-[60px] h-[50px] md:w-[100px] md:h-[80px] bg-white rounded-xl p-2">
+					<div className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] bg-white rounded-xl p-2">
 						<Image
 							src={imageUrl}
 							width={70}

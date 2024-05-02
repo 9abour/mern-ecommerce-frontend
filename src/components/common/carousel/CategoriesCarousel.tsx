@@ -25,7 +25,8 @@ const CategoriesCarousel = ({ swiperRef }: any) => {
 	const card: ICategory = {
 		name: "Angus Burger",
 		color: "[#fbc644]",
-		image: "",
+		imageUrl:
+			"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
 		info: "new",
 	};
 

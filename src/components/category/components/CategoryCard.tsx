@@ -5,7 +5,7 @@ import IconButton from "../../common/button/IconButton";
 import { BsArrowRightShort } from "react-icons/bs";
 
 const CategoryCard = ({ category }: { category: ICategory }) => {
-	const { name, color, info } = category;
+	const { name, color, info, imageUrl } = category;
 	return (
 		<div className="h-[300px] grid items-center">
 			<div className="relative w-[250px] h-[180px] bg-white shadow-clg rounded-xl p-4 [&>div>button]:hover:mr-0 cursor-pointer">
@@ -13,7 +13,7 @@ const CategoryCard = ({ category }: { category: ICategory }) => {
 					className={`absolute w-[150px] h-[150px] top-[-50px] left-[50%] translate-x-[-50%] rounded-full bg-[#fbc644] shadow-circleYellow`}
 				>
 					<Image
-						src={""}
+						src={imageUrl}
 						width={150}
 						height={150}
 						alt=""

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Logo from "./Logo";
 import InputSearch from "@/components/common/input/InputSearch";
 import User from "./User";
@@ -14,11 +14,9 @@ import { useAppSelector } from "@/rtk/store/store";
 import { MdDashboardCustomize } from "react-icons/md";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import { useIsWindowScrolled } from "@/hooks/useIsWindowScrolled";
-import UserContext from "@/context/UserContext";
 
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const { user } = useContext(UserContext);
 
 	const handleClickOutside = () => {
 		if (isMenuOpen) {
@@ -67,7 +65,7 @@ const Navbar = () => {
 							onclick={() => router.push("/wishlist")}
 						/>
 						<span className="absolute w-[50%] h-[50%] -top-[6px] -right-[6px] rounded-full text-xs font-bold bg-secondaryDark text-white text-center flex justify-center items-center">
-							{user?.wishlist.length}
+							{products.length}
 						</span>
 					</div>
 					<User />

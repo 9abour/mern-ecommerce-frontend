@@ -8,7 +8,6 @@ export interface ProductType {
 	categories: string[];
 	count: number;
 	rate: number;
-	discount: number;
 }
 
 export interface UserProductType extends ProductType {

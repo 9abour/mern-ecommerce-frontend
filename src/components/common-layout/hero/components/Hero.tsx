@@ -6,21 +6,20 @@ import Image from "next/image";
 import IconButton from "@/components/common/button/IconButton";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { UserProductType } from "@/components/product/products/index.types";
 
 const Hero = () => {
 	const swiperRef: any = useRef();
 
-	const product: UserProductType = {
+	const product = {
 		id: "1",
 		slug: "angus-burger",
 		name: "Angus Burger",
 		description:
 			"a patty of ground beef grilled and placed between two halves of a bun.",
 		price: 11.2,
-		imageUrl: "",
+		imageUrl:
+			"https://png.pngtree.com/png-vector/20230922/ourmid/pngtree-burger-png-images-png-image_10146424.png",
 		inCart: false,
-		discount: 0,
 		rate: 4,
 		categories: ["Food", "Burgers"],
 		count: 1,
@@ -96,7 +95,7 @@ const Hero = () => {
 						<div className="h-full flex flex-col-reverse sm:flex-row justify-center items-center md:!mx-[-24px] !px-[24px] py-[70px]">
 							<TextInfo product={product} />
 							<Image
-								src=""
+								src={product.imageUrl}
 								width={400}
 								height={400}
 								alt=""
