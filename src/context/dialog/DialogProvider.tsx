@@ -13,7 +13,7 @@ const initialState = {
 const DialogContext = createContext(initialState);
 
 const DialogProvider = ({ children }: ChildrenType) => {
-	const [isOpen, setIsOpen] = useState(initialState.isOpen);
+	const [isOpen, setIsOpen] = useState<boolean>(initialState.isOpen);
 	const [savedConfirmFunc, setSavedConfirmFunc] = useState<null | Function>(
 		null
 	);
@@ -22,7 +22,7 @@ const DialogProvider = ({ children }: ChildrenType) => {
 		if (savedConfirmFunc) {
 			setSavedConfirmFunc(savedConfirmFunc);
 		}
-		setIsOpen(prev => !prev);
+		setIsOpen(!isOpen);
 	};
 
 	const confirmAction = () => {

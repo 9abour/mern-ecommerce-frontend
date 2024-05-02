@@ -39,6 +39,7 @@
 		"react-responsive": "^9.0.2",
 		"rsuite": "^5.40.0",
 		"sass": "^1.67.0",
+		"sharp": "^0.33.3",
 		"slick-carousel": "^1.8.1",
 		"sonner": "^1.0.3",
 		"swiper": "^10.3.0",
