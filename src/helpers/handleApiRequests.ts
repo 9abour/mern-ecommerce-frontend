@@ -19,6 +19,7 @@ class HandleApiRequests {
 
 		return data;
 	};
+
 	public static handlePublicApiRequest = async <Data>({
 		method,
 		headers,
