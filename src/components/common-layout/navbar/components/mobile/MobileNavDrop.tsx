@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { motion } from "framer-motion";
 import { IMenuButton } from "@/components/common/button/types";
 import InputSearch from "@/components/common/input/InputSearch";
@@ -6,9 +6,11 @@ import User from "../User";
 import NavbarMobileLink from "./NavbarMobileLink";
 import { useHandleMenu } from "@/components/common-layout/navbar/hooks/useHandleMenu";
 import { useHandleHeight } from "@/components/common-layout/navbar/hooks/useHandleHeight";
+import UserContext from "@/context/UserContext";
 
 const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 	const refHeight = useRef<HTMLDivElement | null>(null);
+	const { user } = useContext(UserContext);
 
 	const { display } = useHandleMenu({ isMenuOpen, setIsMenuOpen });
 	const { height } = useHandleHeight(refHeight);
@@ -52,7 +54,10 @@ const MobileNavDrop = ({ isMenuOpen, setIsMenuOpen }: IMenuButton) => {
 
 			<div className="w-full p-2">
 				<ul>
-					<NavbarMobileLink href={`/dashboard/category`} name="Dashboard" />
+					{user?.role === "admin" ? (
+						<NavbarMobileLink href={`/dashboard/category`} name="Dashboard" />
+					) : null}
+
 					<NavbarMobileLink href={`/categories`} name="Categories" />
 					<NavbarMobileLink href={`/wishlist`} name="Wishlist" />
 					<NavbarMobileLink href={`/cart`} name="Cart" />
