@@ -1,26 +1,59 @@
 import getUser from "@/helpers/getUser";
+import { isAuthorizedForDashboard } from "@/helpers/isAuthorizedForDashboard";
 import { NextRequest, NextResponse } from "next/server";
+
+/**
+ * Configuration object for the middleware.
+ *
+ * @type {Object}
+ * @property {string[]} matcher - An array of regular expressions to match protected paths.
+ */
+
 export const config = {
 	matcher: ["/((?!api|.*\\..*).*)"],
 };
 
-const protectedRoutes = ["/auth"];
+/**
+ * An array of protected paths that require user authentication.
+ *
+ * @type {string[]}
+ */
+const protectedPaths = ["/auth"];
 
-export default async function middleware(req: NextRequest) {
+export default async function handleAuthenticationMiddleware(req: NextRequest) {
 	const accessToken = req.cookies.get("accessToken")?.value;
 	const refreshToken = req.cookies.get("refreshToken")?.value;
 
+	/**
+	 * User object obtained by fetching user information using the access token.
+	 *
+	 * @type {Object}
+	 */
 	const user = await getUser(accessToken);
 
-	const isProtectedRoute = protectedRoutes.some(route =>
+	/**
+	 * Checks if the current request path is protected.
+	 *
+	 * @type {boolean}
+	 */
+
+	const isProtectedPath = protectedPaths.some(route =>
 		req.nextUrl.pathname.startsWith(route)
 	);
 
-	if (user && isProtectedRoute) {
+	if (user && !isProtectedPath) {
+		return NextResponse.next();
+	}
+
+	if (user && isProtectedPath) {
 		return NextResponse.redirect(new URL("/", req.nextUrl));
-	} else if (!user && !isProtectedRoute && !refreshToken) {
+	}
+
+	if (!user && !isProtectedPath && !refreshToken) {
 		return NextResponse.redirect(new URL("/auth/signin", req.url));
 	}
 
-	return NextResponse.next();
+	if (user && isAuthorizedForDashboard(user)) {
+		return NextResponse.redirect(new URL("/", req.nextUrl));
+	}
 }
