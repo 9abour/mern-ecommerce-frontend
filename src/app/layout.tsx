@@ -12,6 +12,7 @@ import getUser from "@/helpers/getUser";
 import { cookies } from "next/headers";
 import { UserProvider } from "@/context/UserContext";
 import DialogProvider from "@/context/dialog/DialogProvider";
+import { ChildrenType } from "@/types/index.types";
 
 const inter = Outfit({ subsets: ["latin"] });
 
@@ -20,13 +21,10 @@ export const metadata: Metadata = {
 	description: "E-commerce app",
 };
 
-export default async function RootLayout({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
+export default async function RootLayout({ children }: ChildrenType) {
 	const cookieStore = cookies();
 	const accessToken = cookieStore.get("accessToken")?.value;
+
 	const user = await getUser(accessToken);
 
 	return (
@@ -36,9 +34,10 @@ export default async function RootLayout({
 					<QueryProvider>
 						<Toaster richColors position="bottom-left" />
 						<ReduxProvider>
-							<UserProvider initialUser={user}>
+							{/* <UserProvider initialUser={user}>
 								<DashboardLayout>{children}</DashboardLayout>
-							</UserProvider>
+							</UserProvider> */}
+							<h1>Hello</h1>
 						</ReduxProvider>
 					</QueryProvider>
 				</DialogProvider>

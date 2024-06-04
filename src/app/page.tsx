@@ -6,10 +6,10 @@ import Production from "@/components/product/production/components/Production";
 export default async function Home() {
 	return (
 		<>
-			{/* <Hero />
+			<Hero />
 			<PopularCategory />
 			<Production />
-			<AllCategories /> */}
+			<AllCategories />
 		</>
 	);
 }
