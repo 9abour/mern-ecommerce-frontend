@@ -22,9 +22,10 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: ChildrenType) {
-	const user = await getUser(
-		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZDBhMDdiZTQzNTYyYmZhZDYzZTE2ZSIsImZpcnN0TmFtZSI6Ik1vaGFtZWQiLCJsYXN0TmFtZSI6IkFiZFNhYm91ciIsImVtYWlsIjoiOWFib3VyQGdtYWlsLmNvbSIsImltYWdlVXJsIjoiIiwid2lzaGxpc3QiOltdLCJjYXJ0IjpbXSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzE3NDg3ODU0LCJleHAiOjE3MTc0ODk2NTR9.OBXnU-Ri6ZGGfTkLriC6LHuvxhgCy03-MdCAZQHODtQ"
-	);
+	const cookieStore = cookies();
+	const accessToken = cookieStore.get("accessToken");
+
+	const user = accessToken ? await getUser(accessToken.value) : null;
 
 	return (
 		<html lang="en">
