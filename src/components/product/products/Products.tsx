@@ -186,22 +186,23 @@ const Products = () => {
 	];
 
 	const [filters, setFilters] = useState<IFilters>({
-		category: [],
 		availability: [],
 		rate: [],
 		price: [0, 100],
 	});
 
-	const { category, availability, rate, price } = filters;
+	const { availability, rate, price } = filters;
+
+	console.log({ availability, rate, price });
 
 	useEffect(() => {}, [filters]);
 
 	return (
 		<div className="container mx-auto px-4">
 			<h3
-				className={`font-semibold text-2xl text-dark mt-16 my-8 mx-[24px] md:mx-0`}
+				className={`font-semibold text-4xl text-dark mt-16 my-8 mx-[24px] md:mx-0 capitalize`}
 			>
-				Products for - {currentProductsCategory}
+				{currentProductsCategory} products
 			</h3>
 
 			<Filters filters={filters} setFilters={setFilters} />

@@ -10,24 +10,6 @@ import { FiltersHelper } from "../helpers/filters.helper";
 const Filters = ({ filters, setFilters }: IFiltersProps) => {
 	const [rangePrice, setRangePrice] = useState<[number, number]>([0, 100]);
 
-	const [category, setCategory] = useState<IFilterOptions[]>([
-		{
-			id: "0",
-			content: "Burgers",
-			isSelected: false,
-		},
-		{
-			id: "1",
-			content: "Food",
-			isSelected: false,
-		},
-		{
-			id: "2",
-			content: "Burgers",
-			isSelected: false,
-		},
-	]);
-
 	const [availability, setAvailability] = useState<IFilterOptions[]>([
 		{
 			id: "0",
@@ -65,27 +47,20 @@ const Filters = ({ filters, setFilters }: IFiltersProps) => {
 	]);
 
 	useEffect(() => {
-		const selectedCategories = FiltersHelper.getSelectedOptions(category);
 		const selectedAvailability = FiltersHelper.getSelectedOptions(availability);
 		const selectedRating = FiltersHelper.getSelectedOptions(rating);
 
 		setFilters({
-			category: selectedCategories,
 			availability: selectedAvailability,
 			rate: selectedRating,
 			price: rangePrice,
 		});
-	}, [rangePrice, category, availability, rating]);
+	}, [rangePrice, availability, rating]);
 
 	return (
 		<>
 			<div className="flex flex-col-reverse sm:flex-row items-center gap-4 my-4">
 				<div className="flex items-center justify-center sm:justify-start gap-4 container px-4 md:px-0 mx-auto [&>:first-child>div]:left-0 [&>:first-child>div]:translate-x-0 [&>:last-child>div]:left-auto [&>:last-child>div]:right-0 [&>:last-child>div]:translate-x-0">
-					<Select
-						options={category}
-						setOptions={setCategory}
-						label="Category"
-					/>
 					<Select
 						options={availability}
 						setOptions={setAvailability}

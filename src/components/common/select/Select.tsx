@@ -12,8 +12,8 @@ const optionsAnimate = {
 		transition: {
 			type: "spring",
 			bounce: 0,
-			duration: 0.7,
-			delayChildren: 0.2,
+			duration: 0.2,
+			delayChildren: 0.1,
 			staggerChildren: 0.05,
 		},
 	},
@@ -31,12 +31,12 @@ const optionVariants: Variants = {
 	open: {
 		opacity: 1,
 		y: 0,
-		transition: { type: "spring", stiffness: 300, damping: 24 },
+		transition: { type: "spring", stiffness: 300, damping: 24, duration: 0.2 },
 	},
 
 	closed: {
 		opacity: 0,
-		y: -20,
+		y: -10,
 		transition: { duration: 0.2 },
 	},
 };
@@ -66,7 +66,7 @@ const Select = ({ label, options, setOptions }: ISelect) => {
 				initial="closed"
 				animate={optionsIsOpen ? "open" : "closed"}
 				variants={optionsAnimate}
-				className="absolute mt-1 left-2/4 translate-x-[-50%] w-fit min-w-[8rem] lg:min-w-[10rem] p-2 bg-dark rounded-lg [&>:not(:first-child)]:mt-2 !shadow-clg border-[1.5px] border-secondaryDark z-50"
+				className="absolute mt-1 left-2/4 translate-x-[-50%] w-fit min-w-[10rem] lg:min-w-[10rem] p-2 bg-dark rounded-lg [&>:not(:first-child)]:mt-2 !shadow-clg border-[1.5px] border-secondaryDark z-50"
 			>
 				{options.map(option => (
 					<motion.div key={option.id} variants={optionVariants}>
@@ -77,7 +77,7 @@ const Select = ({ label, options, setOptions }: ISelect) => {
 								setOptions(FiltersHelper.selectOption(option.id, options))
 							}
 						>
-							<span className="text-sm">{option.content}</span>
+							<span className="text-sm select-none">{option.content}</span>
 						</Checkbox>
 					</motion.div>
 				))}

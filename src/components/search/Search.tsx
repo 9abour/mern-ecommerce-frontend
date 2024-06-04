@@ -156,7 +156,6 @@ const Search = () => {
 	];
 
 	const [filters, setFilters] = useState<IFilters>({
-		category: [],
 		availability: [],
 		rate: [],
 		price: [0, 0],
